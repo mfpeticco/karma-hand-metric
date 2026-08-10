@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.ruff_cache/
+.DS_Store
+~$*
+
+# Scratch output from the entry scripts. Published results live in results/
+# (16_hand_batch, ablation, robustness, ...) and are tracked; these
+# are per-run outputs a user regenerates.
+workspace/
+results/all_hands_*.yaml
+robust_tests/results/
+figures/*.png
+figures/*.pdf
+
+# Development material kept alongside the code but NOT part of the public
+# release: the paper sources, bulk data, the frozen as-submitted dev repo, and
+# any local scratch. Everything under dev/ stays out of the published tree.
+dev/

@@ -1,0 +1,41 @@
+# Packaging for KaRMA. This makes `pip install -e .` work so that `import karma`
+# (and `baselines`, `robust_tests`) resolve from any working directory.
+#
+# For bit-reproducible numbers, prefer `conda env create -f environment.yml`,
+# which additionally pins the full transitive dependency tree. See the README
+# "Reproducibility" section. Python is capped below 3.11 because pinocchio and
+# hpp-fcl ship as cmeel wheels built against 3.10.
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "karma-hand-metric"
+version = "1.0.0"
+description = "KaRMA: a kinematics-only metric for the fine-manipulation ability of robotic hands"
+readme = "README.md"
+requires-python = ">=3.10,<3.11"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Martin Peticco" },
+    { name = "Pulkit Agrawal" },
+]
+dependencies = [
+    "numpy==1.26.4",
+    "scipy==1.15.3",
+    "pin==2.7.0",          # pinocchio (PyPI cmeel wheel; NOT the unrelated `pinocchio` pkg)
+    "hpp-fcl==2.4.4",
+    "osqp==1.1.1",
+    "healpy==1.19.0",
+    "viser==1.0.24",
+    "matplotlib==3.10.9",  # figures/plot scripts only; not used by the metric
+    "yourdfpy==0.0.60",    # interactive tools/ only (mesh overlay/tuning); not used by the metric
+    "trimesh==4.12.2",     # interactive tools/ only (mesh loading); not used by the metric
+    "PyYAML==6.0.2",
+]
+
+[project.urls]
+Repository = "https://github.com/mfpeticco/karma-hand-metric"
+
+[tool.setuptools]
+packages = ["karma", "baselines", "robust_tests"]

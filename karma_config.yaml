@@ -1,0 +1,66 @@
+# KaRMA global configuration (shared across all robot URDFs)
+# ────────────────────────────────────────────────────────────────
+#
+# NON-DIMENSIONALIZATION
+# All length parameters below are NOMINAL values, tuned for a hand with
+# L_ref ≈ l_ref_nominal_m.  At load time, every length parameter is
+# automatically scaled by (L_ref / l_ref_nominal) so that robots of
+# different sizes get a geometrically equivalent problem.
+#
+# L_ref = mxPr + mF  (max pairwise knuckle distance + median finger wire)
+# computed automatically from the robot URDF.
+
+l_ref_nominal_m: 0.2            # 200 mm, the nominal hand size these values are tuned for
+
+# ── Geometry (nominal, scaled by L_ref) ──
+sphere_radius_m: 0.010          # test sphere radius (20 mm diameter at nominal)
+link_radius_m: 0.0118           # finger capsule radius (23.6 mm diameter at nominal)
+
+# ── Discretization (nominal, scaled by L_ref) ──
+voxel_size_m: 0.010             # translational voxel edge (10 mm at nominal)
+step_size_m: 0.00125            # BFS sub-step (0.125 × voxel, 8 sub-steps per voxel)
+
+# ── Orientation binning (angular; NOT scaled) ──
+# HEALPix on S^2. nside=6 → 432 pixels; with antipodal (line-direction)
+# identification this reduces to the 228 twist-invariant bins the metric
+# actually uses (healpix_npix_lines = 6*nside^2 + 2*nside), ≈10° resolution.
+healpix_nside: 6
+
+# ── Physics (dimensionless; NOT scaled) ──
+friction_coeff: 0.6
+
+# ── Tolerances (nominal, scaled by L_ref) ──
+eps_g_m: 0.00035                # max contact gap (0.35 mm at nominal)
+eps_col_m: 0.0005               # min collision clearance (0.5 mm at nominal)
+
+# ── Angular tolerances (NOT scaled) ──
+max_joint_step_deg: 10.0        # max per-joint step per primitive
+
+# ── Tangential slip control (nominal, scaled by L_ref) ──
+# null = allow tangential slip; value = single hard gate that rejects any step
+# whose tangential slip exceeds this threshold (0.5 mm at nominal L_ref), which
+# is alpha = 0.40 of the per-sub-step commanded motion, the elbow of the
+# reach-vs-tolerance curve; see docs/slip_tolerance_study.md for the data.
+rotation_slip_threshold_mm: 0.5
+
+# ── QP solver (nominal, scaled by L_ref^2) ──
+qp_regularization: 1.0e-6
+
+# ── BFS limits (count; NOT scaled) ──
+max_states: 10000
+
+# ── Seed search (nominal, scaled by L_ref) ──
+seed_search_offsets_m: [0.0, -0.005, -0.01, 0.005, 0.01]
+
+# ── Output ──
+out_dir: workspace
+
+# ── Viewer ──
+viewer_host: 127.0.0.1
+viewer_port: 8080
+
+# ── Parallelism ──
+# Phase 2 (rotation exploration at each reached voxel) runs across worker processes.
+# null = auto (one worker per CPU core). Worker count affects speed only, not the
+# result, so this is safe to change.
+rotation_workers: null

@@ -1,0 +1,9 @@
+RobotEra XHand
+Source:    RobotEra (https://github.com/roboterax). No canonical licensed XHand URDF
+           is currently published upstream; the model's package.xml declares BSD.
+License:   BSD (declared in the model's package.xml; not verifiable against an
+           official RobotEra source)
+Copyright: RobotEra
+
+This model is third-party and remains under its source's license; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

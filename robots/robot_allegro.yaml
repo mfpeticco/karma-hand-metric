@@ -1,0 +1,243 @@
+robot_name: allegro_hand_right
+urdf_path: urdfs/allegro.urdf
+base_link: hand_root
+fingers:
+  thumb:
+    active_joints:
+    - joint_12
+    - joint_13
+    - joint_14
+    - joint_15
+    contact_links:
+    - link_15
+    - link_14
+    - link_13
+    - link_12
+  index:
+    active_joints:
+    - joint_0
+    - joint_1
+    - joint_2
+    - joint_3
+    contact_links:
+    - link_3
+    - link_2
+    - link_1
+    - link_0
+seed:
+  thumb_link: link_15
+  index_link: link_3
+links:
+  link_3:
+    tip_length_m: 0.04
+  link_15:
+    tip_length_m: 0.055
+  link_11:
+    tip_length_m: 0.04
+  link_7:
+    tip_length_m: 0.04
+joints:
+  root_to_base:
+    type: fixed
+    parent: hand_root
+    child: palm_link
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.095
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  joint_0:
+    type: revolute
+    parent: palm_link
+    child: link_0
+    origin_xyz_m:
+    - 0.0
+    - 0.0435
+    - -0.001542
+    origin_rpy_rad:
+    - -0.08726646255
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - 1.0
+    limits:
+      lower: -0.47
+      upper: 0.47
+      effort: 0.7
+      velocity: 7.0
+  joint_1:
+    type: revolute
+    parent: link_0
+    child: link_1
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0164
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.196
+      upper: 1.61
+      effort: 0.7
+      velocity: 7.0
+  joint_2:
+    type: revolute
+    parent: link_1
+    child: link_2
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.054
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.174
+      upper: 1.709
+      effort: 0.7
+      velocity: 7.0
+  joint_3:
+    type: revolute
+    parent: link_2
+    child: link_3
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0384
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.227
+      upper: 1.618
+      effort: 0.7
+      velocity: 7.0
+  joint_3_tip:
+    type: fixed
+    parent: link_3
+    child: link_3_tip
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0267
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  joint_12:
+    type: revolute
+    parent: palm_link
+    child: link_12
+    origin_xyz_m:
+    - -0.0182
+    - 0.019333
+    - -0.045987
+    origin_rpy_rad:
+    - 0.0
+    - -1.65806278845
+    - -1.5707963259
+    axis_xyz:
+    - -1.0
+    - 0.0
+    - 0.0
+    limits:
+      lower: 0.263
+      upper: 1.396
+      effort: 0.7
+      velocity: 7.0
+  joint_13:
+    type: revolute
+    parent: link_12
+    child: link_13
+    origin_xyz_m:
+    - -0.027
+    - 0.005
+    - 0.0399
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - 1.0
+    limits:
+      lower: -0.105
+      upper: 1.163
+      effort: 0.7
+      velocity: 7.0
+  joint_14:
+    type: revolute
+    parent: link_13
+    child: link_14
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0177
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.189
+      upper: 1.644
+      effort: 0.7
+      velocity: 7.0
+  joint_15:
+    type: revolute
+    parent: link_14
+    child: link_15
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0514
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.162
+      upper: 1.719
+      effort: 0.7
+      velocity: 7.0
+  joint_15_tip:
+    type: fixed
+    parent: link_15
+    child: link_15_tip
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0423
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0

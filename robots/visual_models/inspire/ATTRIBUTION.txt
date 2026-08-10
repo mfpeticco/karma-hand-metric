@@ -1,0 +1,8 @@
+Inspire RH56 dexterous hand
+Source:    https://github.com/unitreerobotics/unitree_ros  (h1_description meshes)
+License:   BSD-3-Clause
+Copyright: (c) 2016-2022 Hangzhou Yushu Technology Co., Ltd. (Unitree Robotics);
+           hand geometry by Inspire Robotics
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

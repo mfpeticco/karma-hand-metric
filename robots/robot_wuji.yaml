@@ -1,0 +1,233 @@
+robot_name: wuji_hand_right
+urdf_path: urdfs/wuji.urdf
+base_link: right_palm_link
+fingers:
+  thumb:
+    active_joints:
+    - right_finger1_joint1
+    - right_finger1_joint2
+    - right_finger1_joint3
+    - right_finger1_joint4
+    contact_links:
+    - right_finger1_link4
+    - right_finger1_link3
+    - right_finger1_link2
+    - right_finger1_link1
+  index:
+    active_joints:
+    - right_finger2_joint1
+    - right_finger2_joint2
+    - right_finger2_joint3
+    - right_finger2_joint4
+    contact_links:
+    - right_finger2_link4
+    - right_finger2_link3
+    - right_finger2_link2
+    - right_finger2_link1
+seed:
+  thumb_link: right_finger1_link4
+  index_link: right_finger2_link4
+links:
+  right_finger1_link4:
+    tip_length_m: 0.034
+  right_finger2_link4:
+    tip_length_m: 0.029
+  right_finger3_link4:
+    tip_length_m: 0.029
+  right_finger4_link4:
+    tip_length_m: 0.029
+  right_finger5_link4:
+    tip_length_m: 0.029
+joints:
+  right_finger1_joint1:
+    type: revolute
+    parent: right_palm_link
+    child: right_finger1_link1
+    origin_xyz_m:
+    - 0.0085244
+    - 0.020575
+    - 0.028712
+    origin_rpy_rad:
+    - -1.328
+    - -0.37161
+    - -0.7307
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: 0.0368
+      upper: 1.6125
+      effort: 0.4452
+      velocity: 8.58701992
+  right_finger1_joint2:
+    type: revolute
+    parent: right_finger1_link1
+    child: right_finger1_link2
+    origin_xyz_m:
+    - -0.0047549
+    - -0.0060191
+    - 0.014132
+    origin_rpy_rad:
+    - -0.57428
+    - -0.23677
+    - 1.8034
+    axis_xyz:
+    - 0.0
+    - -1.0
+    - 0.0
+    limits:
+      lower: -0.1576
+      upper: 0.9312
+      effort: 0.4259
+      velocity: 11.10029404
+  right_finger1_joint3:
+    type: revolute
+    parent: right_finger1_link2
+    child: right_finger1_link3
+    origin_xyz_m:
+    - 0.00018873
+    - -0.0009916
+    - 0.034664
+    origin_rpy_rad:
+    - 0.049049
+    - 0.017311
+    - -1.9085
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.4638
+      upper: 1.5607
+      effort: 0.1888
+      velocity: 12.86307659
+  right_finger1_joint4:
+    type: revolute
+    parent: right_finger1_link3
+    child: right_finger1_link4
+    origin_xyz_m:
+    - 0.0
+    - -0.00025
+    - 0.0295
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.4829
+      upper: 1.5451
+      effort: 0.1468
+      velocity: 13.57866158
+  right_finger1_tip_fixed:
+    type: fixed
+    parent: right_finger1_link4
+    child: right_finger1_tip_link
+    origin_xyz_m:
+    - -0.0011048
+    - 0.00023218
+    - 0.0283
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_finger2_joint1:
+    type: revolute
+    parent: right_palm_link
+    child: right_finger2_link1
+    origin_xyz_m:
+    - -0.0058701
+    - 0.029434
+    - 0.091917
+    origin_rpy_rad:
+    - -0.11071
+    - -0.071139
+    - -0.21822
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.1611
+      upper: 1.5588
+      effort: 0.6188
+      velocity: 8.203047484
+  right_finger2_joint2:
+    type: revolute
+    parent: right_finger2_link1
+    child: right_finger2_link2
+    origin_xyz_m:
+    - 0.0022
+    - 0.0
+    - 0.004
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - -1.0
+    - 0.0
+    - 0.0
+    limits:
+      lower: -0.4044
+      upper: 0.3054
+      effort: 0.1822
+      velocity: 8.115781022
+  right_finger2_joint3:
+    type: revolute
+    parent: right_finger2_link2
+    child: right_finger2_link3
+    origin_xyz_m:
+    - -0.0047503
+    - 0.0
+    - 0.043618
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - -0.00026861
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.4714
+      upper: 1.5504
+      effort: 0.2251
+      velocity: 12.86307659
+  right_finger2_joint4:
+    type: revolute
+    parent: right_finger2_link3
+    child: right_finger2_link4
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0295
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -0.4644
+      upper: 1.5753
+      effort: 0.217
+      velocity: 13.57866158
+  right_finger2_tip_fixed:
+    type: fixed
+    parent: right_finger2_link4
+    child: right_finger2_tip_link
+    origin_xyz_m:
+    - -0.00105
+    - 0.0
+    - 0.0274
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0

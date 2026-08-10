@@ -1,0 +1,183 @@
+robot_name: dex5_right
+urdf_path: urdfs/dex5.urdf
+base_link: base_link00
+fingers:
+  thumb:
+    active_joints:
+    - Yaw_11R
+    - Roll_12R
+    - Pitch_13R
+    - Pitch_14R
+    contact_links:
+    - Link_14R
+    - Link_13R
+    - Link_12R
+  index:
+    active_joints:
+    - Roll_21R
+    - Pitch_22R
+    - Pitch_23R
+    - Pitch_24R
+    contact_links:
+    - Link_24R
+    - Link_23R
+    - Link_22R
+seed:
+  thumb_link: Link_14R
+  index_link: Link_24R
+links:
+  Link_14R:
+    tip_length_m: 0.058
+  Link_24R:
+    tip_length_m: 0.03
+  Link_34R:
+    tip_length_m: 0.03
+  Link_44R:
+    tip_length_m: 0.03
+  Link_54R:
+    tip_length_m: 0.03
+joints:
+  Yaw_11R:
+    type: revolute
+    parent: base_link00
+    child: Link_11R
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.01435
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: -0.5867
+    limit_upper: 0.6803
+  Roll_12R:
+    type: revolute
+    parent: Link_11R
+    child: Link_12R
+    origin_xyz:
+    - -1.06041e-05
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 1.5707963267949
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 1.8151
+  Pitch_13R:
+    type: revolute
+    parent: Link_12R
+    child: Link_13R
+    origin_xyz:
+    - 0.0335
+    - 0.0
+    - -0.006
+    origin_rpy:
+    - -1.57079632688918
+    - -1.55083872381532e-05
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 1.765226
+  Pitch_14R:
+    type: revolute
+    parent: Link_13R
+    child: Link_14R
+    origin_xyz:
+    - 0.036609
+    - -0.0053654
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 1.6406
+  Roll_21R:
+    type: revolute
+    parent: base_link00
+    child: Link_21R
+    origin_xyz:
+    - 0.01
+    - 0.073143
+    - -0.0034702
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 1.5708
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: -0.38397
+    limit_upper: 0.38397
+  Pitch_22R:
+    type: revolute
+    parent: Link_21R
+    child: Link_22R
+    origin_xyz:
+    - 0.0042
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 1.5707963267949
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 1.5707963
+  Pitch_23R:
+    type: revolute
+    parent: Link_22R
+    child: Link_23R
+    origin_xyz:
+    - 0.04
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 1.684242699
+  Pitch_24R:
+    type: revolute
+    parent: Link_23R
+    child: Link_24R
+    origin_xyz:
+    - 0.0209845918681
+    - 0.000804303505750905
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 1.396263378

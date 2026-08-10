@@ -1,0 +1,7 @@
+Wuji Hand
+Source:    https://github.com/wuji-technology/wuji-description
+License:   MIT
+Copyright: (c) 2025 Wuji Technology
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

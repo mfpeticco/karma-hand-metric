@@ -1,0 +1,8 @@
+# Quick stability test: Dex3 link_length only (the most problematic case)
+robot_config: robots/robot_dex3.yaml
+metric_config: karma_config.yaml
+max_states_override: 1000
+results_dir: robust_tests/results
+
+stability:
+  link_length_epsilons: [0.01, -0.01, 0.02, -0.02]

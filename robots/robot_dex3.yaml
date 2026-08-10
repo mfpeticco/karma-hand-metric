@@ -1,0 +1,172 @@
+robot_name: Unitree_Dex3_Right
+urdf_path: urdfs/dex3.urdf
+base_link: base_link
+fingers:
+  thumb:
+    active_joints:
+    - right_hand_thumb_0_joint
+    - right_hand_thumb_1_joint
+    - right_hand_thumb_2_joint
+    contact_links:
+    - right_hand_thumb_2_link
+    - right_hand_thumb_1_link
+    - right_hand_thumb_0_link
+  index:
+    active_joints:
+    - right_hand_index_0_joint
+    - right_hand_index_1_joint
+    contact_links:
+    - right_hand_index_1_link
+    - right_hand_index_0_link
+seed:
+  thumb_link: right_hand_thumb_2_link
+  index_link: right_hand_index_1_link
+links:
+  right_hand_thumb_2_link:
+    tip_length_m: 0.053
+  right_hand_index_1_link:
+    tip_length_m: 0.053
+  right_hand_middle_1_link:
+    tip_length_m: 0.053
+joints:
+  base:
+    type: fixed
+    parent: base_link
+    child: right_hand_palm_link
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 3.14
+    - 0.0
+    - -1.57
+  right_hand_thumb_0_joint:
+    type: revolute
+    parent: right_hand_palm_link
+    child: right_hand_thumb_0_link
+    origin_xyz_m:
+    - 0.0255
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 1.0
+    - 0.0
+    limits:
+      lower: -1.04719755
+      upper: 1.04719755
+      effort: 2.45
+      velocity: 6.857
+  right_hand_thumb_1_joint:
+    type: revolute
+    parent: right_hand_thumb_0_link
+    child: right_hand_thumb_1_link
+    origin_xyz_m:
+    - -0.0025
+    - 0.0193
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - 1.0
+    limits:
+      lower: -0.92
+      upper: 0.72431163
+      effort: 1.4
+      velocity: 12.0
+  right_hand_thumb_2_joint:
+    type: revolute
+    parent: right_hand_thumb_1_link
+    child: right_hand_thumb_2_link
+    origin_xyz_m:
+    - 0.0
+    - 0.0458
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - 1.0
+    limits:
+      lower: -1.74532925
+      upper: 0.0
+      effort: 1.4
+      velocity: 12.0
+  thumb_tip_joint:
+    type: fixed
+    parent: right_hand_thumb_2_link
+    child: thumb_tip
+    origin_xyz_m:
+    - 0.0
+    - 0.05
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_index_0_joint:
+    type: revolute
+    parent: right_hand_palm_link
+    child: right_hand_index_0_link
+    origin_xyz_m:
+    - 0.0777
+    - -0.0016
+    - 0.0285
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - 1.0
+    limits:
+      lower: 0.0
+      upper: 1.57079632
+      effort: 1.4
+      velocity: 12.0
+  right_hand_index_1_joint:
+    type: revolute
+    parent: right_hand_index_0_link
+    child: right_hand_index_1_link
+    origin_xyz_m:
+    - 0.0458
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - 1.0
+    limits:
+      lower: 0.0
+      upper: 1.74532925
+      effort: 1.4
+      velocity: 12.0
+  index_joint:
+    type: fixed
+    parent: right_hand_index_1_link
+    child: index_tip
+    origin_xyz_m:
+    - 0.05
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0

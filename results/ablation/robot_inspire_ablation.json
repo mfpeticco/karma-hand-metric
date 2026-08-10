@@ -1,0 +1,62 @@
+{
+  "gap_only": {
+    "label": "(i) Gap-only",
+    "n_voxels": 4,
+    "karma_t": 0.00045833333333333316,
+    "karma_r": 0.0043859649122807015,
+    "n_states": 4,
+    "elapsed_s": 1.7,
+    "phase1_fail_reasons": {
+      "qp_fail": 18
+    },
+    "phase2_fail_reasons": {
+      "rot_slip": 9,
+      "rot_low_eff": 7
+    }
+  },
+  "gap_jl": {
+    "label": "(ii) +Joint limits",
+    "n_voxels": 4,
+    "karma_t": 0.00045833333333333316,
+    "karma_r": 0.0043859649122807015,
+    "n_states": 4,
+    "elapsed_s": 1.7,
+    "phase1_fail_reasons": {
+      "qp_fail": 18
+    },
+    "phase2_fail_reasons": {
+      "rot_slip": 9,
+      "rot_low_eff": 7
+    }
+  },
+  "gap_jl_col": {
+    "label": "(iii) +Collisions",
+    "n_voxels": 4,
+    "karma_t": 0.0004166666666666666,
+    "karma_r": 0.0043859649122807015,
+    "n_states": 4,
+    "elapsed_s": 1.7,
+    "phase1_fail_reasons": {
+      "qp_fail": 18
+    },
+    "phase2_fail_reasons": {
+      "rot_slip": 9,
+      "rot_low_eff": 7
+    }
+  },
+  "full": {
+    "label": "(iv) Full KaRMA",
+    "n_voxels": 4,
+    "karma_t": 0.0004166666666666666,
+    "karma_r": 0.0043859649122807015,
+    "n_states": 4,
+    "elapsed_s": 1.7,
+    "phase1_fail_reasons": {
+      "qp_fail": 18
+    },
+    "phase2_fail_reasons": {
+      "rot_slip": 9,
+      "rot_low_eff": 7
+    }
+  }
+}

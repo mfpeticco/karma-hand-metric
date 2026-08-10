@@ -1,0 +1,318 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# ROBOT CONFIGURATION TEMPLATE FOR KaRMA
+# ══════════════════════════════════════════════════════════════════════════════
+#
+# This template guides you through converting a URDF to the robot_*.yaml format
+# required by KaRMA.
+#
+# Follow each step below per the instructions. Assume the URDF will be in
+# the urdfs/ folder relative to this file.
+#
+# UNITS:
+#   - All xyz offsets: meters
+#   - All rpy and joint limits: radians
+#
+# TIP: an LLM can draft most of this file from your URDF. A ready-made prompt
+# ships alongside this template as robots/prompt.txt -- paste it plus your URDF.
+#
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ──────────────────────────────────────────────────────────────────────────────
+# STEP 1: BASIC ROBOT INFO
+# ──────────────────────────────────────────────────────────────────────────────
+# robot_name: A descriptive name for your robot
+# urdf_path:  Path to URDF relative to this file (usually in urdfs/)
+# base_link:  The root link with no parent (find <link name="..."> that has no
+#             parent joint). Common names: "world", "ground", "base_link"
+
+robot_name: "<robot_name>"
+urdf_path: "urdfs/<your_robot>.urdf"
+base_link: "<base_link>"
+
+# EXAMPLES:
+#   ARMS hand:  robot_name: ARMS, base_link: world
+#   DLR hand:   robot_name: DLR_handmodel, base_link: ground
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# STEP 2: FINGER DEFINITIONS
+# ──────────────────────────────────────────────────────────────────────────────
+# KaRMA uses a 2-finger pinch grasp (thumb + index finger).
+# For each finger, you need to specify:
+#   - active_joints: All MOVABLE joints in the kinematic chain (base to tip)
+#   - contact_links: Links that can make contact with the object
+#
+# HOW TO FIND ACTIVE JOINTS:
+#   1. Open your URDF and trace the joint chain from base to fingertip
+#   2. Include ALL joints with type="revolute", "continuous", or "prismatic"
+#   3. EXCLUDE joints with type="fixed"
+#   4. EXCLUDE coupled/mimic joints (any joint with a <mimic> tag, e.g. a
+#      tendon-coupled DIP that follows its PIP); declare those in STEP 5 instead.
+#      Listing a mimic joint here raises an error.
+#   5. Order: from proximal (near palm) to distal (fingertip)
+#
+# IMPORTANT - CONTACT LINKS REQUIREMENTS:
+#   Pinocchio merges links connected by fixed joints into their parent.
+#   Therefore, contact_links MUST only include links whose INBOUND (parent)
+#   joint is MOVABLE (revolute/continuous/prismatic), NOT fixed.
+#
+#   To identify valid contact links:
+#   1. For each link in the finger chain, find its parent joint
+#   2. Check if that joint is type="fixed" or movable
+#   3. Only include links with MOVABLE parent joints
+#
+#   Include multiple links per finger (distal, middle, proximal phalanges)
+#   to enable contact switching during manipulation.
+
+fingers:
+  thumb:
+    active_joints:
+      - "<thumb_joint_1>"  # Most proximal (near palm)
+      - "<thumb_joint_2>"
+      - "<thumb_joint_3>"
+      - "<thumb_joint_4>"  # Most distal (fingertip)
+    contact_links:
+      - "<thumb_distal_link>"    # Fingertip (parent joint must be movable!)
+      - "<thumb_middle_link>"    # Middle phalanx
+      - "<thumb_proximal_link>"  # Proximal phalanx
+  index:
+    active_joints:
+      - "<index_joint_1>"
+      - "<index_joint_2>"
+      - "<index_joint_3>"
+      - "<index_joint_4>"
+    contact_links:
+      - "<index_distal_link>"
+      - "<index_middle_link>"
+      - "<index_proximal_link>"
+
+# EXAMPLE - ARMS hand (all parent joints are movable):
+#   fingers:
+#     thumb:
+#       active_joints: [CMC1a, CMC1b, MCP, IP]
+#       contact_links: [distal_thumb, proximal_thumb, firstmc]
+#     index:
+#       active_joints: [_2MCP__2mcp_abduction, _2MCP__2mcp_flexion, _2prox-midph_b, _2mid-distph]
+#       contact_links: [2distph, 2midph, 2proxph]
+#
+# EXAMPLE - DLR hand (has fixed joints - must skip those links!):
+#   Joint chain for index: MCP2a_joint -> MCP2b_joint -> PP2_fixed -> PIP2_joint -> PM2_fixed -> DIP2_joint
+#   Links PP2 and PM2 have FIXED parent joints, so we use their movable ancestors:
+#   fingers:
+#     thumb:
+#       active_joints: [CMC1a_joint, CMC1b_joint, MCP1a_joint, MCP1b_joint, IP1_joint]
+#       contact_links: [IP1, MCP1b, MCP1a]  # NOT PP1 or MC1 (fixed parent joints)
+#     index:
+#       active_joints: [MCP2a_joint, MCP2b_joint, PIP2_joint, DIP2_joint]
+#       contact_links: [DIP2, PIP2, MCP2b]  # NOT PM2 or PP2 (fixed parent joints)
+#
+# NOTE - IMC (Inter-Metacarpal) joints:
+#   Some hands have fingers that branch from OTHER metacarpals rather than directly
+#   from the base link (e.g., DLR finger 4 branches from MC3, finger 5 from MC4).
+#   This is handled automatically: include the full joint chain in active_joints.
+#   The capsule system will traverse through fixed joints (like MC3_fixed, MC4_fixed)
+#   to find the movable joints for visualization.
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# STEP 3: SEED GRASP CONFIGURATION
+# ──────────────────────────────────────────────────────────────────────────────
+# The seed defines the initial pinch grasp contact points.
+# Use the DISTAL (fingertip) links from each finger's contact_links.
+
+seed:
+  thumb_link: "<thumb_distal_link>"
+  index_link: "<index_distal_link>"
+
+# EXAMPLES:
+#   ARMS: thumb_link: distal_thumb, index_link: 2distph
+#   DLR:  thumb_link: IP1, index_link: DIP2
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# STEP 4: TERMINAL LINK TIP LENGTHS
+# ──────────────────────────────────────────────────────────────────────────────
+# For each terminal link (a fingertip with no movable child joint), KaRMA builds
+# a capsule along the finger's axis. It auto-detects the tip DIRECTION from the
+# URDF; you supply the tip LENGTH so the capsule reaches the real fingertip.
+#
+# tip_length_m: distance, in METERS, from the terminal link's inbound joint origin
+#               to the physical fingertip. A single scalar per link -- the
+#               direction is found for you, so you only set the magnitude.
+#
+# If you omit tip_length_m the length is auto-estimated from the URDF, which is
+# often too short and then silently undercounts voxels -- so set it explicitly.
+#
+# ══════════════════════════════════════════════════════════════════════════════
+# METHODS TO ESTIMATE tip_length_m (in order of reliability)
+# ══════════════════════════════════════════════════════════════════════════════
+#
+# METHOD A - From a fixed "tip" joint origin (MOST RELIABLE)
+# ──────────────────────────────────────────────────────────────────────────────
+#   Many URDFs connect the distal phalanx to a "*_tip" link by a fixed joint.
+#   tip_length_m is the length of that joint's origin xyz:
+#     <joint name="..._tip_joint" type="fixed">
+#       <parent link="link_3"/>  <child link="link_3_tip"/>
+#       <origin xyz="0 0 0.0267"/>      ->  tip_length_m: 0.0267
+#     </joint>
+#   If the offset lies along one axis, the length is that component; otherwise it
+#   is the vector norm sqrt(x^2 + y^2 + z^2).
+#   Common tip link names: *_tip, *_fingertip, *_head (grippers like dclaw).
+#
+# METHOD B - From the inertia tensor (RECOMMENDED FALLBACK)
+# ──────────────────────────────────────────────────────────────────────────────
+#   With no tip joint, approximate the link as a uniform-density box and take its
+#   longest side. Given mass m and principal inertias (Ixx, Iyy, Izz):
+#     k = 12 / m
+#     sum_sq = (Ixx + Iyy + Izz) * k / 2
+#     a = sqrt(sum_sq - Ixx*k)   b = sqrt(sum_sq - Iyy*k)   c = sqrt(sum_sq - Izz*k)
+#     tip_length_m = max(a, b, c)
+#   Example (LEAP fingertip): m=0.016, ixx=3.368e-06, iyy=1.556e-06, izz=2.863e-06
+#     -> a=0.0199, b=0.0419, c=0.0278  ->  tip_length_m: 0.0419
+#
+# METHOD C - From collision geometry
+# ──────────────────────────────────────────────────────────────────────────────
+#   Box:      tip_length_m = longest box side.
+#   Cylinder: tip_length_m = cylinder length.
+#
+# METHOD D - Measure from the mesh / CAD
+# ──────────────────────────────────────────────────────────────────────────────
+#   Distance from the link's inbound joint origin to the fingertip.
+#
+# ══════════════════════════════════════════════════════════════════════════════
+
+links:
+  # REQUIRED: set tip_length_m for ALL terminal (fingertip) links -- every chain
+  # end, not just thumb and index -- so the whole hand gets consistent capsules.
+
+  <thumb_distal_link>:
+    tip_length_m: 0.0        # Replace with the estimated fingertip length (m)
+
+  <index_distal_link>:
+    tip_length_m: 0.0        # Replace with the estimated fingertip length (m)
+
+# EXAMPLE - Allegro hand (from fixed tip joints):
+#   links:
+#     link_3:  { tip_length_m: 0.0267 }
+#     link_7:  { tip_length_m: 0.0267 }
+#     link_11: { tip_length_m: 0.0267 }
+#     link_15: { tip_length_m: 0.0423 }
+#
+# EXAMPLE - LEAP hand (from inertia estimation):
+#   links:
+#     fingertip:       { tip_length_m: 0.0419 }
+#     fingertip_2:     { tip_length_m: 0.0419 }
+#     fingertip_3:     { tip_length_m: 0.0419 }
+#     thumb_fingertip: { tip_length_m: 0.0663 }
+#
+# The two examples above show raw URDF-extracted values; the shipped
+# robot_allegro.yaml and robot_leap.yaml use lengths later refined with
+# tools/tune_tip_lengths.py, so the numbers differ. Extraction gives the
+# starting point, the tuner gives the final value.
+#
+# EXAMPLE - a shipped config (robots/robot_inspire.yaml):
+#   links:
+#     R_thumb_distal:       { tip_length_m: 0.033405 }
+#     R_index_intermediate: { tip_length_m: 0.049794 }
+
+# OPTIONAL: primary_child_joint
+# For a link with MULTIPLE child joints, name the one that defines the capsule axis:
+#   <link_with_multiple_children>:
+#     primary_child_joint: "<preferred_child_joint>"
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# STEP 5: JOINT DEFINITIONS
+# ──────────────────────────────────────────────────────────────────────────────
+# Runtime kinematics come straight from urdf_path, so the ONLY entries KaRMA
+# needs here are coupled/mimic joints: a joint whose motion is tied to another,
+# common on underactuated hands (e.g. a tendon-coupled DIP that follows its PIP).
+# A `mimic:` block drives it from its source as q = multiplier*q_source + offset,
+# and the joint must be left out of active_joints (STEP 2). Listing ordinary
+# joints here is optional metadata.
+#
+# For each joint in the finger chains, extract:
+#   - type: revolute | continuous | prismatic | fixed
+#   - parent: parent link name
+#   - child: child link name
+#   - origin_xyz_m: [x, y, z] from <origin xyz="..."/>
+#   - origin_rpy_rad: [r, p, y] from <origin rpy="..."/> (default [0,0,0])
+#   - axis_xyz: [x, y, z] from <axis xyz="..."/> (omit for fixed joints)
+#   - limits: lower, upper, effort, velocity (omit for fixed joints)
+#   - mimic: (optional) if joint mimics another joint
+#
+# TIP: Use an LLM to help extract this from your URDF automatically
+# (see robots/prompt.txt).
+
+joints:
+  <joint_name>:
+    type: revolute
+    parent: "<parent_link>"
+    child: "<child_link>"
+    origin_xyz_m: [0.0, 0.0, 0.0]
+    origin_rpy_rad: [0.0, 0.0, 0.0]
+    axis_xyz: [0.0, 0.0, 1.0]
+    limits:
+      lower: -1.0
+      upper: 1.0
+      effort: 1.0
+      velocity: 1.0
+
+  # Example fixed joint (include for completeness, but won't be in Pinocchio):
+  # <fixed_joint_name>:
+  #   type: fixed
+  #   parent: "<parent_link>"
+  #   child: "<child_link>"
+  #   origin_xyz_m: [0.0, 0.0, 0.0]
+  #   origin_rpy_rad: [0.0, 0.0, 0.0]
+
+  # Example mimic joint:
+  # <mimic_joint_name>:
+  #   type: revolute
+  #   parent: "<parent_link>"
+  #   child: "<child_link>"
+  #   origin_xyz_m: [0.0, 0.0, 0.0]
+  #   axis_xyz: [0.0, 0.0, 1.0]
+  #   limits:
+  #     lower: -1.0
+  #     upper: 1.0
+  #     effort: 1.0
+  #     velocity: 1.0
+  #   mimic:
+  #     joint: "<source_joint>"
+  #     multiplier: 1.0
+  #     offset: 0.0
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# VERIFICATION CHECKLIST
+# ══════════════════════════════════════════════════════════════════════════════
+#
+# Before running the metric, verify:
+#
+# [ ] urdf_path points to a valid URDF file in urdfs/ directory
+# [ ] base_link matches the root link name in your URDF
+# [ ] active_joints lists ALL movable joints from base to fingertip
+# [ ] contact_links only includes links with MOVABLE parent joints
+# [ ] seed links are valid entries in contact_links
+# [ ] tip_length_m is set for ALL terminal (fingertip) links
+# [ ] All joint names match exactly with URDF (case-sensitive!)
+#
+# RUN THE METRIC:
+#   python run_metric.py --config robots/robot_<YOUR_ROBOT>.yaml
+#
+#   Expected output: roughly 70-800 voxels for a dexterous hand (the bundled
+#   hands' counts are in results/16_hand_batch/summary.yaml).
+#   If you get <10 voxels, check the capsule geometry and tip_length_m values.
+#
+# VISUAL VERIFICATION (optional):
+#   python run_viser_app.py
+#
+#   Opens the interactive 3D viewer; pick your robot (or "-- Compute New --") and
+#   check that:
+#   - Capsules appear on all finger segments
+#   - Distal (fingertip) capsules extend to the actual fingertip
+#   - Capsule radii look reasonable (default 11.8 mm)
+#   - No capsules are missing or have zero length
+#
+# ══════════════════════════════════════════════════════════════════════════════

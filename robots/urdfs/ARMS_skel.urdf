@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="hand_simple">
+  <material name="light_grey"><color rgba="0.7 0.7 0.7 1.0" /></material>
+  <link name="world_oriented" /><joint name="world_orientation_joint" type="fixed"><parent link="world" /><child link="world_oriented" /><origin xyz="0 0 0" rpy="-1.5707963268 0.0000000000 1.5707963268" /></joint><link name="world" />
+  
+  
+  <link name="2proxph___2MCP__d1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1e-6" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    </link>
+  <link name="2proxph">
+    <inertial>
+      <origin xyz="0.0044 -0.0253 0.004" rpy="0 0 0" />
+      <mass value="0.0158" />
+      <inertia ixx="2.41151e-06" iyy="5.63074e-07" izz="2.40133e-06" ixy="3.31406e-07" ixz="-6.25061e-08" iyz="3.595e-07" />
+    </inertial>
+    </link>
+  <link name="2midph">
+    <inertial>
+      <origin xyz="0.0022 -0.0154 0.00018" rpy="0 0 0" />
+      <mass value="0.0049" />
+      <inertia ixx="2.83258e-07" iyy="7.29644e-08" izz="2.85452e-07" ixy="2.38649e-08" ixz="-1.13365e-09" iyz="1.01166e-08" />
+    </inertial>
+    </link>
+  <link name="2distph">
+    <inertial>
+      <origin xyz="0.0013 -0.01 0.00002" rpy="0 0 0" />
+      <mass value="0.0018" />
+      <inertia ixx="4.55172e-08" iyy="1.5752e-08" izz="4.61775e-08" ixy="5.5272e-09" ixz="-5.75024e-10" iyz="3.19996e-09" />
+    </inertial>
+    </link>
+  
+  
+  <link name="3proxph___3MCP__d1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1e-6" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    </link>
+  <link name="3proxph">
+    <inertial>
+      <origin xyz="0.00097 -0.0262 0.0037" rpy="0 0 0" />
+      <mass value="0.0193" />
+      <inertia ixx="3.52375e-06" iyy="6.16459e-07" izz="3.51005e-06" ixy="8.59086e-08" ixz="-6.41769e-09" iyz="2.17375e-07" />
+    </inertial>
+    </link>
+  <link name="3midph">
+    <inertial>
+      <origin xyz="0.00071 -0.0168 0.0013" rpy="0 0 0" />
+      <mass value="0.00642" />
+      <inertia ixx="5.24504e-07" iyy="1.0143e-07" izz="5.2473e-07" ixy="1.99401e-08" ixz="-8.17162e-10" iyz="1.73764e-08" />
+    </inertial>
+    </link>
+  <link name="3distph">
+    <inertial>
+      <origin xyz="0.0005 -0.0102 -0.00028" rpy="0 0 0" />
+      <mass value="0.00252" />
+      <inertia ixx="8.07596e-08" iyy="2.65112e-08" izz="8.05851e-08" ixy="4.0623e-09" ixz="-3.79846e-10" iyz="5.10078e-09" />
+    </inertial>
+    </link>
+  
+  
+  <link name="fourthmc">
+    <inertial>
+      <origin xyz="-0.002 -0.0214 0.0034" rpy="0 0 0" />
+      <mass value="0.033333333" />
+      <inertia ixx="6.85118e-06" iyy="3.48871e-07" izz="6.79306e-06" ixy="-7.03734e-07" ixz="1.00224e-07" iyz="9.36766e-07" />
+    </inertial>
+    </link>
+  <link name="4proxph___4MCP__d1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1e-6" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    </link>
+  <link name="4proxph">
+    <inertial>
+      <origin xyz="-0.002234 -0.023752 0.003493" rpy="0 0 0" />
+      <mass value="0.01374" />
+      <inertia ixx="1.95194e-06" iyy="3.90612e-07" izz="1.95683e-06" ixy="-2.0172e-07" ixz="2.30682e-08" iyz="1.81482e-07" />
+    </inertial>
+    </link>
+  <link name="4midph">
+    <inertial>
+      <origin xyz="-0.001978 -0.014705 0.001186" rpy="0 0 0" />
+      <mass value="0.00568" />
+      <inertia ixx="3.60389e-07" iyy="9.43143e-08" izz="3.60306e-07" ixy="-2.36509e-08" ixz="2.12726e-09" iyz="2.41196e-08" />
+    </inertial>
+    </link>
+  <link name="4distph">
+    <inertial>
+      <origin xyz="-0.000427 -0.010167 0.002029" rpy="0 0 0" />
+      <mass value="0.0029" />
+      <inertia ixx="9.90716e-08" iyy="3.64408e-08" izz="9.65165e-08" ixy="-5.72303e-09" ixz="1.26263e-09" iyz="1.39322e-08" />
+    </inertial>
+    </link>
+  
+  
+  <link name="fifthmc">
+    <inertial>
+      <origin xyz="-0.006118 -0.017694 0.005429" rpy="0 0 0" />
+      <mass value="0.02962963" />
+      <inertia ixx="4.76564e-06" iyy="5.73128e-07" izz="4.8195e-06" ixy="-1.05652e-06" ixz="2.22645e-07" iyz="9.3644e-07" />
+    </inertial>
+    </link>
+  <link name="5proxph___5MCP__d1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1e-6" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    </link>
+  <link name="5proxph">
+    <inertial>
+      <origin xyz="-0.008101 -0.021077 0.002141" rpy="0 0 0" />
+      <mass value="0.01106" />
+      <inertia ixx="1.18153e-06" iyy="3.71642e-07" izz="1.29122e-06" ixy="-3.28491e-07" ixz="2.81259e-08" iyz="7.93172e-08" />
+    </inertial>
+    </link>
+  <link name="5midph">
+    <inertial>
+      <origin xyz="-0.0049 -0.012136 -0.000153" rpy="0 0 0" />
+      <mass value="0.00372" />
+      <inertia ixx="1.56521e-07" iyy="6.14486e-08" izz="1.702e-07" ixy="-4.00308e-08" ixz="3.68865e-09" iyz="1.01068e-08" />
+    </inertial>
+    </link>
+  <link name="5distph">
+    <inertial>
+      <origin xyz="-0.003583 -0.008881 0.000332" rpy="0 0 0" />
+      <mass value="0.00222" />
+      <inertia ixx="5.05502e-08" iyy="2.88772e-08" izz="5.59113e-08" ixy="-1.23535e-08" ixz="1.14735e-09" iyz="2.53269e-09" />
+    </inertial>
+    </link>
+  
+  
+  <link name="firstmc1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1e-05" />
+      <inertia ixx="1e-05" iyy="1e-05" izz="1e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    </link>
+  <link name="firstmc">
+    <inertial>
+      <origin xyz="0.00784 -0.01472 -0.00602" rpy="0 0 0" />
+      <mass value="0.016" />
+      <inertia ixx="2.37885e-06" iyy="1.42171e-06" izz="2.52462e-06" ixy="9.44456e-07" ixz="5.02069e-07" iyz="-8.17251e-07" />
+    </inertial>
+    </link>
+  <link name="proximal_thumb">
+    <inertial>
+      <origin xyz="0.0096 -0.0163 -0.0063" rpy="0 0 0" />
+      <mass value="0.0079" />
+      <inertia ixx="5.21128e-07" iyy="3.19263e-07" izz="5.85041e-07" ixy="1.89419e-07" ixz="7.52377e-08" iyz="-1.25343e-07" />
+    </inertial>
+    </link>
+  <link name="distal_thumb">
+    <inertial>
+      <origin xyz="0.00557 -0.01042 -0.0044" rpy="0 0 0" />
+      <mass value="0.0031" />
+      <inertia ixx="9.21409e-08" iyy="6.4461e-08" izz="1.0021e-07" ixy="2.83547e-08" ixz="1.30692e-08" iyz="-2.09219e-08" />
+    </inertial>
+    </link>
+  
+  
+  <joint name="CMC1a" type="revolute">
+    <parent link="world_oriented" />
+    <child link="firstmc1" />
+    <origin xyz="0.015293 -0.004569 -0.010308" rpy="0 0 0" />
+    <axis xyz="0.042399 0.665286 -0.745384" />
+    <limit lower="-0.785398" upper="0.261799" effort="1" velocity="1" />
+  </joint>
+  <joint name="CMC1b" type="revolute">
+    <parent link="firstmc1" />
+    <child link="firstmc" />
+    <origin xyz="0.0072 -0.0054 -0.0025" rpy="0 0 0" />
+    <axis xyz="0.495557 0.731736 0.467959" />
+    <limit lower="-0.436332" upper="0.436332" effort="1" velocity="1" />
+  </joint>
+  <joint name="MCP" type="revolute">
+    <parent link="firstmc" />
+    <child link="proximal_thumb" />
+    <origin xyz="0.0165 -0.0292 -0.0127" rpy="0 0 0" />
+    <axis xyz="0.084295 0.203488 -0.975442" />
+    <limit lower="-0.698132" upper="0.785398" effort="1" velocity="1" />
+  </joint>
+  <joint name="IP" type="revolute">
+    <parent link="proximal_thumb" />
+    <child link="distal_thumb" />
+    <origin xyz="0.014 -0.0259 -0.0101" rpy="0 0 0" />
+    <axis xyz="0.050102 0.479623 -0.876043" />
+    <limit lower="-0.436332" upper="1.309" effort="1" velocity="1" />
+  </joint>
+  
+  
+  <joint name="_2MCP__2mcp_abduction" type="revolute">
+    <parent link="world_oriented" />
+    <child link="2proxph___2MCP__d1" />
+    <origin xyz="0.018186 -0.065863 0.008652" rpy="0 0 0" />
+    <axis xyz="0.214609 0.191508 0.957741" />
+    <limit lower="-0.261799" upper="0.261799" effort="1" velocity="1" />
+  </joint>
+  <joint name="_2MCP__2mcp_flexion" type="revolute">
+    <parent link="2proxph___2MCP__d1" />
+    <child link="2proxph" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0.978577 0.026022 -0.197329" />
+    <limit lower="-0.785398" upper="1.5708" effort="1" velocity="1" />
+  </joint>
+  <joint name="_2prox-midph_b" type="revolute">
+    <parent link="2proxph" />
+    <child link="2midph" />
+    <origin xyz="0.007517 -0.041273 0.007326" rpy="0 0 0" />
+    <axis xyz="0.976336 0.126712 -0.175394" />
+    <limit lower="0" upper="1.74533" effort="1" velocity="1" />
+  </joint>
+  <joint name="_2mid-distph" type="revolute">
+    <parent link="2midph" />
+    <child link="2distph" />
+    <origin xyz="0.003333 -0.024888 0.00122" rpy="0 0 0" />
+    <axis xyz="0.986691 0.147151 0.074946" />
+    <limit lower="0" upper="1.39626" effort="1" velocity="1" />
+  </joint>
+  
+  
+  <joint name="_3MCP__3mcp_abduction" type="revolute">
+    <parent link="world_oriented" />
+    <child link="3proxph___3MCP__d1" />
+    <origin xyz="0.000717 -0.065529 0.008267" rpy="0 0 0" />
+    <axis xyz="-0.021499 0.118897 0.992674" />
+    <limit lower="-0.261799" upper="0.261799" effort="1" velocity="1" />
+  </joint>
+  <joint name="_3MCP__3mcp_flexion" type="revolute">
+    <parent link="3proxph___3MCP__d1" />
+    <child link="3proxph" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0.998349 0.047337 -0.010413" />
+    <limit lower="-0.785398" upper="1.5708" effort="1" velocity="1" />
+  </joint>
+  <joint name="_3prox-midph_b" type="revolute">
+    <parent link="3proxph" />
+    <child link="3midph" />
+    <origin xyz="0.00165 -0.044211 0.00623" rpy="0 0 0" />
+    <axis xyz="0.992829 -0.062002 0.102203" />
+    <limit lower="0" upper="1.74533" effort="1" velocity="1" />
+  </joint>
+  <joint name="_3mid-distph" type="revolute">
+    <parent link="3midph" />
+    <child link="3distph" />
+    <origin xyz="0.001365 -0.029047 0.001954" rpy="0 0 0" />
+    <axis xyz="0.994589 0.036103 0.097409" />
+    <limit lower="0" upper="1.39626" effort="1" velocity="1" />
+  </joint>
+  
+  
+  <joint name="CMC4" type="revolute">
+    <parent link="world_oriented" />
+    <child link="fourthmc" />
+    <origin xyz="-0.0097 -0.0147 0.0015" rpy="0 0 0" />
+    <axis xyz="0.58 -0.8006 -0.1506" />
+    <limit lower="0" upper="0.2032" effort="1" velocity="1" />
+  </joint>
+  <joint name="_4MCP__4mcp_abduction" type="revolute">
+    <parent link="fourthmc" />
+    <child link="4proxph___4MCP__d1" />
+    <origin xyz="-0.0053 -0.0489 0.007" rpy="0 0 0" />
+    <axis xyz="-0.022094 0.144366 0.989278" />
+    <limit lower="-0.261799" upper="0.261799" effort="1" velocity="1" />
+  </joint>
+  <joint name="_4MCP__4mcp_flexion" type="revolute">
+    <parent link="4proxph___4MCP__d1" />
+    <child link="4proxph" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0.994818 -0.06526 -0.029717" />
+    <limit lower="-0.785398" upper="1.5708" effort="1" velocity="1" />
+  </joint>
+  <joint name="_4prox-midph_b" type="revolute">
+    <parent link="4proxph" />
+    <child link="4midph" />
+    <origin xyz="-0.0039 -0.0398 0.0057" rpy="0 0 0" />
+    <axis xyz="0.995828 -0.034581 0.092325" />
+    <limit lower="0" upper="1.74533" effort="1" velocity="1" />
+  </joint>
+  <joint name="_4mid-distph" type="revolute">
+    <parent link="4midph" />
+    <child link="4distph" />
+    <origin xyz="-0.0026 -0.0245 0.0033" rpy="0 0 0" />
+    <axis xyz="0.9526 -0.14 0.2701" />
+    <limit lower="0" upper="1.39626" effort="1" velocity="1" />
+  </joint>
+  
+  
+  <joint name="CMC5" type="revolute">
+    <parent link="world_oriented" />
+    <child link="fifthmc" />
+    <origin xyz="-0.0171 -0.0118 -0.0036" rpy="0 0 0" />
+    <axis xyz="0.3718 -0.8665 0.3333" />
+    <mimic joint="CMC4" multiplier="2.72047244094" offset="0" />
+    <limit lower="0" upper="0.5528" effort="1" velocity="1" />
+  </joint>
+  <joint name="_5MCP__5mcp_abduction" type="revolute">
+    <parent link="fifthmc" />
+    <child link="5proxph___5MCP__d1" />
+    <origin xyz="-0.0111 -0.0423 0.0097" rpy="0 0 0" />
+    <axis xyz="-0.025001 0.216206 0.976028" />
+    <limit lower="-0.261799" upper="0.261799" effort="1" velocity="1" />
+  </joint>
+  <joint name="_5MCP__5mcp_flexion" type="revolute">
+    <parent link="5proxph___5MCP__d1" />
+    <child link="5proxph" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0.971501 -0.212817 -0.034463" />
+    <limit lower="-0.785398" upper="1.5708" effort="1" velocity="1" />
+  </joint>
+  <joint name="_5prox-midph_b" type="revolute">
+    <parent link="5proxph" />
+    <child link="5midph" />
+    <origin xyz="-0.0125 -0.0335 0.0043" rpy="0 0 0" />
+    <axis xyz="0.92871 -0.327713 0.176591" />
+    <limit lower="0" upper="1.74533" effort="1" velocity="1" />
+  </joint>
+  <joint name="_5mid-distph" type="revolute">
+    <parent link="5midph" />
+    <child link="5distph" />
+    <origin xyz="-0.0075 -0.0195 0.002" rpy="0 0 0" />
+    <axis xyz="0.892729 -0.426766 0.144588" />
+    <limit lower="0" upper="1.39626" effort="1" velocity="1" />
+  </joint>
+</robot>

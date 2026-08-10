@@ -1,0 +1,41 @@
+robot_name: sharpa
+urdf_path: urdfs/sharpa.urdf
+base_link: right_hand_C_MC
+fingers:
+  thumb:
+    active_joints:
+    - right_thumb_CMC_FE
+    - right_thumb_CMC_AA
+    - right_thumb_MCP_FE
+    - right_thumb_MCP_AA
+    - right_thumb_IP
+    contact_links:
+    - right_thumb_MC
+    - right_thumb_MCP_VL
+    - right_thumb_PP
+    - right_thumb_DP
+  index:
+    active_joints:
+    - right_index_MCP_FE
+    - right_index_MCP_AA
+    - right_index_PIP
+    - right_index_DIP
+    contact_links:
+    - right_index_MCP_VL
+    - right_index_PP
+    - right_index_MP
+    - right_index_DP
+seed:
+  thumb_link: right_thumb_DP
+  index_link: right_index_DP
+links:
+  right_thumb_DP:
+    tip_length_m: 0.029
+  right_index_DP:
+    tip_length_m: 0.029
+  right_middle_DP:
+    tip_length_m: 0.029
+  right_pinky_DP:
+    tip_length_m: 0.029
+  right_ring_DP:
+    tip_length_m: 0.029

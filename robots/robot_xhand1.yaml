@@ -1,0 +1,241 @@
+robot_name: xhand1_right
+urdf_path: urdfs/xhand1.urdf
+base_link: right_hand_link
+fingers:
+  thumb:
+    active_joints:
+    - right_hand_thumb_bend_joint
+    - right_hand_thumb_rota_joint1
+    - right_hand_thumb_rota_joint2
+    contact_links:
+    - right_hand_thumb_rota_link2
+    - right_hand_thumb_rota_link1
+    - right_hand_thumb_bend_link
+  index:
+    active_joints:
+    - right_hand_index_bend_joint
+    - right_hand_index_joint1
+    - right_hand_index_joint2
+    contact_links:
+    - right_hand_index_rota_link2
+    - right_hand_index_rota_link1
+    - right_hand_index_bend_link
+seed:
+  thumb_link: right_hand_thumb_rota_link2
+  index_link: right_hand_index_rota_link2
+links:
+  right_hand_thumb_rota_link2:
+    tip_length_m: 0.052
+  right_hand_index_rota_link2:
+    tip_length_m: 0.044
+  right_hand_mid_link2:
+    tip_length_m: 0.044
+  right_hand_pinky_link2:
+    tip_length_m: 0.044
+  right_hand_ring_link2:
+    tip_length_m: 0.044
+joints:
+  right_hand_ee_joint:
+    type: fixed
+    parent: right_hand_link
+    child: right_hand_ee_link
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.065
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_back_joint:
+    type: fixed
+    parent: right_hand_link
+    child: right_hand_back_link
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.065
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_thumb_bend_joint:
+    type: revolute
+    parent: right_hand_link
+    child: right_hand_thumb_bend_link
+    origin_xyz:
+    - 0.0095
+    - 0.0228
+    - 0.0305
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - -1
+    limit_lower: 0.0
+    limit_upper: 1.832
+  right_hand_thumb_rota_joint1:
+    type: revolute
+    parent: right_hand_thumb_bend_link
+    child: right_hand_thumb_rota_link1
+    origin_xyz:
+    - 0.0083177
+    - 0.028599
+    - -0.00178
+    origin_rpy:
+    - 0.0
+    - 0.2618
+    - -0.0407
+    axis:
+    - 1
+    - 0
+    - 0
+    limit_lower: -0.698
+    limit_upper: 1.57
+  right_hand_thumb_rotaback_joint1:
+    type: fixed
+    parent: right_hand_thumb_rota_link1
+    child: right_hand_thumb_rotaback_link1
+    origin_xyz:
+    - 0.0
+    - 0.0553
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_thumb_rota_joint2:
+    type: revolute
+    parent: right_hand_thumb_rota_link1
+    child: right_hand_thumb_rota_link2
+    origin_xyz:
+    - 0.0
+    - 0.0553
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 1
+    - 0
+    - 0
+    limit_lower: 0.0
+    limit_upper: 1.57
+  right_hand_thumb_rotaback_joint2:
+    type: fixed
+    parent: right_hand_thumb_rota_link2
+    child: right_hand_thumb_rotaback_link2
+    origin_xyz:
+    - 0.0
+    - 0.0502276499414863
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_thumb_rota_joint3:
+    type: fixed
+    parent: right_hand_thumb_rota_link2
+    child: right_hand_thumb_rota_tip
+    origin_xyz:
+    - 0.0
+    - 0.0502276499414863
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_index_bend_joint:
+    type: revolute
+    parent: right_hand_link
+    child: right_hand_index_bend_link
+    origin_xyz:
+    - 0.0065
+    - 0.0265
+    - 0.0899
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - -1
+    - 0
+    - 0
+    limit_lower: -0.174
+    limit_upper: 0.174
+  right_hand_index_joint1:
+    type: revolute
+    parent: right_hand_index_bend_link
+    child: right_hand_index_rota_link1
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0178
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 1
+    - 0
+    limit_lower: 0.0
+    limit_upper: 1.919
+  right_hand_index_rotaback_joint1:
+    type: fixed
+    parent: right_hand_index_rota_link1
+    child: right_hand_index_rotaback_link1
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0558
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_index_joint2:
+    type: revolute
+    parent: right_hand_index_rota_link1
+    child: right_hand_index_rota_link2
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0558
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 1
+    - 0
+    limit_lower: 0.0
+    limit_upper: 1.919
+  right_hand_index_rotaback_joint2:
+    type: fixed
+    parent: right_hand_index_rota_link2
+    child: right_hand_index_rotaback_link2
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0422482924089424
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_index_rota_joint3:
+    type: fixed
+    parent: right_hand_index_rota_link2
+    child: right_hand_index_rota_tip
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0422482924089424
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0

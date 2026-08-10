@@ -1,0 +1,12 @@
+# Medium-confidence tests: scale invariance + finger swap
+# Scale: fixed hardcoded thresholds, validated on LEAP k=2.0
+# Finger swap: not specifically investigated but should be symmetric
+
+robot_config: robots/robot_leap.yaml  # overridden by runner
+metric_config: karma_config.yaml
+max_states_override: 1000
+results_dir: robust_tests/results
+
+invariance:
+  scale_factors: [0.5, 2.0]
+  test_finger_swap: true

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: "KaRMA: Kinematic Rolling Manipulation Ability"
+message: "If you use this software, please cite the paper below."
+type: software
+authors:
+  - family-names: Peticco
+    given-names: Martin
+    affiliation: "Massachusetts Institute of Technology"
+  - family-names: Agrawal
+    given-names: Pulkit
+    affiliation: "Massachusetts Institute of Technology"
+license: MIT
+repository-code: "https://github.com/mfpeticco/karma-hand-metric"
+abstract: >-
+  A kinematics-only metric for fine manipulation ability in robotic hands.
+  KaRMA quantifies the reachable in-hand translation and reorientation of a
+  spherical test object held in a two-finger precision pinch, under feasible
+  rolling motions that maintain contact.
+preferred-citation:
+  type: conference-paper
+  title: "A Kinematic Metric for Fine Manipulation Ability in Robotic Hands"
+  authors:
+    - family-names: Peticco
+      given-names: Martin
+    - family-names: Agrawal
+      given-names: Pulkit
+  collection-title: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)"
+  year: 2026
+  url: "https://arxiv.org/abs/2605.15548"
+  identifiers:
+    - type: other
+      value: "arXiv:2605.15548"
+      description: "arXiv preprint"

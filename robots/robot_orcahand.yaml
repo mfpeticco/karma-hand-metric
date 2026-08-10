@@ -1,0 +1,326 @@
+robot_name: orcahand_right
+urdf_path: urdfs/orca.urdf
+base_link: world
+fingers:
+  thumb:
+    active_joints:
+    - right_thumb_mcp
+    - right_thumb_abd
+    - right_thumb_pip
+    - right_thumb_dip
+    contact_links:
+    - right_thumb_dp
+    - right_thumb_ip
+    - right_thumb_pp
+  index:
+    active_joints:
+    - right_index_abd
+    - right_index_mcp
+    - right_index_pip
+    contact_links:
+    - right_index_ip
+    - right_index_pp
+    - right_index_mp
+seed:
+  thumb_link: right_thumb_dp
+  index_link: right_index_ip
+links:
+  right_thumb_dp:
+    tip_length_m: 0.033101
+  right_index_ip:
+    tip_length_m: 0.049967
+  right_middle_pip_jointbody:
+    tip_length_m: 0.049967
+  right_pinky_pip_jointbody:
+    tip_length_m: 0.049967
+  right_ring_pip_jointbody:
+    tip_length_m: 0.049967
+joints:
+  world2right_tower_fixed:
+    type: fixed
+    parent: world
+    child: world2right_tower_fixed_jointbody
+    origin_xyz:
+    - 0.04
+    - 0.0
+    - 0.04575
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  world2right_tower_fixed_offset:
+    type: fixed
+    parent: world2right_tower_fixed_jointbody
+    child: right_tower
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_wrist:
+    type: revolute
+    parent: right_tower
+    child: right_wrist_jointbody
+    origin_xyz:
+    - 0.04063
+    - 0.0
+    - 0.10487
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 1.0
+    - 0.0
+    - 0.0
+    limit_lower: -0.6736
+    limit_upper: 0.8972
+  right_wrist_offset:
+    type: fixed
+    parent: right_wrist_jointbody
+    child: right_palm
+    origin_xyz:
+    - -0.002
+    - 0.00144
+    - 0.03872
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_thumb_mcp:
+    type: revolute
+    parent: right_palm
+    child: right_thumb_mcp_jointbody
+    origin_xyz:
+    - -0.02821
+    - 0.01777
+    - -0.01321
+    origin_rpy:
+    - 0.53857
+    - -0.05595
+    - -1.27047
+    axis:
+    - 0.0
+    - 0.0
+    - -1.0
+    limit_lower: -0.87266
+    limit_upper: 0.87266
+  right_thumb_mcp_offset:
+    type: fixed
+    parent: right_thumb_mcp_jointbody
+    child: right_thumb_mp
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_thumb_abd:
+    type: revolute
+    parent: right_thumb_mp
+    child: right_thumb_abd_jointbody
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - -1.22173
+    - 0.0
+    - 0.0
+    axis:
+    - 0.0
+    - 0.34202085907197166
+    - 0.9396923602752502
+    limit_lower: -1.08211
+    limit_upper: 0.0
+  right_thumb_abd_offset:
+    type: fixed
+    parent: right_thumb_abd_jointbody
+    child: right_thumb_pp
+    origin_xyz:
+    - -0.03
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_thumb_pip:
+    type: revolute
+    parent: right_thumb_pp
+    child: right_thumb_pip_jointbody
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - -2.6536e-06
+    - 1.5707926536
+    - 3.141592653589793
+    axis:
+    - 0.0
+    - -1.0
+    - 0.0
+    limit_lower: -0.7944
+    limit_upper: 1.23
+  right_thumb_pip_offset:
+    type: fixed
+    parent: right_thumb_pip_jointbody
+    child: right_thumb_ip
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_thumb_dip:
+    type: revolute
+    parent: right_thumb_ip
+    child: right_thumb_dip_jointbody
+    origin_xyz:
+    - 0.0005
+    - 0.0
+    - 0.033
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0.0
+    - -1.0
+    - 0.0
+    limit_lower: -0.85384
+    limit_upper: 1.45
+  right_thumb_dip_offset:
+    type: fixed
+    parent: right_thumb_dip_jointbody
+    child: right_thumb_dp
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  thumb_dp2right_thumb_fingertip_fixed_offset:
+    type: fixed
+    parent: right_thumb_dp
+    child: right_thumb_fingertip
+    origin_xyz:
+    - -0.003
+    - 0.0
+    - 0.025
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_index_abd:
+    type: revolute
+    parent: right_palm
+    child: right_index_abd_jointbody
+    origin_xyz:
+    - -0.024088797
+    - 0.001899964
+    - 0.025164929
+    origin_rpy:
+    - 1.6067
+    - 1.13552
+    - -0.05339
+    axis:
+    - 0.0
+    - 0.0
+    - -1.0
+    limit_lower: -1.04577
+    limit_upper: 0.24577
+  right_index_abd_offset:
+    type: fixed
+    parent: right_index_abd_jointbody
+    child: right_index_mp
+    origin_xyz:
+    - -0.02
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_index_mcp:
+    type: revolute
+    parent: right_index_mp
+    child: right_index_mcp_jointbody
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 3.141592653589793
+    - -1.5707926536
+    - 3.141592653589793
+    axis:
+    - 0.0
+    - -1.0
+    - 0.0
+    limit_lower: -0.34907
+    limit_upper: 1.65806
+  right_index_mcp_offset:
+    type: fixed
+    parent: right_index_mcp_jointbody
+    child: right_index_pp
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_index_pip:
+    type: revolute
+    parent: right_index_pp
+    child: right_index_pip_jointbody
+    origin_xyz:
+    - 0.0005
+    - 0.0
+    - 0.038
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0.0
+    - -1.0
+    - 0.0
+    limit_lower: -0.34907
+    limit_upper: 1.88496
+  right_index_pip_offset:
+    type: fixed
+    parent: right_index_pip_jointbody
+    child: right_index_ip
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_index_ip2right_index_fingertip_fixed_offset:
+    type: fixed
+    parent: right_index_ip
+    child: right_index_fingertip
+    origin_xyz:
+    - -0.009
+    - 0.0
+    - 0.035
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0

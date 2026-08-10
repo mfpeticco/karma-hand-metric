@@ -1,0 +1,132 @@
+robot_name: ability_hand_right
+urdf_path: urdfs/ability.urdf
+base_link: base_link
+fingers:
+  thumb:
+    active_joints:
+    - thumb_q1
+    - thumb_q2
+    contact_links:
+    - thumb_L2
+    - thumb_L1
+  index:
+    active_joints:
+    - index_q1
+    contact_links:
+    - index_L2
+    - index_L1
+seed:
+  thumb_link: thumb_L2
+  index_link: index_L2
+links:
+  thumb_L2:
+    tip_length_m: 0.069
+  index_L2:
+    tip_length_m: 0.047
+  middle_L2:
+    tip_length_m: 0.047
+  pinky_L2:
+    tip_length_m: 0.047
+  ring_L2:
+    tip_length_m: 0.047
+joints:
+  thumb_q1:
+    type: revolute
+    parent: thumb_base
+    child: thumb_L1
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 3.141592653589793
+    - 0.0
+    - -0.18884434641020664
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: -2.0943951
+    limit_upper: 0.0
+  thumb_q2:
+    type: revolute
+    parent: thumb_L1
+    child: thumb_L2
+    origin_xyz:
+    - 0.0278283501
+    - 0.0
+    - 0.0147507
+    origin_rpy:
+    - 1.832595714594045
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 2.0943951
+  thumb_tip_joint:
+    type: fixed
+    parent: thumb_L2
+    child: thumb_tip
+    origin_xyz:
+    - 0.065
+    - 0.016
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  index_q1:
+    type: revolute
+    parent: thumb_base
+    child: index_L1
+    origin_xyz:
+    - 0.00949
+    - -0.01304
+    - -0.06295
+    origin_rpy:
+    - -1.1595426535897932
+    - 1.284473
+    - -1.0510016535897932
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 2.0943951
+  index_q2:
+    type: revolute
+    parent: index_L1
+    child: index_L2
+    origin_xyz:
+    - 0.038472723
+    - 0.003257695
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.084474
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 2.6586
+    mimic:
+      joint: index_q1
+      multiplier: 1.05851325
+      offset: 0.72349796
+  index_tip_joint:
+    type: fixed
+    parent: index_L2
+    child: index_tip
+    origin_xyz:
+    - 0.035
+    - -0.018
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0

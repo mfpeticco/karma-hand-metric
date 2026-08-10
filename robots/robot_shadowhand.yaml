@@ -1,0 +1,604 @@
+robot_name: shadowhand_motor
+urdf_path: urdfs/shadowhand.urdf
+base_link: world
+fingers:
+  thumb:
+    active_joints:
+    - rh_THJ5
+    - rh_THJ4
+    - rh_THJ3
+    - rh_THJ2
+    - rh_THJ1
+    contact_links:
+    - rh_thdistal
+    - rh_thmiddle
+    - rh_thproximal
+  index:
+    active_joints:
+    - rh_FFJ4
+    - rh_FFJ3
+    - rh_FFJ2
+    - rh_FFJ1
+    contact_links:
+    - rh_ffdistal
+    - rh_ffmiddle
+    - rh_ffproximal
+seed:
+  thumb_link: rh_thdistal
+  index_link: rh_ffdistal
+links:
+  rh_thdistal:
+    tip_length_m: 0.034
+  rh_ffdistal:
+    tip_length_m: 0.03
+  rh_mfdistal:
+    tip_length_m: 0.03
+  rh_rfdistal:
+    tip_length_m: 0.03
+  rh_lfdistal:
+    tip_length_m: 0.03
+joints:
+  rh_THJ5:
+    type: revolute
+    parent: rh_palm
+    child: rh_thbase
+    origin_xyz_m:
+    - 0.034
+    - -0.00858
+    - 0.029
+    origin_rpy_rad:
+    - -0.7853981633974483
+    - 0.0
+    - -1.5707963267948966
+    axis_xyz:
+    - 0
+    - 0
+    - -1
+    limits:
+      lower: -1.0471975511965976
+      upper: 1.0471975511965976
+      effort: 5.0
+      velocity: 4.0
+  rh_THJ4:
+    type: revolute
+    parent: rh_thbase
+    child: rh_thproximal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0
+    - 1
+    - 0
+    limits:
+      lower: 0.0
+      upper: 1.2217304763960306
+      effort: 3.0
+      velocity: 4.0
+  rh_THJ3:
+    type: revolute
+    parent: rh_thproximal
+    child: rh_thhub
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.038
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0
+    - 1
+    - 0
+    limits:
+      lower: -0.20943951023931953
+      upper: 0.20943951023931953
+      effort: 2.0
+      velocity: 4.0
+  rh_THJ2:
+    type: revolute
+    parent: rh_thhub
+    child: rh_thmiddle
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: -0.6981317007977318
+      upper: 0.6981317007977318
+      effort: 2.0
+      velocity: 2.0
+  rh_THJ1:
+    type: revolute
+    parent: rh_thmiddle
+    child: rh_thdistal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.032
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: -0.2617993877991494
+      upper: 1.5707963267948966
+      effort: 1.0
+      velocity: 4.0
+  rh_thtip:
+    type: fixed
+    parent: rh_thdistal
+    child: rh_thtip
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0275
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  rh_FFJ4:
+    type: revolute
+    parent: rh_palm
+    child: rh_ffknuckle
+    origin_xyz_m:
+    - 0.033
+    - 0.0
+    - 0.095
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0
+    - -1
+    - 0
+    limits:
+      lower: -0.3490658503988659
+      upper: 0.3490658503988659
+      effort: 2.0
+      velocity: 2.0
+  rh_FFJ3:
+    type: revolute
+    parent: rh_ffknuckle
+    child: rh_ffproximal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: -0.2617993877991494
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_FFJ2:
+    type: revolute
+    parent: rh_ffproximal
+    child: rh_ffmiddle
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.045
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: 0.0
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_FFJ1:
+    type: revolute
+    parent: rh_ffmiddle
+    child: rh_ffdistal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.025
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: 0.0
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_FFtip:
+    type: fixed
+    parent: rh_ffdistal
+    child: rh_fftip
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.026
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  rh_MFJ4:
+    type: revolute
+    parent: rh_palm
+    child: rh_mfknuckle
+    origin_xyz_m:
+    - 0.011
+    - 0.0
+    - 0.099
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0
+    - -1
+    - 0
+    limits:
+      lower: -0.3490658503988659
+      upper: 0.3490658503988659
+      effort: 2.0
+      velocity: 2.0
+  rh_MFJ3:
+    type: revolute
+    parent: rh_mfknuckle
+    child: rh_mfproximal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: -0.2617993877991494
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_MFJ2:
+    type: revolute
+    parent: rh_mfproximal
+    child: rh_mfmiddle
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.045
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: 0.0
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_MFJ1:
+    type: revolute
+    parent: rh_mfmiddle
+    child: rh_mfdistal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.025
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: 0.0
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_MFtip:
+    type: fixed
+    parent: rh_mfdistal
+    child: rh_mftip
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.026
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  rh_RFJ4:
+    type: revolute
+    parent: rh_palm
+    child: rh_rfknuckle
+    origin_xyz_m:
+    - -0.011
+    - 0.0
+    - 0.095
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0
+    - -1
+    - 0
+    limits:
+      lower: -0.3490658503988659
+      upper: 0.3490658503988659
+      effort: 2.0
+      velocity: 2.0
+  rh_RFJ3:
+    type: revolute
+    parent: rh_rfknuckle
+    child: rh_rfproximal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: -0.2617993877991494
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_RFJ2:
+    type: revolute
+    parent: rh_rfproximal
+    child: rh_rfmiddle
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.045
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: 0.0
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_RFJ1:
+    type: revolute
+    parent: rh_rfmiddle
+    child: rh_rfdistal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.025
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: 0.0
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_RFtip:
+    type: fixed
+    parent: rh_rfdistal
+    child: rh_rftip
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.026
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  rh_LFJ5:
+    type: revolute
+    parent: rh_palm
+    child: rh_lfmetacarpal
+    origin_xyz_m:
+    - -0.033
+    - 0.0095
+    - 0.02071
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0
+    - -1
+    - 0
+    limits:
+      lower: 0.0
+      upper: 0.7853981633974483
+      effort: 2.0
+      velocity: 2.0
+  rh_LFJ4:
+    type: revolute
+    parent: rh_lfmetacarpal
+    child: rh_lfknuckle
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.06579
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0
+    - -1
+    - 0
+    limits:
+      lower: -0.3490658503988659
+      upper: 0.3490658503988659
+      effort: 2.0
+      velocity: 2.0
+  rh_LFJ3:
+    type: revolute
+    parent: rh_lfknuckle
+    child: rh_lfproximal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: -0.2617993877991494
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_LFJ2:
+    type: revolute
+    parent: rh_lfproximal
+    child: rh_lfmiddle
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.045
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: 0.0
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_LFJ1:
+    type: revolute
+    parent: rh_lfmiddle
+    child: rh_lfdistal
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.025
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: 0.0
+      upper: 1.5707963267948966
+      effort: 2.0
+      velocity: 2.0
+  rh_LFtip:
+    type: fixed
+    parent: rh_lfdistal
+    child: rh_lftip
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.026
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+  rh_WRJ2:
+    type: revolute
+    parent: rh_forearm
+    child: rh_wrist
+    origin_xyz_m:
+    - 0.0
+    - -0.01
+    - 0.21301
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0
+    - 1
+    - 0
+    limits:
+      lower: -0.5235987755982988
+      upper: 0.17453292519943295
+      effort: 10.0
+      velocity: 2.0
+  rh_WRJ1:
+    type: revolute
+    parent: rh_wrist
+    child: rh_palm
+    origin_xyz_m:
+    - 0.0
+    - 0.0
+    - 0.034
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 1
+    - 0
+    - 0
+    limits:
+      lower: -0.6981317007977318
+      upper: 0.4886921905584123
+      effort: 30.0
+      velocity: 2.0

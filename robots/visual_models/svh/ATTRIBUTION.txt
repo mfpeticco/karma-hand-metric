@@ -1,0 +1,7 @@
+SCHUNK SVH 5-finger hand
+Source:    https://github.com/dexsuite/dex-urdf  (robots/hands/schunk_hand)
+License:   GPL-3.0  (LICENSE file in the schunk_hand folder; full text at the source)
+Copyright: dex-urdf authors; SCHUNK SVH hand
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

@@ -1,0 +1,654 @@
+meta:
+  timestamp: '2026-07-30T19:04:52.017570'
+  robot_config: robots/robot_inspire.yaml
+  metric_config: karma_config.yaml
+  max_states_override: 1000
+  total_elapsed_s: 309.6
+baseline:
+  n_voxels: 4
+  n_states: 4
+  translational_score: 0.0004166666666666666
+  global_rotational_score: 0.0043859649122807015
+  elapsed_s: 7.37
+invariance:
+  translation:
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: translate [1.0, 0.0, 0.0]
+    elapsed_s: 7.4
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: translate [0.0, 2.5, 0.0]
+    elapsed_s: 7.39
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: translate [0.0, 0.0, -0.5]
+    elapsed_s: 7.41
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: translate [0.3, -0.7, 1.2]
+    elapsed_s: 7.46
+  rotation:
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: rotate rpy_deg=[0, 0, 45]
+    elapsed_s: 7.37
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: rotate rpy_deg=[0, 90, 0]
+    elapsed_s: 7.52
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: rotate rpy_deg=[30, 0, 0]
+    elapsed_s: 7.32
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: rotate rpy_deg=[15, 30, 45]
+    elapsed_s: 7.39
+  scale:
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: scale k=0.5
+    elapsed_s: 7.42
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: scale k=2.0
+    elapsed_s: 7.34
+  finger_swap:
+    n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.00045833333333333316
+    delta_translational_score: 4.166666666666658e-05
+    pct_translational_score: 10.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: false
+    practical_match: true
+    label: finger_swap
+    elapsed_s: 7.51
+stability:
+  link_length:
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: link_length eps=+0.010
+    epsilon: 0.01
+    elapsed_s: 7.32
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: link_length eps=-0.010
+    epsilon: -0.01
+    elapsed_s: 7.22
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.00041666666666666675
+    delta_translational_score: 1.6263032587282567e-19
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: link_length eps=+0.020
+    epsilon: 0.02
+    elapsed_s: 7.28
+  - n_voxels: 3
+    delta_n_voxels: -1
+    pct_n_voxels: -25.0
+    n_states: 3
+    delta_n_states: -1
+    pct_n_states: -25.0
+    translational_score: 0.00037499999999999995
+    delta_translational_score: -4.166666666666663e-05
+    pct_translational_score: -10.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: false
+    practical_match: true
+    label: link_length eps=-0.020
+    epsilon: -0.02
+    elapsed_s: 7.35
+  joint_limits:
+  - n_voxels: 3
+    delta_n_voxels: -1
+    pct_n_voxels: -25.0
+    n_states: 3
+    delta_n_states: -1
+    pct_n_states: -25.0
+    translational_score: 0.0002916666666666666
+    delta_translational_score: -0.000125
+    pct_translational_score: -30.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: false
+    practical_match: true
+    label: joint_limits delta=+1.0deg
+    delta_deg: 1.0
+    elapsed_s: 7.08
+  - n_voxels: 3
+    delta_n_voxels: -1
+    pct_n_voxels: -25.0
+    n_states: 3
+    delta_n_states: -1
+    pct_n_states: -25.0
+    translational_score: 0.0003749999999999999
+    delta_translational_score: -4.1666666666666686e-05
+    pct_translational_score: -10.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: false
+    practical_match: true
+    label: joint_limits delta=-1.0deg
+    delta_deg: -1.0
+    elapsed_s: 7.3
+  - n_voxels: 3
+    delta_n_voxels: -1
+    pct_n_voxels: -25.0
+    n_states: 3
+    delta_n_states: -1
+    pct_n_states: -25.0
+    translational_score: 0.0002916666666666666
+    delta_translational_score: -0.000125
+    pct_translational_score: -30.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: false
+    practical_match: true
+    label: joint_limits delta=+3.0deg
+    delta_deg: 3.0
+    elapsed_s: 6.9
+  - n_voxels: 3
+    delta_n_voxels: -1
+    pct_n_voxels: -25.0
+    n_states: 3
+    delta_n_states: -1
+    pct_n_states: -25.0
+    translational_score: 0.0002916666666666666
+    delta_translational_score: -0.000125
+    pct_translational_score: -30.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: false
+    practical_match: true
+    label: joint_limits delta=-3.0deg
+    delta_deg: -3.0
+    elapsed_s: 7.42
+  sphere_radius:
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: sphere_radius eps=+0.020 (0.0100→0.0102)
+    epsilon: 0.02
+    elapsed_s: 7.28
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0003749999999999999
+    delta_translational_score: -4.1666666666666686e-05
+    pct_translational_score: -10.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: false
+    practical_match: true
+    label: sphere_radius eps=-0.020 (0.0100→0.0098)
+    epsilon: -0.02
+    elapsed_s: 7.18
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: sphere_radius eps=+0.050 (0.0100→0.0105)
+    epsilon: 0.05
+    elapsed_s: 7.33
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: sphere_radius eps=-0.050 (0.0100→0.0095)
+    epsilon: -0.05
+    elapsed_s: 7.32
+  link_radius:
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: link_radius eps=+0.020 (0.0118→0.0120)
+    epsilon: 0.02
+    elapsed_s: 7.37
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0003749999999999999
+    delta_translational_score: -4.1666666666666686e-05
+    pct_translational_score: -10.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: false
+    practical_match: true
+    label: link_radius eps=-0.020 (0.0118→0.0116)
+    epsilon: -0.02
+    elapsed_s: 7.28
+  - n_voxels: 4
+    delta_n_voxels: 0
+    pct_n_voxels: 0.0
+    n_states: 4
+    delta_n_states: 0
+    pct_n_states: 0.0
+    translational_score: 0.0004166666666666666
+    delta_translational_score: 0.0
+    pct_translational_score: 0.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: true
+    practical_match: true
+    label: link_radius eps=+0.050 (0.0118→0.0124)
+    epsilon: 0.05
+    elapsed_s: 7.38
+  - n_voxels: 3
+    delta_n_voxels: -1
+    pct_n_voxels: -25.0
+    n_states: 3
+    delta_n_states: -1
+    pct_n_states: -25.0
+    translational_score: 0.0002916666666666666
+    delta_translational_score: -0.000125
+    pct_translational_score: -30.0
+    global_rotational_score: 0.0043859649122807015
+    delta_global_rotational_score: 0.0
+    pct_global_rotational_score: 0.0
+    exact_match: false
+    practical_match: true
+    label: link_radius eps=-0.050 (0.0118→0.0112)
+    epsilon: -0.05
+    elapsed_s: 7.06
+  seed_determinism:
+    n_runs: 3
+    all_identical: true
+    runs:
+    - n_voxels: 4
+      n_states: 4
+      translational_score: 0.0004166666666666666
+      global_rotational_score: 0.0043859649122807015
+      elapsed_s: 7.37
+    - n_voxels: 4
+      n_states: 4
+      translational_score: 0.0004166666666666666
+      global_rotational_score: 0.0043859649122807015
+      elapsed_s: 7.42
+    - n_voxels: 4
+      n_states: 4
+      translational_score: 0.0004166666666666666
+      global_rotational_score: 0.0043859649122807015
+      elapsed_s: 7.33
+numerical:
+  determinism:
+    n_runs: 3
+    all_identical: true
+    runs:
+    - n_voxels: 4
+      n_states: 4
+      translational_score: 0.0004166666666666666
+      global_rotational_score: 0.0043859649122807015
+      elapsed_s: 7.49
+    - n_voxels: 4
+      n_states: 4
+      translational_score: 0.0004166666666666666
+      global_rotational_score: 0.0043859649122807015
+      elapsed_s: 7.35
+    - n_voxels: 4
+      n_states: 4
+      translational_score: 0.0004166666666666666
+      global_rotational_score: 0.0043859649122807015
+      elapsed_s: 7.31
+characterization:
+  lref:
+  - L_ref_m: 0.2225
+    mxPr_m: 0.087
+    mF_m: 0.1355
+    n_fingers: 4
+    finger_wires_m:
+    - 0.1355
+    - 0.1355
+    - 0.1355
+    - 0.159836
+    robot: robot_allegro.yaml
+  - L_ref_m: 0.171294
+    mxPr_m: 0.067928
+    mF_m: 0.103366
+    n_fingers: 5
+    finger_wires_m:
+    - 0.105873
+    - 0.09727
+    - 0.103366
+    - 0.144477
+    - 0.086545
+    robot: robot_ARMS_skel.yaml
+  - L_ref_m: 0.184771
+    mxPr_m: 0.088771
+    mF_m: 0.096
+    n_fingers: 5
+    finger_wires_m:
+    - 0.096
+    - 0.096
+    - 0.096
+    - 0.096
+    - 0.0975
+    robot: robot_shadowhand.yaml
+  - L_ref_m: 0.24936
+    mxPr_m: 0.091243
+    mF_m: 0.158117
+    n_fingers: 4
+    finger_wires_m:
+    - 0.158117
+    - 0.158117
+    - 0.158117
+    - 0.16327
+    robot: robot_leap.yaml
+  - L_ref_m: 0.155389
+    mxPr_m: 0.082732
+    mF_m: 0.072657
+    n_fingers: 5
+    finger_wires_m:
+    - 0.115726
+    - 0.072657
+    - 0.077601
+    - 0.072397
+    - 0.064459
+    robot: robot_inspire.yaml
+  - L_ref_m: 0.155295
+    mxPr_m: 0.059495
+    mF_m: 0.0958
+    n_fingers: 3
+    finger_wires_m:
+    - 0.115261
+    - 0.0958
+    - 0.0958
+    robot: robot_dex3.yaml
+  - L_ref_m: 0.327208
+    mxPr_m: 0.106121
+    mF_m: 0.221087
+    n_fingers: 3
+    finger_wires_m:
+    - 0.221147
+    - 0.221087
+    - 0.221001
+    robot: robot_dclaw.yaml
+  - L_ref_m: 0.188339
+    mxPr_m: 0.08383
+    mF_m: 0.104509
+    n_fingers: 5
+    finger_wires_m:
+    - 0.137709
+    - 0.104509
+    - 0.104509
+    - 0.104509
+    - 0.114149
+    robot: robot_sharpa.yaml
+  step_size:
+  - n_voxels: 3
+    n_states: 3
+    translational_score: 0.0002499999999999999
+    global_rotational_score: 0.0043859649122807015
+    label: step_size=0.25*voxel (0.002500m)
+    step_size_m: 0.0025
+    step_fraction: 0.25
+    elapsed_s: 7.08
+  - n_voxels: 4
+    n_states: 4
+    translational_score: 0.0004166666666666666
+    global_rotational_score: 0.0043859649122807015
+    label: step_size=0.125*voxel (0.001250m)
+    step_size_m: 0.00125
+    step_fraction: 0.125
+    elapsed_s: 7.34
+  - n_voxels: 4
+    n_states: 4
+    translational_score: 0.0004999999999999998
+    global_rotational_score: 0.0043859649122807015
+    label: step_size=0.0625*voxel (0.000625m)
+    step_size_m: 0.000625
+    step_fraction: 0.0625
+    elapsed_s: 7.59
+  bfs_budget:
+  - n_voxels: 4
+    n_states: 4
+    translational_score: 0.0004166666666666666
+    global_rotational_score: 0.0043859649122807015
+    label: max_states=500
+    max_states: 500
+    elapsed_s: 7.34
+  - n_voxels: 4
+    n_states: 4
+    translational_score: 0.0004166666666666666
+    global_rotational_score: 0.0043859649122807015
+    label: max_states=1000
+    max_states: 1000
+    elapsed_s: 7.43
+  - n_voxels: 4
+    n_states: 4
+    translational_score: 0.0004166666666666666
+    global_rotational_score: 0.0043859649122807015
+    label: max_states=2000
+    max_states: 2000
+    elapsed_s: 7.42
+  - n_voxels: 4
+    n_states: 4
+    translational_score: 0.0004166666666666666
+    global_rotational_score: 0.0043859649122807015
+    label: max_states=5000
+    max_states: 5000
+    elapsed_s: 7.34
+  - n_voxels: 4
+    n_states: 4
+    translational_score: 0.0004166666666666666
+    global_rotational_score: 0.0043859649122807015
+    label: max_states=10000
+    max_states: 10000
+    elapsed_s: 7.35

@@ -1,0 +1,7 @@
+Wonik/SimLab Allegro Hand (via Drake drake_models)
+Source:    https://github.com/RobotLocomotion/models
+License:   BSD
+Copyright: Wonik Robotics; Drake mods (c) Toyota Research Institute
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

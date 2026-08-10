@@ -1,0 +1,664 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="DLR_handmodel">
+  <link name="ground_oriented" /><joint name="ground_orientation_joint" type="fixed"><parent link="ground" /><child link="ground_oriented" /><origin xyz="0 0 0" rpy="-1.5707963268 0.0000000000 0.0000000000" /></joint><link name="ground">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="MCP2a">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP2a_joint" type="revolute">
+    <parent link="ground_oriented" />
+    <child link="MCP2a" />
+    <origin xyz="0.00112756 -0.02894003 -0.00258697" rpy="-2.97153179 0.17373322 -2.16226478" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.02" upper="0.903" />
+  </joint>
+  <link name="MCP2b">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP2b_joint" type="revolute">
+    <parent link="MCP2a" />
+    <child link="MCP2b" />
+    <origin xyz="0 0 0" rpy="1.57079327 1.29757309 -2.98206879" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-0.203" upper="0.991" />
+  </joint>
+  <link name="PP2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00210206 0.00594899 0.00023393" rpy="1.51767576 0.02382108 0.02258825" />
+      <geometry>
+        <cylinder radius="0.004750" length="0.047381" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="PP2_fixed" type="fixed">
+    <parent link="MCP2b" />
+    <child link="PP2" />
+    <origin xyz="-0.01266949 -0.01784861 -0.02001128" rpy="2.01815253 0.68638224 1.52729883" />
+  </joint>
+  <link name="PIP2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="PIP2_joint" type="revolute">
+    <parent link="PP2" />
+    <child link="PIP2" />
+    <origin xyz="0.00266634 -0.01770148 0.00149144" rpy="3.02407871 0.32603526 2.08465167" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-2.008" upper="0.171" />
+  </joint>
+  <link name="PM2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00085370 0.00262885 0.00111374" rpy="1.52870185 0.02065890 0.01980714" />
+      <geometry>
+        <cylinder radius="0.004250" length="0.028645" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="PM2_fixed" type="fixed">
+    <parent link="PIP2" />
+    <child link="PM2" />
+    <origin xyz="-0.01430452 -0.00863928 0.00285207" rpy="-3.00555093 0.26221168 2.12536254" />
+  </joint>
+  <link name="DIP2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.01055456 -0.00294827 0.00050222" rpy="-1.52498367 -0.02609802 1.84199250" />
+      <geometry>
+        <cylinder radius="0.004000" length="0.021940" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="DIP2_joint" type="revolute">
+    <parent link="PM2" />
+    <child link="DIP2" />
+    <origin xyz="0.00114957 -0.01167801 0.00171634" rpy="3.10919338 0.05910672 1.83892284" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.366" upper="0.829" />
+  </joint>
+  <link name="CMC1a">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="CMC1a_joint" type="revolute">
+    <parent link="ground_oriented" />
+    <child link="CMC1a" />
+    <origin xyz="0.01950111 0.02695073 0.00443441" rpy="2.48727972 -0.14754713 -0.42888542" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-0.929" upper="0.27" />
+  </joint>
+  <link name="CMC1b">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="CMC1b_joint" type="revolute">
+    <parent link="CMC1a" />
+    <child link="CMC1b" />
+    <origin xyz="-0.01737179 -0.00971473 0.00000009" rpy="-1.37890303 0.5583485 1.29247478" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="0.005" upper="0.866" />
+  </joint>
+  <link name="MC1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00280980 0.00826182 -0.00805952" rpy="1.30083853 -0.05313827 -0.04043512" />
+      <geometry>
+        <cylinder radius="0.005250" length="0.054157" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="MC1_fixed" type="fixed">
+    <parent link="CMC1b" />
+    <child link="MC1" />
+    <origin xyz="0.03354848 -0.01248297 0.01216455" rpy="-2.40732831 0.54908404 -1.85815669" />
+  </joint>
+  <link name="MCP1a">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP1a_joint" type="revolute">
+    <parent link="MC1" />
+    <child link="MCP1a" />
+    <origin xyz="0.00137157 -0.01779916 -0.00084812" rpy="3.05390316 -0.00793818 0.17955431" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-0.001" upper="1.614" />
+  </joint>
+  <link name="MCP1b">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP1b_joint" type="revolute">
+    <parent link="MCP1a" />
+    <child link="MCP1b" />
+    <origin xyz="0 0 0" rpy="1.57077559 1.40697104 -1.11025748" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-0.002" upper="1.189" />
+  </joint>
+  <link name="PP1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00187697 0.00534056 0.00067829" rpy="1.53491659 0.00178693 0.00172394" />
+      <geometry>
+        <cylinder radius="0.004000" length="0.037984" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="PP1_fixed" type="fixed">
+    <parent link="MCP1b" />
+    <child link="PP1" />
+    <origin xyz="-0.00881935 -0.01471952 -0.01733277" rpy="1.5741734 0.70472886 1.03560697" />
+  </joint>
+  <link name="IP1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.00586655 -0.01483146 0.00018116" rpy="-1.55930435 -0.15299313 2.76317902" />
+      <geometry>
+        <cylinder radius="0.004000" length="0.031901" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="IP1_joint" type="revolute">
+    <parent link="PP1" />
+    <child link="IP1" />
+    <origin xyz="0.00191091 -0.0136391 0.00135957" rpy="3.1212228 -0.2734143 -3.20378307" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.0" upper="0.793" />
+  </joint>
+  <link name="IMC3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="IMC3_joint" type="revolute">
+    <parent link="ground_oriented" />
+    <child link="IMC3" />
+    <origin xyz="0.000273 0.01967667 -0.00381503" rpy="1.77115361 -0.08468856 -0.10358527" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-0.076" upper="0.27" />
+  </joint>
+  <link name="MC3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00361529 -0.00394312 0.00514889" rpy="1.75995059 -0.04621467 -0.05589681" />
+      <geometry>
+        <cylinder radius="0.005500" length="0.048806" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="MC3_fixed" type="fixed">
+    <parent link="IMC3" />
+    <child link="MC3" />
+    <origin xyz="-0.00495342 -0.00967755 0.01997446" rpy="-1.55666295 0.02564177 -0.07324621" />
+  </joint>
+  <link name="MCP3a">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP3a_joint" type="revolute">
+    <parent link="MC3" />
+    <child link="MCP3a" />
+    <origin xyz="0.00248792 -0.02788517 0.00056535" rpy="-3.06481638 0.18119135 -3.05161826" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.401" upper="0.655" />
+  </joint>
+  <link name="MCP3b">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP3b_joint" type="revolute">
+    <parent link="MCP3a" />
+    <child link="MCP3b" />
+    <origin xyz="0 0 0" rpy="1.57079258 1.43881163 2.40418212" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-0.361" upper="0.379" />
+  </joint>
+  <link name="PP3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00198584 0.00617869 0.00052671" rpy="1.57515141 0.03801393 0.03817980" />
+      <geometry>
+        <cylinder radius="0.004750" length="0.052070" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="PP3_fixed" type="fixed">
+    <parent link="MCP3b" />
+    <child link="PP3" />
+    <origin xyz="-0.00585579 -0.02263291 -0.02216632" rpy="1.80985017 0.74680743 1.67804873" />
+  </joint>
+  <link name="PIP3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="PIP3_joint" type="revolute">
+    <parent link="PP3" />
+    <child link="PIP3" />
+    <origin xyz="0.00297529 -0.01983706 0.00041341" rpy="-3.10128167 0.0516092 -2.38548014" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.989" upper="0.233" />
+  </joint>
+  <link name="PM3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.00003813 0.00286024 0.00063869" rpy="1.61707877 0.00949522 0.00994517" />
+      <geometry>
+        <cylinder radius="0.004250" length="0.033133" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="PM3_fixed" type="fixed">
+    <parent link="PIP3" />
+    <child link="PM3" />
+    <origin xyz="0.0128016 -0.0146496 0.00044222" rpy="3.0920109 -0.00372241 -2.41345172" />
+  </joint>
+  <link name="DIP3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00230593 -0.01261149 0.00046200" rpy="-1.53328061 -0.28324714 -2.97123572" />
+      <geometry>
+        <cylinder radius="0.004000" length="0.025658" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="DIP3_joint" type="revolute">
+    <parent link="PM3" />
+    <child link="DIP3" />
+    <origin xyz="0.00011917 -0.01368763 -0.00012773" rpy="-3.06294799 0.29509605 -2.90405259" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.486" upper="0.418" />
+  </joint>
+  <link name="IMC4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="IMC4_joint" type="revolute">
+    <parent link="MC3" />
+    <child link="IMC4" />
+    <origin xyz="0.00060402 0.02840978 -0.0080106" rpy="1.27408673 -0.19279634 -0.05286132" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="0.005" upper="0.366" />
+  </joint>
+  <link name="MC4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00183217 0.00048279 0.00038408" rpy="1.64362475 -0.04336960 -0.04664786" />
+      <geometry>
+        <cylinder radius="0.005500" length="0.050772" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="MC4_fixed" type="fixed">
+    <parent link="IMC4" />
+    <child link="MC4" />
+    <origin xyz="0.0030355 -0.0128709 0.02243187" rpy="-1.13307596 0.24986687 0.0261586" />
+  </joint>
+  <link name="MCP4a">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP4a_joint" type="revolute">
+    <parent link="MC4" />
+    <child link="MCP4a" />
+    <origin xyz="0.00073153 -0.02481215 -0.00146137" rpy="-3.02998578 0.00639049 -0.52427495" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.462" upper="0.77" />
+  </joint>
+  <link name="MCP4b">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP4b_joint" type="revolute">
+    <parent link="MCP4a" />
+    <child link="MCP4b" />
+    <origin xyz="0 0 0" rpy="1.57079782 0.88958636 -0.97804086" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-0.358" upper="0.419" />
+  </joint>
+  <link name="PP4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00010893 0.00527716 0.00003490" rpy="1.58444621 0.00125565 0.00127291" />
+      <geometry>
+        <cylinder radius="0.004750" length="0.048276" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="PP4_fixed" type="fixed">
+    <parent link="MCP4b" />
+    <child link="PP4" />
+    <origin xyz="-0.00768566 -0.01508707 -0.02405368" rpy="1.50910016 0.60894585 1.01390811" />
+  </joint>
+  <link name="PIP4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="PIP4_joint" type="revolute">
+    <parent link="PP4" />
+    <child link="PIP4" />
+    <origin xyz="0.00013924 -0.01885876 -0.00029457" rpy="3.14059038 0.01510742 2.4491022" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.939" upper="0.342" />
+  </joint>
+  <link name="PM4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00054710 0.00295739 0.00068523" rpy="1.57967216 -0.02144662 -0.02163781" />
+      <geometry>
+        <cylinder radius="0.004250" length="0.032009" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="PM4_fixed" type="fixed">
+    <parent link="PIP4" />
+    <child link="PM4" />
+    <origin xyz="-0.0119595 -0.01470671 -0.00124534" rpy="3.03185818 0.0095041 2.41124171" />
+  </joint>
+  <link name="DIP4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.00814642 -0.00948367 -0.00088321" rpy="-1.64132691 0.00933881 2.43123979" />
+      <geometry>
+        <cylinder radius="0.004000" length="0.025067" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="DIP4_joint" type="revolute">
+    <parent link="PM4" />
+    <child link="DIP4" />
+    <origin xyz="0.00020388 -0.01304283 0.00054321" rpy="-3.13801871 -0.03828433 2.42544903" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.495" upper="0.457" />
+  </joint>
+  <link name="IMC5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="IMC5_joint" type="revolute">
+    <parent link="MC4" />
+    <child link="IMC5" />
+    <origin xyz="0.00133314 0.02238944 -0.00555069" rpy="1.4215517 -0.03266849 -0.28812425" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-0.005" upper="0.395" />
+  </joint>
+  <link name="MC5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00009122 -0.00118817 0.00497271" rpy="1.73849483 0.07347235 0.08694007" />
+      <geometry>
+        <cylinder radius="0.005500" length="0.045314" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="MC5_fixed" type="fixed">
+    <parent link="IMC5" />
+    <child link="MC5" />
+    <origin xyz="0.00258619 -0.0143344 0.01765157" rpy="-1.28482247 0.05594939 0.00161629" />
+  </joint>
+  <link name="MCP5a">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP5a_joint" type="revolute">
+    <parent link="MC5" />
+    <child link="MCP5a" />
+    <origin xyz="0.00175437 -0.02346684 0.00120119" rpy="-1.59299831 -1.0835392 1.10326" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-0.65" upper="0.305" />
+  </joint>
+  <link name="MCP5b">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="MCP5b_joint" type="revolute">
+    <parent link="MCP5a" />
+    <child link="MCP5b" />
+    <origin xyz="0 0 0" rpy="1.57079157 1.299249 -2.19199508" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.702" upper="0.983" />
+  </joint>
+  <link name="PP5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00129768 0.00423329 0.00021813" rpy="1.60714241 -0.01449333 -0.01502990" />
+      <geometry>
+        <cylinder radius="0.004750" length="0.039501" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="PP5_fixed" type="fixed">
+    <parent link="MCP5b" />
+    <child link="PP5" />
+    <origin xyz="0.01915435 0.01451382 -0.00058784" rpy="3.08139078 -0.05082231 -0.98716161" />
+  </joint>
+  <link name="PIP5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="PIP5_joint" type="revolute">
+    <parent link="PP5" />
+    <child link="PIP5" />
+    <origin xyz="0.00101144 -0.01550217 -0.00049949" rpy="-3.09076508 0.22127951 -2.73171742" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.886" upper="0.213" />
+  </joint>
+  <link name="PM5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.00011656 0.00242718 -0.00129161" rpy="1.68153524 0.02364885 0.02642390" />
+      <geometry>
+        <cylinder radius="0.004250" length="0.025134" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="PM5_fixed" type="fixed">
+    <parent link="PIP5" />
+    <child link="PM5" />
+    <origin xyz="0.00633628 -0.01348262 -0.00081588" rpy="3.08032639 -0.00152062 -2.67440633" />
+  </joint>
+  <link name="DIP5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0.00586147 -0.01017793 -0.00202047" rpy="-1.74225917 0.11297019 -2.63860008" />
+      <geometry>
+        <cylinder radius="0.004000" length="0.023835" />
+      </geometry>
+      <material>
+        <color rgba="0.8 0.7 0.6 1.0" />
+      </material>
+    </visual>
+  </link>
+  <joint name="DIP5_joint" type="revolute">
+    <parent link="PM5" />
+    <child link="DIP5" />
+    <origin xyz="0.0001806 -0.01005921 -0.00268002" rpy="3.11811207 -0.07074845 -2.69091568" />
+    <axis xyz="0 0 1" />
+    <limit effort="10" velocity="10" lower="-1.629" upper="0.179" />
+  </joint>
+</robot>

@@ -1,0 +1,7 @@
+LEAP Hand (via dexsuite/dex-urdf)
+Source:    https://github.com/dexsuite/dex-urdf
+License:   MIT
+Copyright: (c) 2023 Ananye Agarwal
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

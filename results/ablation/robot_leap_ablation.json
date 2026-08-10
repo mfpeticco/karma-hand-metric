@@ -1,0 +1,86 @@
+{
+  "gap_only": {
+    "label": "(i) Gap-only",
+    "n_voxels": 4636,
+    "karma_t": 0.5782083333333333,
+    "karma_r": 0.5266081871345029,
+    "n_states": 239257,
+    "elapsed_s": 502.8,
+    "phase1_fail_reasons": {
+      "duplicate_voxel": 12741,
+      "qp_fail": 5337,
+      "projection": 468
+    },
+    "phase2_fail_reasons": {
+      "rot_slip": 13980,
+      "rot_low_eff": 483,
+      "rot_projection": 20
+    }
+  },
+  "gap_jl": {
+    "label": "(ii) +Joint limits",
+    "n_voxels": 1931,
+    "karma_t": 0.23924999999999996,
+    "karma_r": 0.4014619883040935,
+    "n_states": 69113,
+    "elapsed_s": 183.5,
+    "phase1_fail_reasons": {
+      "qp_fail": 3721,
+      "duplicate_voxel": 3912,
+      "projection": 93
+    },
+    "phase2_fail_reasons": {
+      "rot_slip": 6975,
+      "rot_low_eff": 266,
+      "rot_projection": 11,
+      "rot_qp_fail": 1
+    }
+  },
+  "gap_jl_col": {
+    "label": "(iii) +Collisions",
+    "n_voxels": 982,
+    "karma_t": 0.12524999999999997,
+    "karma_r": 0.33245614035087717,
+    "n_states": 29662,
+    "elapsed_s": 102.2,
+    "phase1_fail_reasons": {
+      "qp_fail": 1660,
+      "duplicate_voxel": 1659,
+      "collision": 200,
+      "self_collision": 400,
+      "projection": 11
+    },
+    "phase2_fail_reasons": {
+      "rot_collision": 761,
+      "rot_slip": 1813,
+      "rot_low_eff": 80,
+      "rot_self_collision": 1238,
+      "rot_qp_fail": 1
+    }
+  },
+  "full": {
+    "label": "(iv) Full KaRMA",
+    "n_voxels": 792,
+    "karma_t": 0.09691666666666666,
+    "karma_r": 0.3038011695906433,
+    "n_states": 24132,
+    "elapsed_s": 78.4,
+    "phase1_fail_reasons": {
+      "qp_fail": 1330,
+      "duplicate_voxel": 1358,
+      "grasp": 337,
+      "collision": 108,
+      "self_collision": 31,
+      "projection": 6
+    },
+    "phase2_fail_reasons": {
+      "rot_grasp": 1108,
+      "rot_slip": 1360,
+      "rot_collision": 503,
+      "rot_low_eff": 37,
+      "rot_self_collision": 144,
+      "rot_qp_fail": 3,
+      "rot_projection": 1
+    }
+  }
+}

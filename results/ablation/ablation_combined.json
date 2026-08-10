@@ -1,0 +1,371 @@
+{
+  "robot_leap": {
+    "gap_only": {
+      "label": "(i) Gap-only",
+      "n_voxels": 4636,
+      "karma_t": 0.5782083333333333,
+      "karma_r": 0.5266081871345029,
+      "n_states": 239257,
+      "elapsed_s": 502.8,
+      "phase1_fail_reasons": {
+        "duplicate_voxel": 12741,
+        "qp_fail": 5337,
+        "projection": 468
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 13980,
+        "rot_low_eff": 483,
+        "rot_projection": 20
+      }
+    },
+    "gap_jl": {
+      "label": "(ii) +Joint limits",
+      "n_voxels": 1931,
+      "karma_t": 0.23924999999999996,
+      "karma_r": 0.4014619883040935,
+      "n_states": 69113,
+      "elapsed_s": 183.5,
+      "phase1_fail_reasons": {
+        "qp_fail": 3721,
+        "duplicate_voxel": 3912,
+        "projection": 93
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 6975,
+        "rot_low_eff": 266,
+        "rot_projection": 11,
+        "rot_qp_fail": 1
+      }
+    },
+    "gap_jl_col": {
+      "label": "(iii) +Collisions",
+      "n_voxels": 982,
+      "karma_t": 0.12524999999999997,
+      "karma_r": 0.33245614035087717,
+      "n_states": 29662,
+      "elapsed_s": 102.2,
+      "phase1_fail_reasons": {
+        "qp_fail": 1660,
+        "duplicate_voxel": 1659,
+        "collision": 200,
+        "self_collision": 400,
+        "projection": 11
+      },
+      "phase2_fail_reasons": {
+        "rot_collision": 761,
+        "rot_slip": 1813,
+        "rot_low_eff": 80,
+        "rot_self_collision": 1238,
+        "rot_qp_fail": 1
+      }
+    },
+    "full": {
+      "label": "(iv) Full KaRMA",
+      "n_voxels": 792,
+      "karma_t": 0.09691666666666666,
+      "karma_r": 0.3038011695906433,
+      "n_states": 24132,
+      "elapsed_s": 78.4,
+      "phase1_fail_reasons": {
+        "qp_fail": 1330,
+        "duplicate_voxel": 1358,
+        "grasp": 337,
+        "collision": 108,
+        "self_collision": 31,
+        "projection": 6
+      },
+      "phase2_fail_reasons": {
+        "rot_grasp": 1108,
+        "rot_slip": 1360,
+        "rot_collision": 503,
+        "rot_low_eff": 37,
+        "rot_self_collision": 144,
+        "rot_qp_fail": 3,
+        "rot_projection": 1
+      }
+    }
+  },
+  "robot_shadowhand": {
+    "gap_only": {
+      "label": "(i) Gap-only",
+      "n_voxels": 4070,
+      "karma_t": 0.5079166666666668,
+      "karma_r": 0.5266081871345031,
+      "n_states": 222746,
+      "elapsed_s": 509.2,
+      "phase1_fail_reasons": {
+        "duplicate_voxel": 11610,
+        "projection": 511,
+        "qp_fail": 4161
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 11286,
+        "rot_low_eff": 315,
+        "rot_projection": 21
+      }
+    },
+    "gap_jl": {
+      "label": "(ii) +Joint limits",
+      "n_voxels": 128,
+      "karma_t": 0.017250000000000005,
+      "karma_r": 0.21374269005847948,
+      "n_states": 3416,
+      "elapsed_s": 14.2,
+      "phase1_fail_reasons": {
+        "qp_fail": 370,
+        "duplicate_voxel": 137,
+        "projection": 7
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 494,
+        "rot_low_eff": 18
+      }
+    },
+    "gap_jl_col": {
+      "label": "(iii) +Collisions",
+      "n_voxels": 128,
+      "karma_t": 0.015875000000000004,
+      "karma_r": 0.17309941520467834,
+      "n_states": 3061,
+      "elapsed_s": 13.3,
+      "phase1_fail_reasons": {
+        "qp_fail": 370,
+        "duplicate_voxel": 135,
+        "projection": 7,
+        "self_collision": 2
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 402,
+        "rot_collision": 53,
+        "rot_low_eff": 12,
+        "rot_self_collision": 45
+      }
+    },
+    "full": {
+      "label": "(iv) Full KaRMA",
+      "n_voxels": 110,
+      "karma_t": 0.013125000000000003,
+      "karma_r": 0.16052631578947366,
+      "n_states": 2606,
+      "elapsed_s": 11.4,
+      "phase1_fail_reasons": {
+        "qp_fail": 312,
+        "duplicate_voxel": 106,
+        "projection": 7,
+        "grasp": 17
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 313,
+        "rot_collision": 37,
+        "rot_grasp": 53,
+        "rot_low_eff": 14,
+        "rot_self_collision": 23
+      }
+    }
+  },
+  "robot_xhand1": {
+    "gap_only": {
+      "label": "(i) Gap-only",
+      "n_voxels": 6250,
+      "karma_t": 0.7812499999999999,
+      "karma_r": 0.47309941520467835,
+      "n_states": 253227,
+      "elapsed_s": 591.1,
+      "phase1_fail_reasons": {
+        "qp_fail": 7737,
+        "duplicate_voxel": 16969,
+        "projection": 296
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 19877,
+        "rot_low_eff": 1015,
+        "rot_projection": 12,
+        "rot_qp_fail": 1
+      }
+    },
+    "gap_jl": {
+      "label": "(ii) +Joint limits",
+      "n_voxels": 58,
+      "karma_t": 0.004708333333333332,
+      "karma_r": 0.19269005847953213,
+      "n_states": 1547,
+      "elapsed_s": 5.1,
+      "phase1_fail_reasons": {
+        "qp_fail": 186,
+        "duplicate_voxel": 48
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 209,
+        "rot_low_eff": 9
+      }
+    },
+    "gap_jl_col": {
+      "label": "(iii) +Collisions",
+      "n_voxels": 53,
+      "karma_t": 0.004499999999999999,
+      "karma_r": 0.17690058479532164,
+      "n_states": 1377,
+      "elapsed_s": 5.1,
+      "phase1_fail_reasons": {
+        "qp_fail": 169,
+        "collision": 4,
+        "duplicate_voxel": 41
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 163,
+        "rot_low_eff": 8,
+        "rot_collision": 21,
+        "rot_self_collision": 12
+      }
+    },
+    "full": {
+      "label": "(iv) Full KaRMA",
+      "n_voxels": 32,
+      "karma_t": 0.003458333333333333,
+      "karma_r": 0.09736842105263159,
+      "n_states": 487,
+      "elapsed_s": 4.4,
+      "phase1_fail_reasons": {
+        "qp_fail": 105,
+        "collision": 4,
+        "duplicate_voxel": 14,
+        "grasp": 7
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 106,
+        "rot_low_eff": 3,
+        "rot_collision": 7,
+        "rot_grasp": 12
+      }
+    }
+  },
+  "robot_dex3": {
+    "gap_only": {
+      "label": "(i) Gap-only",
+      "n_voxels": 54,
+      "karma_t": 0.01904166666666667,
+      "karma_r": 0.3429824561403509,
+      "n_states": 923,
+      "elapsed_s": 11.5,
+      "phase1_fail_reasons": {
+        "qp_fail": 198,
+        "duplicate_voxel": 20
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 214
+      }
+    },
+    "gap_jl": {
+      "label": "(ii) +Joint limits",
+      "n_voxels": 34,
+      "karma_t": 0.004041666666666667,
+      "karma_r": 0.09678362573099415,
+      "n_states": 418,
+      "elapsed_s": 4.0,
+      "phase1_fail_reasons": {
+        "qp_fail": 136,
+        "duplicate_voxel": 2
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 134,
+        "rot_low_eff": 2
+      }
+    },
+    "gap_jl_col": {
+      "label": "(iii) +Collisions",
+      "n_voxels": 34,
+      "karma_t": 0.004041666666666667,
+      "karma_r": 0.09678362573099415,
+      "n_states": 416,
+      "elapsed_s": 4.0,
+      "phase1_fail_reasons": {
+        "qp_fail": 136,
+        "duplicate_voxel": 2
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 132,
+        "rot_low_eff": 2,
+        "rot_self_collision": 2
+      }
+    },
+    "full": {
+      "label": "(iv) Full KaRMA",
+      "n_voxels": 34,
+      "karma_t": 0.004041666666666667,
+      "karma_r": 0.09444444444444444,
+      "n_states": 407,
+      "elapsed_s": 4.0,
+      "phase1_fail_reasons": {
+        "qp_fail": 136,
+        "duplicate_voxel": 2
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 125,
+        "rot_low_eff": 2,
+        "rot_grasp": 9
+      }
+    }
+  },
+  "robot_inspire": {
+    "gap_only": {
+      "label": "(i) Gap-only",
+      "n_voxels": 4,
+      "karma_t": 0.00045833333333333316,
+      "karma_r": 0.0043859649122807015,
+      "n_states": 4,
+      "elapsed_s": 1.7,
+      "phase1_fail_reasons": {
+        "qp_fail": 18
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 9,
+        "rot_low_eff": 7
+      }
+    },
+    "gap_jl": {
+      "label": "(ii) +Joint limits",
+      "n_voxels": 4,
+      "karma_t": 0.00045833333333333316,
+      "karma_r": 0.0043859649122807015,
+      "n_states": 4,
+      "elapsed_s": 1.7,
+      "phase1_fail_reasons": {
+        "qp_fail": 18
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 9,
+        "rot_low_eff": 7
+      }
+    },
+    "gap_jl_col": {
+      "label": "(iii) +Collisions",
+      "n_voxels": 4,
+      "karma_t": 0.0004166666666666666,
+      "karma_r": 0.0043859649122807015,
+      "n_states": 4,
+      "elapsed_s": 1.7,
+      "phase1_fail_reasons": {
+        "qp_fail": 18
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 9,
+        "rot_low_eff": 7
+      }
+    },
+    "full": {
+      "label": "(iv) Full KaRMA",
+      "n_voxels": 4,
+      "karma_t": 0.0004166666666666666,
+      "karma_r": 0.0043859649122807015,
+      "n_states": 4,
+      "elapsed_s": 1.7,
+      "phase1_fail_reasons": {
+        "qp_fail": 18
+      },
+      "phase2_fail_reasons": {
+        "rot_slip": 9,
+        "rot_low_eff": 7
+      }
+    }
+  }
+}

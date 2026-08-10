@@ -1,0 +1,11 @@
+# Quick stability: link_length + joint_limits only (the two worst categories)
+robot_config: robots/robot_leap.yaml
+metric_config: karma_config.yaml
+max_states_override: 1000
+results_dir: robust_tests/results
+
+stability:
+  link_length_epsilons: [0.01, -0.01]
+  joint_limit_deltas_deg: [1.0, -1.0]
+  sphere_radius_epsilons: [0.01, -0.01]
+  link_radius_epsilons: [0.01, -0.01]

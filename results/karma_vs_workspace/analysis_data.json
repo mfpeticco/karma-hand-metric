@@ -1,0 +1,407 @@
+{
+  "description": "KaRMA vs workspace baselines analysis (rebuilt with batch_20260728_161151 baselines)",
+  "karma_source": "results/16_hand_batch",
+  "baseline_source": "results/baselines/batch_20260728_161151 (Sobol, convex hull)",
+  "correlations": {
+    "opposability_vs_karma_t": {
+      "rho": 0.9314,
+      "p": 0.0
+    },
+    "opposability_vs_karma_r": {
+      "rho": 0.9321,
+      "p": 0.0
+    },
+    "total_dof_vs_karma_t": {
+      "rho": 0.7128,
+      "p": 0.00194
+    },
+    "total_range_vs_karma_t": {
+      "rho": 0.8029,
+      "p": 0.000181
+    },
+    "yoshikawa_vs_karma_t": {
+      "rho": -0.2,
+      "p": 0.457688
+    },
+    "gci_vs_karma_t": {
+      "rho": -0.0824,
+      "p": 0.761733
+    },
+    "karma_t_vs_karma_r": {
+      "rho": 0.9566,
+      "p": 0.0
+    }
+  },
+  "delta_vs_baseline_correlations": {
+    "opposability": {
+      "rho": 0.0199,
+      "p": 0.9417
+    },
+    "total_dof": {
+      "rho": 0.2462,
+      "p": 0.3581
+    },
+    "total_range": {
+      "rho": 0.095,
+      "p": 0.7264
+    },
+    "yoshikawa": {
+      "rho": -0.306,
+      "p": 0.249
+    },
+    "gci": {
+      "rho": 0.0332,
+      "p": 0.9029
+    }
+  },
+  "delta_vs_baseline_summary": {
+    "max_abs_rho": 0.306,
+    "min_p": 0.249,
+    "paper_claim": "all weak: |rho_s| <= 0.31, p > 0.24"
+  },
+  "hands": [
+    {
+      "hand": "leap",
+      "karma_t": 0.096917,
+      "karma_r": 0.303801,
+      "voxels": 792,
+      "l_ref_m": 0.2494,
+      "opposability": 0.2298,
+      "total_dof": 8,
+      "total_range_rad": 21.11,
+      "yoshikawa": 6.315889468401893e-08,
+      "gci": 0.102057,
+      "karma_t_rank": 1,
+      "karma_r_rank": 2,
+      "opp_rank": 1,
+      "rank_residual": 0,
+      "rank_residual_r": -1
+    },
+    {
+      "hand": "allegro",
+      "karma_t": 0.054667,
+      "karma_r": 0.334795,
+      "voxels": 445,
+      "l_ref_m": 0.2225,
+      "opposability": 0.0526,
+      "total_dof": 8,
+      "total_range_rad": 12.59,
+      "yoshikawa": 9.872422829737347e-08,
+      "gci": 0.150652,
+      "karma_t_rank": 2,
+      "karma_r_rank": 1,
+      "opp_rank": 5,
+      "rank_residual": 3,
+      "rank_residual_r": 4
+    },
+    {
+      "hand": "dclaw",
+      "karma_t": 0.036417,
+      "karma_r": 0.230702,
+      "voxels": 315,
+      "l_ref_m": 0.3272,
+      "opposability": 0.1172,
+      "total_dof": 6,
+      "total_range_rad": 16.25,
+      "yoshikawa": 2.597613946692672e-07,
+      "gci": 0.08329,
+      "karma_t_rank": 3,
+      "karma_r_rank": 5,
+      "opp_rank": 2,
+      "rank_residual": -1,
+      "rank_residual_r": -3
+    },
+    {
+      "hand": "sharpa",
+      "karma_t": 0.034042,
+      "karma_r": 0.247076,
+      "voxels": 290,
+      "l_ref_m": 0.18830000000000002,
+      "opposability": 0.0695,
+      "total_dof": 9,
+      "total_range_rad": 12.74,
+      "yoshikawa": 4.341477534015325e-08,
+      "gci": 0.150176,
+      "karma_t_rank": 4,
+      "karma_r_rank": 3,
+      "opp_rank": 3,
+      "rank_residual": -1,
+      "rank_residual_r": 0
+    },
+    {
+      "hand": "wuji",
+      "karma_t": 0.033917,
+      "karma_r": 0.233333,
+      "voxels": 310,
+      "l_ref_m": 0.1766,
+      "opposability": 0.057,
+      "total_dof": 8,
+      "total_range_rad": 13.21,
+      "yoshikawa": 1.617810033871343e-08,
+      "gci": 0.116726,
+      "karma_t_rank": 5,
+      "karma_r_rank": 4,
+      "opp_rank": 4,
+      "rank_residual": -1,
+      "rank_residual_r": 0
+    },
+    {
+      "hand": "shadowhand",
+      "karma_t": 0.013125,
+      "karma_r": 0.160526,
+      "voxels": 110,
+      "l_ref_m": 0.18480000000000002,
+      "opposability": 0.0334,
+      "total_dof": 9,
+      "total_range_rad": 12.64,
+      "yoshikawa": 1.0036885376352535e-08,
+      "gci": 0.106939,
+      "karma_t_rank": 6,
+      "karma_r_rank": 7,
+      "opp_rank": 7,
+      "rank_residual": 1,
+      "rank_residual_r": 0
+    },
+    {
+      "hand": "ARMS_skel",
+      "karma_t": 0.011792,
+      "karma_r": 0.149415,
+      "voxels": 96,
+      "l_ref_m": 0.1713,
+      "opposability": 0.0172,
+      "total_dof": 8,
+      "total_range_rad": 11.17,
+      "yoshikawa": 8.515403455516285e-09,
+      "gci": 0.114878,
+      "karma_t_rank": 7,
+      "karma_r_rank": 9,
+      "opp_rank": 8,
+      "rank_residual": 1,
+      "rank_residual_r": -1
+    },
+    {
+      "hand": "dex5",
+      "karma_t": 0.00925,
+      "karma_r": 0.173099,
+      "voxels": 77,
+      "l_ref_m": 0.1859,
+      "opposability": 0.0357,
+      "total_dof": 8,
+      "total_range_rad": 11.91,
+      "yoshikawa": 9.864683008573053e-09,
+      "gci": 0.112037,
+      "karma_t_rank": 8,
+      "karma_r_rank": 6,
+      "opp_rank": 6,
+      "rank_residual": -2,
+      "rank_residual_r": 0
+    },
+    {
+      "hand": "DLR",
+      "karma_t": 0.008083,
+      "karma_r": 0.15848,
+      "voxels": 72,
+      "l_ref_m": 0.2045,
+      "opposability": 0.0119,
+      "total_dof": 9,
+      "total_range_rad": 14.15,
+      "yoshikawa": 1.176880191309975e-08,
+      "gci": 0.082205,
+      "karma_t_rank": 9,
+      "karma_r_rank": 8,
+      "opp_rank": 10,
+      "rank_residual": 1,
+      "rank_residual_r": 2
+    },
+    {
+      "hand": "dex3",
+      "karma_t": 0.004042,
+      "karma_r": 0.094444,
+      "voxels": 34,
+      "l_ref_m": 0.15530000000000002,
+      "opposability": 0.0,
+      "total_dof": 5,
+      "total_range_rad": 8.8,
+      "yoshikawa": 1.0936830179631393e-07,
+      "gci": 0.097118,
+      "karma_t_rank": 10,
+      "karma_r_rank": 12,
+      "opp_rank": 12,
+      "rank_residual": 2,
+      "rank_residual_r": 0
+    },
+    {
+      "hand": "xhand1",
+      "karma_t": 0.003458,
+      "karma_r": 0.097368,
+      "voxels": 32,
+      "l_ref_m": 0.19080000000000003,
+      "opposability": 0.0145,
+      "total_dof": 6,
+      "total_range_rad": 9.86,
+      "yoshikawa": 9.816609698348242e-09,
+      "gci": 0.091273,
+      "karma_t_rank": 11,
+      "karma_r_rank": 11,
+      "opp_rank": 9,
+      "rank_residual": -2,
+      "rank_residual_r": -2
+    },
+    {
+      "hand": "orcahand",
+      "karma_t": 0.002875,
+      "karma_r": 0.136842,
+      "voxels": 25,
+      "l_ref_m": 0.1689,
+      "opposability": 0.0073,
+      "total_dof": 7,
+      "total_range_rad": 12.69,
+      "yoshikawa": 5.580967569373251e-09,
+      "gci": 0.081766,
+      "karma_t_rank": 12,
+      "karma_r_rank": 10,
+      "opp_rank": 11,
+      "rank_residual": -1,
+      "rank_residual_r": 1
+    },
+    {
+      "hand": "xhandlite",
+      "karma_t": 0.002042,
+      "karma_r": 0.061404,
+      "voxels": 17,
+      "l_ref_m": 0.17,
+      "opposability": 0.0,
+      "total_dof": 5,
+      "total_range_rad": 7.61,
+      "yoshikawa": 6.289981987748307e-08,
+      "gci": 0.090639,
+      "karma_t_rank": 13,
+      "karma_r_rank": 13,
+      "opp_rank": 13,
+      "rank_residual": 0,
+      "rank_residual_r": 0
+    },
+    {
+      "hand": "inspire",
+      "karma_t": 0.000417,
+      "karma_r": 0.004386,
+      "voxels": 4,
+      "l_ref_m": 0.1554,
+      "opposability": 0.0,
+      "total_dof": 3,
+      "total_range_rad": 3.6,
+      "yoshikawa": 0.0015484167152238456,
+      "gci": 0.207651,
+      "karma_t_rank": 14,
+      "karma_r_rank": 15,
+      "opp_rank": 14,
+      "rank_residual": 0,
+      "rank_residual_r": -1
+    },
+    {
+      "hand": "svh",
+      "karma_t": 0.000375,
+      "karma_r": 0.010234,
+      "voxels": 3,
+      "l_ref_m": 0.1829,
+      "opposability": 0.0,
+      "total_dof": 4,
+      "total_range_rad": 4.09,
+      "yoshikawa": 1.8752313478308947e-05,
+      "gci": 0.133088,
+      "karma_t_rank": 15,
+      "karma_r_rank": 14,
+      "opp_rank": 15,
+      "rank_residual": 0,
+      "rank_residual_r": 1
+    },
+    {
+      "hand": "ability_hand_right",
+      "karma_t": 0.000292,
+      "karma_r": 0.004386,
+      "voxels": 3,
+      "l_ref_m": 0.1589,
+      "opposability": 0.0,
+      "total_dof": 3,
+      "total_range_rad": 6.28,
+      "yoshikawa": 0.0003668278883084971,
+      "gci": 0.375674,
+      "karma_t_rank": 16,
+      "karma_r_rank": 16,
+      "opp_rank": 16,
+      "rank_residual": 0,
+      "rank_residual_r": 0
+    }
+  ],
+  "rank_displacement": {
+    "karma_t": {
+      "mean_abs_displacement": 1.0,
+      "fraction_misranked_ge2": "4/16 (25%)",
+      "fraction_any_change": "11/16 (69%)",
+      "pairwise_inversions": "8/120 (7%)",
+      "n_outliers_ge3": 1
+    },
+    "karma_r": {
+      "mean_abs_displacement": 1.0,
+      "fraction_misranked_ge2": "4/16 (25%)",
+      "fraction_any_change": "9/16 (56%)",
+      "pairwise_inversions": "10/120 (8%)",
+      "n_outliers_ge3": 2
+    }
+  },
+  "outliers": [
+    {
+      "hand": "allegro",
+      "karma_t": 0.054667,
+      "karma_r": 0.334795,
+      "voxels": 445,
+      "l_ref_m": 0.2225,
+      "opposability": 0.0526,
+      "total_dof": 8,
+      "total_range_rad": 12.59,
+      "yoshikawa": 9.872422829737347e-08,
+      "gci": 0.150652,
+      "karma_t_rank": 2,
+      "karma_r_rank": 1,
+      "opp_rank": 5,
+      "rank_residual": 3,
+      "rank_residual_r": 4
+    }
+  ],
+  "outliers_r": [
+    {
+      "hand": "allegro",
+      "karma_t": 0.054667,
+      "karma_r": 0.334795,
+      "voxels": 445,
+      "l_ref_m": 0.2225,
+      "opposability": 0.0526,
+      "total_dof": 8,
+      "total_range_rad": 12.59,
+      "yoshikawa": 9.872422829737347e-08,
+      "gci": 0.150652,
+      "karma_t_rank": 2,
+      "karma_r_rank": 1,
+      "opp_rank": 5,
+      "rank_residual": 3,
+      "rank_residual_r": 4
+    },
+    {
+      "hand": "dclaw",
+      "karma_t": 0.036417,
+      "karma_r": 0.230702,
+      "voxels": 315,
+      "l_ref_m": 0.3272,
+      "opposability": 0.1172,
+      "total_dof": 6,
+      "total_range_rad": 16.25,
+      "yoshikawa": 2.597613946692672e-07,
+      "gci": 0.08329,
+      "karma_t_rank": 3,
+      "karma_r_rank": 5,
+      "opp_rank": 2,
+      "rank_residual": -1,
+      "rank_residual_r": -3
+    }
+  ]
+}

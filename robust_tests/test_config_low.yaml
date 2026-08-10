@@ -1,0 +1,14 @@
+# Low-confidence tests: stability perturbations
+# These test Lipschitz-like continuity under small parameter changes.
+
+robot_config: robots/robot_leap.yaml  # overridden by runner
+metric_config: karma_config.yaml
+max_states_override: 1000
+results_dir: robust_tests/results/low
+
+stability:
+  link_length_epsilons: [0.01, -0.01, 0.02, -0.02]
+  joint_limit_deltas_deg: [1.0, -1.0, 3.0, -3.0]
+  sphere_radius_epsilons: [0.02, -0.02, 0.05, -0.05]
+  seed_determinism_repeats: 3
+  link_radius_epsilons: [0.02, -0.02, 0.05, -0.05]

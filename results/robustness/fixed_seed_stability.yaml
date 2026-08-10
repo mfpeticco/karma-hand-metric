@@ -1,0 +1,685 @@
+- baseline_r_score: 0.3038011695906433
+  baseline_t_score: 0.09691666666666666
+  baseline_voxels: 792
+  perturbations:
+    joint_limits_deg:
+    - delta: 48
+      elapsed: 63.8
+      label: joint_limits +1.0deg
+      level: 1.0
+      pct: 6.1
+      r_score: 0.29444444444444445
+      t_score: 0.07787499999999999
+      voxels: 840
+    - delta: -52
+      elapsed: 59.1
+      label: joint_limits -1.0deg
+      level: -1.0
+      pct: -6.6
+      r_score: 0.29853801169590644
+      t_score: 0.07266666666666666
+      voxels: 740
+    - delta: -33
+      elapsed: 64.7
+      label: joint_limits +3.0deg
+      level: 3.0
+      pct: -4.2
+      r_score: 0.3005847953216374
+      t_score: 0.07875
+      voxels: 759
+    - delta: -150
+      elapsed: 56.3
+      label: joint_limits -3.0deg
+      level: -3.0
+      pct: -18.9
+      r_score: 0.29269005847953217
+      t_score: 0.06912499999999999
+      voxels: 642
+    link_length:
+    - delta: 3
+      elapsed: 58.0
+      label: link_length +1.0%
+      level: 0.01
+      pct: 0.4
+      r_score: 0.2967836257309942
+      t_score: 0.071875
+      voxels: 795
+    - delta: -56
+      elapsed: 44.8
+      label: link_length -1.0%
+      level: -0.01
+      pct: -7.1
+      r_score: 0.2964912280701754
+      t_score: 0.053625
+      voxels: 736
+    - delta: -106
+      elapsed: 54.0
+      label: link_length +2.0%
+      level: 0.02
+      pct: -13.4
+      r_score: 0.297953216374269
+      t_score: 0.06579166666666665
+      voxels: 686
+    - delta: -50
+      elapsed: 45.0
+      label: link_length -2.0%
+      level: -0.02
+      pct: -6.3
+      r_score: 0.2900584795321638
+      t_score: 0.05383333333333333
+      voxels: 742
+    link_radius:
+    - delta: -207
+      elapsed: 61.9
+      label: link_radius +2.0%
+      level: 0.02
+      pct: -26.1
+      r_score: 0.29210526315789476
+      t_score: 0.07716666666666666
+      voxels: 585
+    - delta: 22
+      elapsed: 64.4
+      label: link_radius -2.0%
+      level: -0.02
+      pct: 2.8
+      r_score: 0.3152046783625731
+      t_score: 0.08025
+      voxels: 814
+    - delta: -101
+      elapsed: 56.9
+      label: link_radius +5.0%
+      level: 0.05
+      pct: -12.8
+      r_score: 0.2929824561403509
+      t_score: 0.07041666666666667
+      voxels: 691
+    - delta: -5
+      elapsed: 72.0
+      label: link_radius -5.0%
+      level: -0.05
+      pct: -0.6
+      r_score: 0.3055555555555556
+      t_score: 0.09008333333333331
+      voxels: 787
+    sphere_radius:
+    - delta: -24
+      elapsed: 60.8
+      label: sphere_radius +2.0%
+      level: 0.02
+      pct: -3.0
+      r_score: 0.29883040935672517
+      t_score: 0.075625
+      voxels: 768
+    - delta: 5
+      elapsed: 63.0
+      label: sphere_radius -2.0%
+      level: -0.02
+      pct: 0.6
+      r_score: 0.3213450292397661
+      t_score: 0.07816666666666666
+      voxels: 797
+    - delta: -14
+      elapsed: 61.0
+      label: sphere_radius +5.0%
+      level: 0.05
+      pct: -1.8
+      r_score: 0.2865497076023392
+      t_score: 0.07675
+      voxels: 778
+    - delta: -26
+      elapsed: 64.5
+      label: sphere_radius -5.0%
+      level: -0.05
+      pct: -3.3
+      r_score: 0.3271929824561403
+      t_score: 0.07924999999999999
+      voxels: 766
+  robot: leap
+- baseline_r_score: 0.16052631578947366
+  baseline_t_score: 0.013125000000000003
+  baseline_voxels: 110
+  perturbations:
+    joint_limits_deg:
+    - delta: 11
+      elapsed: 13.5
+      label: joint_limits +1.0deg
+      level: 1.0
+      pct: 10.0
+      r_score: 0.1704678362573099
+      t_score: 0.013625000000000005
+      voxels: 121
+    - delta: -11
+      elapsed: 12.7
+      label: joint_limits -1.0deg
+      level: -1.0
+      pct: -10.0
+      r_score: 0.15789473684210523
+      t_score: 0.012708333333333337
+      voxels: 99
+    - delta: 3
+      elapsed: 13.2
+      label: joint_limits +3.0deg
+      level: 3.0
+      pct: 2.7
+      r_score: 0.1754385964912281
+      t_score: 0.012958333333333337
+      voxels: 113
+    - delta: -52
+      elapsed: 6.2
+      label: joint_limits -3.0deg
+      level: -3.0
+      pct: -47.3
+      r_score: 0.1235867446393762
+      t_score: 0.003750000000000001
+      voxels: 58
+    link_length:
+    - delta: -4
+      elapsed: 10.1
+      label: link_length +1.0%
+      level: 0.01
+      pct: -3.6
+      r_score: 0.15994152046783627
+      t_score: 0.008375
+      voxels: 106
+    - delta: -40
+      elapsed: 9.8
+      label: link_length -1.0%
+      level: -0.01
+      pct: -36.4
+      r_score: 0.15175438596491228
+      t_score: 0.007958333333333335
+      voxels: 70
+    - delta: -50
+      elapsed: 11.1
+      label: link_length +2.0%
+      level: 0.02
+      pct: -45.5
+      r_score: 0.15380116959064327
+      t_score: 0.009708333333333336
+      voxels: 60
+    - delta: -109
+      elapsed: 7.3
+      label: link_length -2.0%
+      level: -0.02
+      pct: -99.1
+      r_score: 0.10116959064327484
+      t_score: 0.005625
+      voxels: 1
+    link_radius:
+    - delta: -1
+      elapsed: 12.4
+      label: link_radius +2.0%
+      level: 0.02
+      pct: -0.9
+      r_score: 0.16198830409356724
+      t_score: 0.012041666666666671
+      voxels: 109
+    - delta: -47
+      elapsed: 11.8
+      label: link_radius -2.0%
+      level: -0.02
+      pct: -42.7
+      r_score: 0.15555555555555556
+      t_score: 0.011166666666666668
+      voxels: 63
+    - delta: -2
+      elapsed: 11.7
+      label: link_radius +5.0%
+      level: 0.05
+      pct: -1.8
+      r_score: 0.16111111111111112
+      t_score: 0.011000000000000003
+      voxels: 108
+    - delta: -49
+      elapsed: 10.7
+      label: link_radius -5.0%
+      level: -0.05
+      pct: -44.5
+      r_score: 0.16081871345029242
+      t_score: 0.009166666666666668
+      voxels: 61
+    sphere_radius:
+    - delta: -5
+      elapsed: 13.1
+      label: sphere_radius +2.0%
+      level: 0.02
+      pct: -4.5
+      r_score: 0.16140350877192985
+      t_score: 0.01345833333333334
+      voxels: 105
+    - delta: -18
+      elapsed: 12.7
+      label: sphere_radius -2.0%
+      level: -0.02
+      pct: -16.4
+      r_score: 0.16228070175438594
+      t_score: 0.01266666666666667
+      voxels: 92
+    - delta: -43
+      elapsed: 11.8
+      label: sphere_radius +5.0%
+      level: 0.05
+      pct: -39.1
+      r_score: 0.15526315789473685
+      t_score: 0.011000000000000003
+      voxels: 67
+    - delta: -7
+      elapsed: 11.6
+      label: sphere_radius -5.0%
+      level: -0.05
+      pct: -6.4
+      r_score: 0.16286549707602338
+      t_score: 0.010958333333333337
+      voxels: 103
+  robot: shadowhand
+- baseline_r_score: 0.09736842105263159
+  baseline_t_score: 0.003458333333333333
+  baseline_voxels: 32
+  perturbations:
+    joint_limits_deg:
+    - delta: 1
+      elapsed: 6.4
+      label: joint_limits +1.0deg
+      level: 1.0
+      pct: 3.1
+      r_score: 0.10029239766081871
+      t_score: 0.0036666666666666657
+      voxels: 33
+    - delta: -22
+      elapsed: 5.0
+      label: joint_limits -1.0deg
+      level: -1.0
+      pct: -68.8
+      r_score: 0.08742690058479534
+      t_score: 0.002416666666666666
+      voxels: 10
+    - delta: -22
+      elapsed: 5.8
+      label: joint_limits +3.0deg
+      level: 3.0
+      pct: -68.8
+      r_score: 0.1064327485380117
+      t_score: 0.003374999999999999
+      voxels: 10
+    - delta: -27
+      elapsed: 3.4
+      label: joint_limits -3.0deg
+      level: -3.0
+      pct: -84.4
+      r_score: 0.0675438596491228
+      t_score: 0.0012916666666666664
+      voxels: 5
+    link_length:
+    - delta: -23
+      elapsed: 3.7
+      label: link_length +1.0%
+      level: 0.01
+      pct: -71.9
+      r_score: 0.06023391812865497
+      t_score: 0.0013333333333333329
+      voxels: 9
+    - delta: 1
+      elapsed: 5.0
+      label: link_length -1.0%
+      level: -0.01
+      pct: 3.1
+      r_score: 0.09736842105263159
+      t_score: 0.0027083333333333334
+      voxels: 33
+    - delta: -23
+      elapsed: 3.4
+      label: link_length +2.0%
+      level: 0.02
+      pct: -71.9
+      r_score: 0.05994152046783626
+      t_score: 0.0011250000000000003
+      voxels: 9
+    - delta: 2
+      elapsed: 4.0
+      label: link_length -2.0%
+      level: -0.02
+      pct: 6.2
+      r_score: 0.08691520467836257
+      t_score: 0.0018749999999999997
+      voxels: 34
+    link_radius:
+    - delta: 0
+      elapsed: 6.4
+      label: link_radius +2.0%
+      level: 0.02
+      pct: 0.0
+      r_score: 0.10526315789473684
+      t_score: 0.0038333333333333327
+      voxels: 32
+    - delta: -22
+      elapsed: 5.3
+      label: link_radius -2.0%
+      level: -0.02
+      pct: -68.8
+      r_score: 0.08830409356725145
+      t_score: 0.0025416666666666656
+      voxels: 10
+    - delta: 1
+      elapsed: 6.1
+      label: link_radius +5.0%
+      level: 0.05
+      pct: 3.1
+      r_score: 0.10760233918128653
+      t_score: 0.003499999999999999
+      voxels: 33
+    - delta: -22
+      elapsed: 5.1
+      label: link_radius -5.0%
+      level: -0.05
+      pct: -68.8
+      r_score: 0.08567251461988303
+      t_score: 0.0025416666666666656
+      voxels: 10
+    sphere_radius:
+    - delta: -22
+      elapsed: 5.1
+      label: sphere_radius +2.0%
+      level: 0.02
+      pct: -68.8
+      r_score: 0.0871345029239766
+      t_score: 0.002458333333333333
+      voxels: 10
+    - delta: 0
+      elapsed: 6.2
+      label: sphere_radius -2.0%
+      level: -0.02
+      pct: 0.0
+      r_score: 0.09853801169590642
+      t_score: 0.0034166666666666655
+      voxels: 32
+    - delta: 0
+      elapsed: 6.4
+      label: sphere_radius +5.0%
+      level: 0.05
+      pct: 0.0
+      r_score: 0.09970760233918126
+      t_score: 0.0035416666666666656
+      voxels: 32
+    - delta: 0
+      elapsed: 5.1
+      label: sphere_radius -5.0%
+      level: -0.05
+      pct: 0.0
+      r_score: 0.08508771929824561
+      t_score: 0.0026249999999999993
+      voxels: 32
+  robot: xhand1
+- baseline_r_score: 0.09444444444444444
+  baseline_t_score: 0.004041666666666667
+  baseline_voxels: 34
+  perturbations:
+    joint_limits_deg:
+    - delta: 0
+      elapsed: 6.1
+      label: joint_limits +1.0deg
+      level: 1.0
+      pct: 0.0
+      r_score: 0.09444444444444444
+      t_score: 0.004041666666666667
+      voxels: 34
+    - delta: -8
+      elapsed: 5.8
+      label: joint_limits -1.0deg
+      level: -1.0
+      pct: -23.5
+      r_score: 0.09093567251461988
+      t_score: 0.003416666666666667
+      voxels: 26
+    - delta: 2
+      elapsed: 6.1
+      label: joint_limits +3.0deg
+      level: 3.0
+      pct: 5.9
+      r_score: 0.09473684210526316
+      t_score: 0.004125
+      voxels: 36
+    - delta: -11
+      elapsed: 5.7
+      label: joint_limits -3.0deg
+      level: -3.0
+      pct: -32.4
+      r_score: 0.08976608187134501
+      t_score: 0.0032500000000000003
+      voxels: 23
+    link_length:
+    - delta: -13
+      elapsed: 5.6
+      label: link_length +1.0%
+      level: 0.01
+      pct: -38.2
+      r_score: 0.09181286549707601
+      t_score: 0.0032083333333333317
+      voxels: 21
+    - delta: -28
+      elapsed: 4.9
+      label: link_length -1.0%
+      level: -0.01
+      pct: -82.4
+      r_score: 0.07309941520467837
+      t_score: 0.0029166666666666664
+      voxels: 6
+    - delta: -13
+      elapsed: 5.4
+      label: link_length +2.0%
+      level: 0.02
+      pct: -38.2
+      r_score: 0.09415204678362572
+      t_score: 0.003041666666666667
+      voxels: 21
+    - delta: -28
+      elapsed: 4.8
+      label: link_length -2.0%
+      level: -0.02
+      pct: -82.4
+      r_score: 0.0698830409356725
+      t_score: 0.002583333333333333
+      voxels: 6
+    link_radius:
+    - delta: -8
+      elapsed: 6.0
+      label: link_radius +2.0%
+      level: 0.02
+      pct: -23.5
+      r_score: 0.09005847953216374
+      t_score: 0.0036666666666666666
+      voxels: 26
+    - delta: 0
+      elapsed: 6.0
+      label: link_radius -2.0%
+      level: -0.02
+      pct: 0.0
+      r_score: 0.08888888888888889
+      t_score: 0.004041666666666667
+      voxels: 34
+    - delta: -8
+      elapsed: 5.9
+      label: link_radius +5.0%
+      level: 0.05
+      pct: -23.5
+      r_score: 0.09005847953216373
+      t_score: 0.0037500000000000003
+      voxels: 26
+    - delta: 0
+      elapsed: 6.0
+      label: link_radius -5.0%
+      level: -0.05
+      pct: 0.0
+      r_score: 0.08742690058479531
+      t_score: 0.004
+      voxels: 34
+    sphere_radius:
+    - delta: -8
+      elapsed: 5.9
+      label: sphere_radius +2.0%
+      level: 0.02
+      pct: -23.5
+      r_score: 0.08684210526315789
+      t_score: 0.0036666666666666666
+      voxels: 26
+    - delta: 0
+      elapsed: 6.1
+      label: sphere_radius -2.0%
+      level: -0.02
+      pct: 0.0
+      r_score: 0.09035087719298246
+      t_score: 0.004
+      voxels: 34
+    - delta: -28
+      elapsed: 4.8
+      label: sphere_radius +5.0%
+      level: 0.05
+      pct: -82.4
+      r_score: 0.06491228070175438
+      t_score: 0.0027916666666666667
+      voxels: 6
+    - delta: -5
+      elapsed: 5.8
+      label: sphere_radius -5.0%
+      level: -0.05
+      pct: -14.7
+      r_score: 0.10204678362573098
+      t_score: 0.003333333333333334
+      voxels: 29
+  robot: dex3
+- baseline_r_score: 0.0043859649122807015
+  baseline_t_score: 0.0004166666666666666
+  baseline_voxels: 4
+  perturbations:
+    joint_limits_deg:
+    - delta: 0
+      elapsed: 2.2
+      label: joint_limits +1.0deg
+      level: 1.0
+      pct: 0.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0004166666666666666
+      voxels: 4
+    - delta: 0
+      elapsed: 2.2
+      label: joint_limits -1.0deg
+      level: -1.0
+      pct: 0.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0004166666666666666
+      voxels: 4
+    - delta: 0
+      elapsed: 2.2
+      label: joint_limits +3.0deg
+      level: 3.0
+      pct: 0.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0004166666666666666
+      voxels: 4
+    - delta: 0
+      elapsed: 2.2
+      label: joint_limits -3.0deg
+      level: -3.0
+      pct: 0.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0004166666666666666
+      voxels: 4
+    link_length:
+    - delta: -3
+      elapsed: 2.0
+      label: link_length +1.0%
+      level: 0.01
+      pct: -75.0
+      r_score: 0.0043859649122807015
+      t_score: 0.00029166666666666664
+      voxels: 1
+    - delta: -1
+      elapsed: 2.2
+      label: link_length -1.0%
+      level: -0.01
+      pct: -25.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0003749999999999999
+      voxels: 3
+    - delta: -3
+      elapsed: 1.8
+      label: link_length +2.0%
+      level: 0.02
+      pct: -75.0
+      r_score: 0.0043859649122807015
+      t_score: 0.00020833333333333337
+      voxels: 1
+    - delta: -1
+      elapsed: 2.0
+      label: link_length -2.0%
+      level: -0.02
+      pct: -25.0
+      r_score: 0.0043859649122807015
+      t_score: 0.00029166666666666664
+      voxels: 3
+    link_radius:
+    - delta: -2
+      elapsed: 2.1
+      label: link_radius +2.0%
+      level: 0.02
+      pct: -50.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0003333333333333332
+      voxels: 2
+    - delta: -1
+      elapsed: 2.2
+      label: link_radius -2.0%
+      level: -0.02
+      pct: -25.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0003749999999999999
+      voxels: 3
+    - delta: -3
+      elapsed: 1.7
+      label: link_radius +5.0%
+      level: 0.05
+      pct: -75.0
+      r_score: 0.0043859649122807015
+      t_score: 0.00012499999999999995
+      voxels: 1
+    - delta: -3
+      elapsed: 1.7
+      label: link_radius -5.0%
+      level: -0.05
+      pct: -75.0
+      r_score: 0.0043859649122807015
+      t_score: 0.00012499999999999995
+      voxels: 1
+    sphere_radius:
+    - delta: -2
+      elapsed: 2.1
+      label: sphere_radius +2.0%
+      level: 0.02
+      pct: -50.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0003333333333333332
+      voxels: 2
+    - delta: -1
+      elapsed: 2.1
+      label: sphere_radius -2.0%
+      level: -0.02
+      pct: -25.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0003749999999999999
+      voxels: 3
+    - delta: -3
+      elapsed: 2.0
+      label: sphere_radius +5.0%
+      level: 0.05
+      pct: -75.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0002916666666666666
+      voxels: 1
+    - delta: -3
+      elapsed: 1.8
+      label: sphere_radius -5.0%
+      level: -0.05
+      pct: -75.0
+      r_score: 0.0043859649122807015
+      t_score: 0.0002083333333333333
+      voxels: 1
+  robot: inspire

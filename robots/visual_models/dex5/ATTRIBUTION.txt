@@ -1,0 +1,7 @@
+Unitree Dex5-1
+Source:    https://github.com/unitreerobotics/unitree_ros
+License:   BSD-3-Clause
+Copyright: (c) 2016-2022 Hangzhou Yushu Technology Co., Ltd. (Unitree Robotics)
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

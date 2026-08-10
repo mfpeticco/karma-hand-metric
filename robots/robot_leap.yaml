@@ -1,0 +1,207 @@
+robot_name: leap_hand
+urdf_path: urdfs/leap.urdf
+base_link: palm_lower
+fingers:
+  thumb:
+    active_joints:
+    - '12'
+    - '13'
+    - '14'
+    - '15'
+    contact_links:
+    - thumb_fingertip
+    - thumb_dip
+    - thumb_pip
+    - pip_4
+  index:
+    active_joints:
+    - '1'
+    - '0'
+    - '2'
+    - '3'
+    contact_links:
+    - fingertip
+    - dip
+    - pip
+    - mcp_joint
+seed:
+  thumb_link: thumb_fingertip
+  index_link: fingertip
+links:
+  fingertip:
+    tip_length_m: 0.055
+  fingertip_2:
+    tip_length_m: 0.055
+  fingertip_3:
+    tip_length_m: 0.055
+  thumb_fingertip:
+    tip_length_m: 0.075
+joints:
+  '1':
+    type: revolute
+    parent: palm_lower
+    child: mcp_joint
+    origin_xyz_m:
+    - -0.00709525
+    - 0.02305776
+    - -0.0187224
+    origin_rpy_rad:
+    - 1.570796326794895
+    - 1.5707963267948946
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - -1.0
+    limits:
+      lower: -0.314
+      upper: 2.23
+      effort: 0.95
+      velocity: 8.48
+  '0':
+    type: revolute
+    parent: mcp_joint
+    child: pip
+    origin_xyz_m:
+    - -0.0122
+    - 0.0381
+    - 0.0145
+    origin_rpy_rad:
+    - -1.5707963267948966
+    - -0.0
+    - 1.5707963267948943
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - -1.0
+    limits:
+      lower: -1.047
+      upper: 1.047
+      effort: 0.95
+      velocity: 8.48
+  '2':
+    type: revolute
+    parent: pip
+    child: dip
+    origin_xyz_m:
+    - 0.015
+    - 0.0143
+    - -0.013
+    origin_rpy_rad:
+    - 1.570796326794896
+    - -1.5707963267948963
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - -1.0
+    limits:
+      lower: -0.506
+      upper: 1.885
+      effort: 0.95
+      velocity: 8.48
+  '3':
+    type: revolute
+    parent: dip
+    child: fingertip
+    origin_xyz_m:
+    - 0.0
+    - -0.0361
+    - 0.0002
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - -1.0
+    limits:
+      lower: -0.366
+      upper: 2.042
+      effort: 0.95
+      velocity: 8.48
+  '12':
+    type: revolute
+    parent: palm_lower
+    child: pip_4
+    origin_xyz_m:
+    - -0.06939525
+    - -0.00124224
+    - -0.0216224
+    origin_rpy_rad:
+    - 0.0
+    - 1.5707963267948957
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - -1.0
+    limits:
+      lower: -0.349
+      upper: 2.094
+      effort: 0.95
+      velocity: 8.48
+  '13':
+    type: revolute
+    parent: pip_4
+    child: thumb_pip
+    origin_xyz_m:
+    - 0.0
+    - 0.0143
+    - -0.013
+    origin_rpy_rad:
+    - 1.570796326794896
+    - -1.5707963267948963
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - -1.0
+    limits:
+      lower: -0.47
+      upper: 2.443
+      effort: 0.95
+      velocity: 8.48
+  '14':
+    type: revolute
+    parent: thumb_pip
+    child: thumb_dip
+    origin_xyz_m:
+    - 0.0
+    - 0.0145
+    - -0.017
+    origin_rpy_rad:
+    - -1.5707963267948966
+    - 0.0
+    - 0.0
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - -1.0
+    limits:
+      lower: -1.2
+      upper: 1.9
+      effort: 0.95
+      velocity: 8.48
+  '15':
+    type: revolute
+    parent: thumb_dip
+    child: thumb_fingertip
+    origin_xyz_m:
+    - 0.0
+    - 0.0466
+    - 0.0002
+    origin_rpy_rad:
+    - 0.0
+    - 0.0
+    - 3.141592653589793
+    axis_xyz:
+    - 0.0
+    - 0.0
+    - -1.0
+    limits:
+      lower: -1.34
+      upper: 1.88
+      effort: 0.95
+      velocity: 8.48

@@ -1,0 +1,7 @@
+Google ROBEL D'Claw
+Source:    https://github.com/google-research/robel
+License:   Apache-2.0
+Copyright: The ROBEL Authors, 2019
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

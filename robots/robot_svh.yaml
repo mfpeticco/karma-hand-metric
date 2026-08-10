@@ -1,0 +1,295 @@
+robot_name: schunk_svh_hand_right
+urdf_path: urdfs/svh.urdf
+base_link: base_link
+fingers:
+  thumb:
+    active_joints:
+    - right_hand_Thumb_Opposition
+    - right_hand_Thumb_Flexion
+    contact_links:
+    - right_hand_c
+    - right_hand_b
+    - right_hand_a
+  index:
+    active_joints:
+    - right_hand_Index_Finger_Proximal
+    - right_hand_Index_Finger_Distal
+    contact_links:
+    - right_hand_t
+    - right_hand_p
+    - right_hand_l
+seed:
+  thumb_link: right_hand_c
+  index_link: right_hand_t
+links:
+  right_hand_c:
+    tip_length_m: 0.029
+  right_hand_t:
+    tip_length_m: 0.023
+  right_hand_q:
+    tip_length_m: 0.023
+  right_hand_r:
+    tip_length_m: 0.023
+  right_hand_s:
+    tip_length_m: 0.023
+joints:
+  root_joint:
+    type: fixed
+    parent: base_link
+    child: right_hand_base_link
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - -1.57079
+  right_hand_f4:
+    type: fixed
+    parent: right_hand_base_link
+    child: right_hand_e1
+    origin_xyz:
+    - 0.0
+    - -0.01313
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_Thumb_Opposition:
+    type: revolute
+    parent: right_hand_e1
+    child: right_hand_z
+    origin_xyz:
+    - -0.0169
+    - 0.02626
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.2618
+    - 1.571
+    axis:
+    - 0
+    - 0
+    - -1
+    limit_lower: 0.0
+    limit_upper: 0.9879
+  right_hand_j5:
+    type: revolute
+    parent: right_hand_e1
+    child: right_hand_e2
+    origin_xyz:
+    - 0.0184
+    - 0.006
+    - 0.0375
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 0.98786
+    mimic:
+      joint: right_hand_Thumb_Opposition
+      multiplier: 1.0
+      offset: 0.0
+  right_hand_Thumb_Flexion:
+    type: revolute
+    parent: right_hand_z
+    child: right_hand_a
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.04596
+    origin_rpy:
+    - 1.57079
+    - -0.6004
+    - 1.57079
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 0.9704
+  right_hand_j3:
+    type: revolute
+    parent: right_hand_a
+    child: right_hand_b
+    origin_xyz:
+    - 0.0485
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 0.98506
+    mimic:
+      joint: right_hand_Thumb_Flexion
+      multiplier: 1.01511
+      offset: 0.0
+  right_hand_j4:
+    type: revolute
+    parent: right_hand_b
+    child: right_hand_c
+    origin_xyz:
+    - 0.03
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 1.406
+    mimic:
+      joint: right_hand_Thumb_Flexion
+      multiplier: 1.44889
+      offset: 0.0
+  thtip_joint:
+    type: fixed
+    parent: right_hand_c
+    child: thtip
+    origin_xyz:
+    - 0.0275
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_middle_spread_dummy:
+    type: fixed
+    parent: right_hand_e1
+    child: right_hand_virtual_k
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.11
+    origin_rpy:
+    - 0.0
+    - -1.5707
+    - 1.5707
+  right_hand_index_spread:
+    type: revolute
+    parent: right_hand_e1
+    child: right_hand_virtual_l
+    origin_xyz:
+    - -0.025
+    - 0.0
+    - 0.11
+    origin_rpy:
+    - 0.0
+    - -1.5707
+    - 1.5707
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 0.28833
+    mimic:
+      joint: right_hand_Finger_Spread
+      multiplier: 0.5
+      offset: 0.0
+  right_hand_Index_Finger_Proximal:
+    type: revolute
+    parent: right_hand_virtual_l
+    child: right_hand_l
+    origin_xyz:
+    - 0.0
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - -1.5707
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 0.79849
+  right_hand_Index_Finger_Distal:
+    type: revolute
+    parent: right_hand_l
+    child: right_hand_p
+    origin_xyz:
+    - 0.04804
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 1.334
+  right_hand_j14:
+    type: revolute
+    parent: right_hand_p
+    child: right_hand_t
+    origin_xyz:
+    - 0.026
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 1.394
+    mimic:
+      joint: right_hand_Index_Finger_Distal
+      multiplier: 1.045
+      offset: 0.0
+  fftip_joint:
+    type: fixed
+    parent: right_hand_t
+    child: fftip
+    origin_xyz:
+    - 0.014
+    - 0.0
+    - 0.0
+    origin_rpy:
+    - 0.0
+    - 0.0
+    - 0.0
+  right_hand_Finger_Spread:
+    type: revolute
+    parent: right_hand_e2
+    child: right_hand_virtual_i
+    origin_xyz:
+    - 0.025355
+    - -0.006
+    - 0.056
+    origin_rpy:
+    - -1.5707
+    - -1.5707
+    - 0.0
+    axis:
+    - 0
+    - 0
+    - 1
+    limit_lower: 0.0
+    limit_upper: 0.5829

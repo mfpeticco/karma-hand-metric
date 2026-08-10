@@ -1,0 +1,7 @@
+Shadow Dexterous Hand (sr_description)
+Source:    https://github.com/shadow-robot/sr_common
+License:   CC BY 4.0 (mesh geometry; see ../ATTRIBUTIONS.md note on Shadow)
+Copyright: (c) Shadow Robot Company Ltd.
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

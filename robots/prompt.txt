@@ -1,0 +1,149 @@
+You are converting a URDF into a robot_*.yaml for KaRMA, a kinematics-only
+metric for fine manipulation. It evaluates a 2-finger (thumb + index) pinch grasp.
+
+*** Mesh files are NOT needed. The metric uses kinematics only. ***
+Ignore any missing mesh/STL/DAE warnings; they do not affect the output.
+
+Paste the URDF below, then follow the five sections to produce the YAML.
+After generating it, ASK THE USER to verify the tip offsets on real hardware
+or CAD; these are critical for score accuracy.
+
+────────────────────────────────────────────────────────────────────────────────
+1. BASIC INFO
+────────────────────────────────────────────────────────────────────────────────
+Extract:
+  robot_name:  descriptive name (e.g. "allegro_hand_right")
+  urdf_path:   "urdfs/<filename>.urdf"
+  base_link:   the root <link> that has NO parent joint
+
+────────────────────────────────────────────────────────────────────────────────
+2. FINGER CHAINS  (thumb + index)
+────────────────────────────────────────────────────────────────────────────────
+For each finger, trace the joint chain from base_link to the fingertip.
+
+active_joints:
+  - List every MOVABLE joint (revolute / continuous / prismatic), proximal→distal.
+  - EXCLUDE fixed joints.
+  - EXCLUDE mimic joints (any joint with a <mimic> tag). These are handled
+    automatically; listing them here causes a validation error.
+
+contact_links:
+  - Pinocchio merges links connected by fixed joints into their movable parent.
+    A link whose parent joint is fixed does NOT exist in the model.
+  - Therefore, only list links whose PARENT JOINT is MOVABLE.
+  - Include 2-4 links per finger (distal, middle, proximal phalanges).
+
+If the URDF does not clearly label "thumb" and "index", ask the user which
+two fingers to use.
+
+────────────────────────────────────────────────────────────────────────────────
+3. SEED
+────────────────────────────────────────────────────────────────────────────────
+  seed.thumb_link = the most-distal link in thumb contact_links
+  seed.index_link = the most-distal link in index contact_links
+
+────────────────────────────────────────────────────────────────────────────────
+4. TIP LENGTHS  (*** CRITICAL: affects score accuracy ***)
+────────────────────────────────────────────────────────────────────────────────
+For each terminal link (a link with no child joints), provide:
+  tip_length_m: <scalar>
+This is the distance in meters from the link frame origin to the physical
+fingertip.
+
+The code automatically detects the correct direction from URDF geometry
+(collision cylinder → inertia CoM → joint heuristic). You only need to
+specify *how far* the capsule extends, not *which direction*.
+
+These values define both capsule geometry and the reference length L_ref that
+non-dimensionalizes the entire metric. Wrong lengths → wrong scores.
+
+How to extract:
+  a) BEST: Look for a fixed "tip joint" whose child is a tip frame:
+       <joint name="index_tip_joint" type="fixed">
+         <origin xyz="0.035 -0.018 0.0"/>
+     Compute the magnitude: sqrt(0.035² + 0.018²) ≈ 0.0394
+
+  b) FALLBACK: Estimate from inertia tensors (box model) or collision geometry.
+
+After generating the YAML, ALWAYS tell the user:
+  "The tip lengths below are extracted from the URDF. Please verify them
+   against the real hardware or CAD model; they directly affect score
+   accuracy."
+
+────────────────────────────────────────────────────────────────────────────────
+5. MIMIC JOINTS  (only if present)
+────────────────────────────────────────────────────────────────────────────────
+If any joint has a <mimic> tag:
+  - Do NOT put it in active_joints.
+  - Add a joints: section listing ONLY the mimic joint(s):
+      joints:
+        <mimic_joint>:
+          type: revolute
+          parent: <parent_link>
+          child: <child_link>
+          mimic:
+            joint: <source_joint>
+            multiplier: <m>
+            offset: <o>
+
+If there are NO mimic joints, omit the joints: section entirely.
+
+────────────────────────────────────────────────────────────────────────────────
+OUTPUT FORMAT
+────────────────────────────────────────────────────────────────────────────────
+Produce EXACTLY this YAML structure (use the real names from the URDF):
+
+```yaml
+robot_name: "<name>"
+urdf_path: "urdfs/<file>.urdf"
+base_link: "<base_link>"
+
+fingers:
+  thumb:
+    active_joints:
+      - joint_a
+      - joint_b
+    contact_links:
+      - link_x
+      - link_y
+  index:
+    active_joints:
+      - joint_c
+    contact_links:
+      - link_z
+      - link_w
+
+seed:
+  thumb_link: link_x
+  index_link: link_z
+
+links:               # one entry per terminal (fingertip) link: EVERY chain end,
+  link_x:            # not just thumb and index. All of them feed into L_ref.
+    tip_length_m: 0.042
+  link_z:
+    tip_length_m: 0.027
+  link_m:            # ...one for each remaining fingertip link
+    tip_length_m: 0.031
+
+# joints: section only if mimic joints exist (see section 5)
+```
+
+────────────────────────────────────────────────────────────────────────────────
+COMMON MISTAKES
+────────────────────────────────────────────────────────────────────────────────
+- Putting thumb:/index: at the root instead of under fingers:
+- Using "seed_grasp:" instead of "seed:"
+- Forgetting base_link:
+- Including mimic joints in active_joints → causes ValueError
+- Including links with fixed parent joints in contact_links → link not found
+- Copying the full joint definitions (type/axis/limits); they are only needed
+  for mimic joints
+
+────────────────────────────────────────────────────────────────────────────────
+REQUIRED CLARIFYING QUESTIONS
+────────────────────────────────────────────────────────────────────────────────
+Before producing the YAML, ask the user:
+1. Which two fingers should be used as thumb and index?
+   (if the URDF doesn't make it obvious)
+2. After output: "Please verify the tip_length_m values against the
+   real hardware or CAD; these critically affect metric scores."

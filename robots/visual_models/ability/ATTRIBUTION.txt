@@ -1,0 +1,7 @@
+PSYONIC Ability Hand
+Source:    https://github.com/psyonicinc/ability-hand-api
+License:   MIT
+Copyright: PSYONIC, Inc.
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

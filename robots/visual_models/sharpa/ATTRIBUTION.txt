@@ -1,0 +1,9 @@
+Sharpa hand (Right_Sharpa_HA4)
+Source:    https://github.com/sharpa-robotics/sharpa-urdf-usd-xml
+License:   Permissive. The HA4 packaging we used declared BSD in its package.xml;
+           that packaging is no longer published upstream, where the (renamed)
+           "Sharpa Wave" model is now Apache-2.0, (c) 2025 Sharpa Group.
+Copyright: (c) Sharpa Group
+
+This model is third-party and remains under its source's license; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

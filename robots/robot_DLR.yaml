@@ -1,0 +1,698 @@
+robot_name: DLR_handmodel
+urdf_path: urdfs/DLR_skel.urdf
+base_link: ground
+fingers:
+  thumb:
+    active_joints:
+    - CMC1a_joint
+    - CMC1b_joint
+    - MCP1a_joint
+    - MCP1b_joint
+    - IP1_joint
+    contact_links:
+    - IP1
+    - MCP1b
+    - MCP1a
+  index:
+    active_joints:
+    - MCP2a_joint
+    - MCP2b_joint
+    - PIP2_joint
+    - DIP2_joint
+    contact_links:
+    - DIP2
+    - PIP2
+    - MCP2b
+seed:
+  thumb_link: IP1
+  index_link: DIP2
+links:
+  IP1:
+    tip_length_m: 0.031391
+  DIP2:
+    tip_length_m: 0.031391
+  DIP3:
+    tip_length_m: 0.031391
+  DIP4:
+    tip_length_m: 0.031391
+  DIP5:
+    tip_length_m: 0.031391
+joints:
+  CMC1a_joint:
+    type: revolute
+    parent: ground
+    child: CMC1a
+    origin_xyz_m:
+    - 0.01950111
+    - 0.02695073
+    - 0.00443441
+    origin_rpy_rad:
+    - 2.48727972
+    - -0.14754713
+    - -0.42888542
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.929
+      upper: 0.27
+      effort: 10
+      velocity: 10
+  CMC1b_joint:
+    type: revolute
+    parent: CMC1a
+    child: CMC1b
+    origin_xyz_m:
+    - -0.01737179
+    - -0.00971473
+    - 9.0e-08
+    origin_rpy_rad:
+    - -1.37890303
+    - 0.5583485
+    - 1.29247478
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: 0.005
+      upper: 0.866
+      effort: 10
+      velocity: 10
+  MC1_fixed:
+    type: fixed
+    parent: CMC1b
+    child: MC1
+    origin_xyz_m:
+    - 0.03354848
+    - -0.01248297
+    - 0.01216455
+    origin_rpy_rad:
+    - -2.40732831
+    - 0.54908404
+    - -1.85815669
+  MCP1a_joint:
+    type: revolute
+    parent: MC1
+    child: MCP1a
+    origin_xyz_m:
+    - 0.00137157
+    - -0.01779916
+    - -0.00084812
+    origin_rpy_rad:
+    - 3.05390316
+    - -0.00793818
+    - 0.17955431
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.001
+      upper: 1.614
+      effort: 10
+      velocity: 10
+  MCP1b_joint:
+    type: revolute
+    parent: MCP1a
+    child: MCP1b
+    origin_xyz_m:
+    - 0
+    - 0
+    - 0
+    origin_rpy_rad:
+    - 1.57077559
+    - 1.40697104
+    - -1.11025748
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.002
+      upper: 1.189
+      effort: 10
+      velocity: 10
+  PP1_fixed:
+    type: fixed
+    parent: MCP1b
+    child: PP1
+    origin_xyz_m:
+    - -0.00881935
+    - -0.01471952
+    - -0.01733277
+    origin_rpy_rad:
+    - 1.5741734
+    - 0.70472886
+    - 1.03560697
+  IP1_joint:
+    type: revolute
+    parent: PP1
+    child: IP1
+    origin_xyz_m:
+    - 0.00191091
+    - -0.0136391
+    - 0.00135957
+    origin_rpy_rad:
+    - 3.1212228
+    - -0.2734143
+    - -3.20378307
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.0
+      upper: 0.793
+      effort: 10
+      velocity: 10
+  MCP2a_joint:
+    type: revolute
+    parent: ground
+    child: MCP2a
+    origin_xyz_m:
+    - 0.00112756
+    - -0.02894003
+    - -0.00258697
+    origin_rpy_rad:
+    - -2.97153179
+    - 0.17373322
+    - -2.06226478
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.02
+      upper: 0.903
+      effort: 10
+      velocity: 10
+  MCP2b_joint:
+    type: revolute
+    parent: MCP2a
+    child: MCP2b
+    origin_xyz_m:
+    - 0
+    - 0
+    - 0
+    origin_rpy_rad:
+    - 1.57079327
+    - 1.29757309
+    - -2.98206879
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.203
+      upper: 0.991
+      effort: 10
+      velocity: 10
+  PP2_fixed:
+    type: fixed
+    parent: MCP2b
+    child: PP2
+    origin_xyz_m:
+    - -0.01266949
+    - -0.01784861
+    - -0.02001128
+    origin_rpy_rad:
+    - 2.01815253
+    - 0.68638224
+    - 1.52729883
+  PIP2_joint:
+    type: revolute
+    parent: PP2
+    child: PIP2
+    origin_xyz_m:
+    - 0.00266634
+    - -0.01770148
+    - 0.00149144
+    origin_rpy_rad:
+    - 3.02407871
+    - 0.32603526
+    - 2.08465167
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -2.008
+      upper: 0.171
+      effort: 10
+      velocity: 10
+  PM2_fixed:
+    type: fixed
+    parent: PIP2
+    child: PM2
+    origin_xyz_m:
+    - -0.01430452
+    - -0.00863928
+    - 0.00285207
+    origin_rpy_rad:
+    - -3.00555093
+    - 0.26221168
+    - 2.12536254
+  DIP2_joint:
+    type: revolute
+    parent: PM2
+    child: DIP2
+    origin_xyz_m:
+    - 0.00114957
+    - -0.01167801
+    - 0.00171634
+    origin_rpy_rad:
+    - 3.10919338
+    - 0.05910672
+    - 1.83892284
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.366
+      upper: 0.829
+      effort: 10
+      velocity: 10
+  IMC3_joint:
+    type: revolute
+    parent: ground
+    child: IMC3
+    origin_xyz_m:
+    - -0.0013853
+    - -0.02843639
+    - -0.0021739
+    origin_rpy_rad:
+    - -3.01621437
+    - 0.16846031
+    - -1.57096016
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.213
+      upper: 0.213
+      effort: 10
+      velocity: 10
+  MC3_fixed:
+    type: fixed
+    parent: IMC3
+    child: MC3
+    origin_xyz_m:
+    - 0.00177205
+    - 0.02185056
+    - -0.00393076
+    origin_rpy_rad:
+    - -2.54621315
+    - -0.18177924
+    - 1.57075966
+  MCP3a_joint:
+    type: revolute
+    parent: MC3
+    child: MCP3a
+    origin_xyz_m:
+    - 0.00148833
+    - -0.0318992
+    - -0.00041889
+    origin_rpy_rad:
+    - -3.13826632
+    - 0.17018464
+    - -1.5707963
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.018
+      upper: 0.291
+      effort: 10
+      velocity: 10
+  MCP3b_joint:
+    type: revolute
+    parent: MCP3a
+    child: MCP3b
+    origin_xyz_m:
+    - 0
+    - 0
+    - 0
+    origin_rpy_rad:
+    - 1.57079587
+    - 0.90296811
+    - -0.67622465
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.148
+      upper: 0.627
+      effort: 10
+      velocity: 10
+  PP3_fixed:
+    type: fixed
+    parent: MCP3b
+    child: PP3
+    origin_xyz_m:
+    - -0.00809134
+    - -0.01531023
+    - -0.02385015
+    origin_rpy_rad:
+    - 1.56314974
+    - 0.56765157
+    - 1.00801766
+  PIP3_joint:
+    type: revolute
+    parent: PP3
+    child: PIP3
+    origin_xyz_m:
+    - 0.00081758
+    - -0.01975768
+    - 0.00035974
+    origin_rpy_rad:
+    - 3.11868644
+    - 0.02695393
+    - 2.13404086
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.974
+      upper: 0.302
+      effort: 10
+      velocity: 10
+  PM3_fixed:
+    type: fixed
+    parent: PIP3
+    child: PM3
+    origin_xyz_m:
+    - -0.01226716 -0.01487651 -0.00104034
+    origin_rpy_rad:
+    - 3.04637682
+    - 0.00995618
+    - 2.09705926
+  DIP3_joint:
+    type: revolute
+    parent: PM3
+    child: DIP3
+    origin_xyz_m:
+    - 0.00026621
+    - -0.01331073
+    - 0.00046063
+    origin_rpy_rad:
+    - -3.14043825
+    - -0.02901014
+    - 2.09114095
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.493
+      upper: 0.487
+      effort: 10
+      velocity: 10
+  IMC4_joint:
+    type: revolute
+    parent: MC3
+    child: IMC4
+    origin_xyz_m:
+    - 0.00100595
+    - 0.02170677
+    - -0.00504638
+    origin_rpy_rad:
+    - 1.52524436
+    - 0.04116518
+    - -0.34030813
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.005
+      upper: 0.512
+      effort: 10
+      velocity: 10
+  MC4_fixed:
+    type: fixed
+    parent: IMC4
+    child: MC4
+    origin_xyz_m:
+    - 0.00193926
+    - -0.01440419
+    - 0.01692742
+    origin_rpy_rad:
+    - -1.34750628
+    - 0.05750048
+    - -0.00166748
+  MCP4a_joint:
+    type: revolute
+    parent: MC4
+    child: MCP4a
+    origin_xyz_m:
+    - 0.00166085
+    - -0.02335453
+    - 0.00086983
+    origin_rpy_rad:
+    - -1.59254843
+    - -1.18104076
+    - 0.98909641
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.654
+      upper: 0.258
+      effort: 10
+      velocity: 10
+  MCP4b_joint:
+    type: revolute
+    parent: MCP4a
+    child: MCP4b
+    origin_xyz_m:
+    - 0
+    - 0
+    - 0
+    origin_rpy_rad:
+    - 1.57079782
+    - 0.88958636
+    - -0.97804086
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.358
+      upper: 0.419
+      effort: 10
+      velocity: 10
+  PP4_fixed:
+    type: fixed
+    parent: MCP4b
+    child: PP4
+    origin_xyz_m:
+    - -0.00768566
+    - -0.01508707
+    - -0.02405368
+    origin_rpy_rad:
+    - 1.50910016
+    - 0.60894585
+    - 1.01390811
+  PIP4_joint:
+    type: revolute
+    parent: PP4
+    child: PIP4
+    origin_xyz_m:
+    - 0.00013924
+    - -0.01885876
+    - -0.00029457
+    origin_rpy_rad:
+    - 3.14059038
+    - 0.01510742
+    - 2.4491022
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.939
+      upper: 0.342
+      effort: 10
+      velocity: 10
+  PM4_fixed:
+    type: fixed
+    parent: PIP4
+    child: PM4
+    origin_xyz_m:
+    - -0.0119595
+    - -0.01470671
+    - -0.00124534
+    origin_rpy_rad:
+    - 3.03185818
+    - 0.0095041
+    - 2.41124171
+  DIP4_joint:
+    type: revolute
+    parent: PM4
+    child: DIP4
+    origin_xyz_m:
+    - 0.00020388
+    - -0.01304283
+    - 0.00054321
+    origin_rpy_rad:
+    - -3.13801871
+    - -0.03828433
+    - 2.42544903
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.495
+      upper: 0.457
+      effort: 10
+      velocity: 10
+  IMC5_joint:
+    type: revolute
+    parent: MC4
+    child: IMC5
+    origin_xyz_m:
+    - 0.00133314
+    - 0.02238944
+    - -0.00555069
+    origin_rpy_rad:
+    - 1.4215517
+    - -0.03266849
+    - -0.28812425
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.005
+      upper: 0.395
+      effort: 10
+      velocity: 10
+  MC5_fixed:
+    type: fixed
+    parent: IMC5
+    child: MC5
+    origin_xyz_m:
+    - 0.00258619
+    - -0.0143344
+    - 0.01765157
+    origin_rpy_rad:
+    - -1.28482247
+    - 0.05594939
+    - 0.00161629
+  MCP5a_joint:
+    type: revolute
+    parent: MC5
+    child: MCP5a
+    origin_xyz_m:
+    - 0.00175437
+    - -0.02346684
+    - 0.00120119
+    origin_rpy_rad:
+    - -1.59299831
+    - -1.0835392
+    - 1.10326
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -0.65
+      upper: 0.305
+      effort: 10
+      velocity: 10
+  MCP5b_joint:
+    type: revolute
+    parent: MCP5a
+    child: MCP5b
+    origin_xyz_m:
+    - 0
+    - 0
+    - 0
+    origin_rpy_rad:
+    - 1.57079157
+    - 1.299249
+    - -2.19199508
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.702
+      upper: 0.983
+      effort: 10
+      velocity: 10
+  PP5_fixed:
+    type: fixed
+    parent: MCP5b
+    child: PP5
+    origin_xyz_m:
+    - 0.01915435
+    - 0.01451382
+    - -0.00058784
+    origin_rpy_rad:
+    - 3.08139078
+    - -0.05082231
+    - -0.98716161
+  PIP5_joint:
+    type: revolute
+    parent: PP5
+    child: PIP5
+    origin_xyz_m:
+    - 0.00101144
+    - -0.01550217
+    - -0.00049949
+    origin_rpy_rad:
+    - -3.09076508
+    - 0.22127951
+    - -2.73171742
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.886
+      upper: 0.213
+      effort: 10
+      velocity: 10
+  PM5_fixed:
+    type: fixed
+    parent: PIP5
+    child: PM5
+    origin_xyz_m:
+    - 0.00633628
+    - -0.01348262
+    - -0.00081588
+    origin_rpy_rad:
+    - 3.08032639
+    - -0.00152062
+    - -2.67440633
+  DIP5_joint:
+    type: revolute
+    parent: PM5
+    child: DIP5
+    origin_xyz_m:
+    - 0.0001806
+    - -0.01005921
+    - -0.00268002
+    origin_rpy_rad:
+    - 3.11811207
+    - -0.07074845
+    - -2.69091568
+    axis_xyz:
+    - 0
+    - 0
+    - 1
+    limits:
+      lower: -1.629
+      upper: 0.179
+      effort: 10
+      velocity: 10

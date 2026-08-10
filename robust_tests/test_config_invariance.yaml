@@ -1,0 +1,36 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# Invariance-only config — reproduces Table III (translation / rotation / scale)
+# using the committed harness (run_tests.py), at the default grid-snap precision
+# (decimals=12; overridable via KARMA_SNAP_DECIMALS, see karma/robot.py).
+#
+#   python experiments/run_robustness_all_robots.py robust_tests/test_config_invariance.yaml
+#
+# Group 2 (sensitivity) is covered by the full suite (test_config.yaml, shipped
+# as results/robustness/results_*_latest.yaml); the Determinism row is backed by
+# results/16_hand_batch/determinism_3runs.txt.
+# This config exists to demonstrate the full 4-translation + 4-rotation + 2-scale
+# invariance suite (the counts stated in §V-F) with a committed, reproducible run.
+# ═══════════════════════════════════════════════════════════════════════════════
+
+robot_config: robots/robot_leap.yaml     # overridden per-hand by experiments/run_robustness_all_robots.py
+metric_config: karma_config.yaml
+max_states_override: 1000                 # budget never binds for the 5 reps (LEAP reaches 792 < 1000)
+results_dir: robust_tests/results
+
+invariance:
+  # 1.1 Translation (four offsets)
+  translations_m:
+    - [1.0, 0.0, 0.0]
+    - [0.0, 2.5, 0.0]
+    - [0.0, 0.0, -0.5]
+    - [0.3, -0.7, 1.2]
+  # 1.2 Rotation (four rotations), roll-pitch-yaw in degrees
+  rotations_rpy_deg:
+    - [0, 0, 45]
+    - [0, 90, 0]
+    - [30, 0, 0]
+    - [15, 30, 45]
+  # 1.3 Scale (0.5x and 2x)
+  scale_factors: [0.5, 2.0]
+  # finger-swap not part of Table III
+  test_finger_swap: false

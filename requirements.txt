@@ -1,0 +1,20 @@
+# KaRMA direct dependencies. Requires Python 3.10 in a conda env, because
+# pinocchio and hpp-fcl ship as cmeel wheels built against it.
+#
+# Prefer `conda env create -f environment.yml`, which additionally pins the
+# transitive dependencies. Versions are pinned because the metric counts voxels
+# across discrete feasibility thresholds, so solver-level differences can move a
+# boundary voxel; see README "Reproducibility" for what that does and does not
+# guarantee across machines. The metric is CPU-only: no GPU or torch dependency.
+
+numpy==1.26.4
+scipy==1.15.3
+pin==2.7.0          # pinocchio (PyPI cmeel wheel; NOT the unrelated `pinocchio` pkg)
+hpp-fcl==2.4.4
+osqp==1.1.1
+healpy==1.19.0
+viser==1.0.24
+matplotlib==3.10.9   # figures/plot scripts only; not used by the metric
+yourdfpy==0.0.60     # interactive tools/ only (mesh overlay/tuning); not used by the metric
+trimesh==4.12.2      # interactive tools/ only (mesh loading); not used by the metric
+PyYAML==6.0.2

@@ -1,0 +1,7 @@
+ORCA Hand
+Source:    https://github.com/orcahand/orcahand_description
+License:   MIT
+Copyright: (c) 2025 ORCA (maintainer Arturo Roberti)
+
+This model is third-party and remains under the license above; the KaRMA
+repository's MIT LICENSE does not apply to it. See ../ATTRIBUTIONS.md.

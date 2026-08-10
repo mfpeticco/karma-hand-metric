@@ -1,0 +1,23 @@
+# High-confidence tests: translation + rotation invariance + determinism
+# These have been validated on LEAP with 0-1 voxel difference.
+
+robot_config: robots/robot_leap.yaml  # overridden by runner
+metric_config: karma_config.yaml
+max_states_override: 1000
+results_dir: robust_tests/results
+
+invariance:
+  translations_m:
+    - [1.0, 0.0, 0.0]
+    - [0.0, 2.5, 0.0]
+    - [0.0, 0.0, -0.5]
+    - [0.3, -0.7, 1.2]
+
+  rotations_rpy_deg:
+    - [0, 0, 45]
+    - [0, 90, 0]
+    - [30, 0, 0]
+    - [15, 30, 45]
+
+numerical:
+  determinism_repeats: 3
