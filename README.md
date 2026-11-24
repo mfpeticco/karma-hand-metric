@@ -59,11 +59,15 @@ Recompute the KaRMA scores for any hand on your own computer:
 python run_metric.py --config robots/robot_leap.yaml          # ~5 min
 python run_metric.py --config robots/robot_shadowhand.yaml    # ~45 s
 python run_metric.py --config robots/robot_inspire.yaml       # ~10 s
+python run_metric.py --config robots/robot_xynova_prima1_right.yaml
+python run_metric.py --config robots/robot_xynova_prima1_left.yaml
 ```
 
-Each run writes a summary to `workspace/current.yaml` and its full reachable set to `workspace/current.pkl`. View your run with `python run_viser_app.py --result workspace/current.pkl`.
+Each run writes a summary to `workspace/current.yaml` and its full reachable set to `workspace/current.pkl`. Start `python run_viser_app.py`, select the hand you scored, and choose `workspace/current.pkl (latest)` in the result dropdown.
 
-To score all 16 bundled hands at once, run `python run_all_hands.py`. Runtime scales with how dexterous the hand is, since a more capable hand reaches more voxels. The full sweep takes roughly 18 minutes on a 32-thread desktop.
+The saved [Prima1 results](results/prima1/) use the bundled left- and right-hand URDFs, with `TH4` as the first thumb joint and a 32.716 mm thumb tip length measured from the visual mesh. Each hand has a `current.yaml` summary and a `current.pkl` reachable set. The default viewer can also load these runs. Select `xynova_prima1_left` or `xynova_prima1_right` in the robot dropdown.
+
+To score all configured hands at once, run `python run_all_hands.py`. Runtime scales with how dexterous the hand is, since a more capable hand reaches more voxels. The original 16-hand sweep took roughly 18 minutes on a 32-thread desktop.
 
 ---
 
@@ -116,7 +120,7 @@ that regenerate the paper's supporting data.
 | Script | Purpose |
 | --- | --- |
 | `run_metric.py --config robots/robot_<name>.yaml` | one hand → `workspace/current.{yaml,pkl}` |
-| `run_all_hands.py` | all 16 hands → the Table I summary |
+| `run_all_hands.py` | all configured hands → a summary under `results/` |
 | `run_viser_app.py` | open a computed result in the interactive viewer |
 
 **Inspect hands** — `tools/` (none are needed to compute the metric)

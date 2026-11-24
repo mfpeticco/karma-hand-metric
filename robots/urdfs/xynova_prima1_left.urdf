@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="xynova_prima1_left">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000809383010283195 -0.00422305453986003 0.0442581266481593"
+        rpy="0 0 0" />
+      <mass
+        value="0.0363878365082781" />
+      <inertia
+        ixx="2.61410314079046E-05"
+        ixy="-8.61120969347751E-07"
+        ixz="8.21277181015481E-07"
+        iyy="1.38065748134941E-05"
+        iyz="4.45542592067733E-06"
+        izz="1.45989179597506E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/base_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/base_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="TH4_Link">
+    <inertial>
+      <origin
+        xyz="-0.000294479298789062 -0.000126129244959916 -0.0458321710988197"
+        rpy="0 0 0" />
+      <mass
+        value="0.000639641524997585" />
+      <inertia
+        ixx="1.7331146724455E-08"
+        ixy="7.74468896844238E-09"
+        ixz="-1.03877273300477E-13"
+        iyy="2.76316493275451E-08"
+        iyz="-3.78486443255084E-14"
+        izz="2.5977288704064E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH4_Link_collision.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="TH4"
+    type="revolute">
+    <origin
+      xyz="0.0055439 -0.024276 0.06046"
+      rpy="0 0 -0.94773" />
+    <parent
+      link="base_link" />
+    <child
+      link="TH4_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.34907"
+      upper="1.7453"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="TH5_Link">
+    <inertial>
+      <origin
+        xyz="0.0370604213329479 -0.0161277334579395 -0.00350049164848757"
+        rpy="0 0 0" />
+      <mass
+        value="0.0737358882762665" />
+      <inertia
+        ixx="1.54628032330939E-05"
+        ixy="4.83627955352495E-06"
+        ixz="1.96624970976301E-06"
+        iyy="1.25011596769766E-05"
+        iyz="-8.94523564753195E-07"
+        izz="1.8552038832158E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH5_Link_collision.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="TH5"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.04581"
+      rpy="-1.5708 0 -0.44853" />
+    <parent
+      link="TH4_Link" />
+    <child
+      link="TH5_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="TH2_Link">
+    <inertial>
+      <origin
+        xyz="-0.000225977964245734 -0.000226919497861605 -2.22602694645684E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00063963346997432" />
+      <inertia
+        ixx="1.34013783403263E-08"
+        ixy="2.01495262786598E-09"
+        ixz="-6.19923875721259E-14"
+        iyy="3.15609962457591E-08"
+        iyz="-7.86164847929185E-14"
+        izz="2.59768786976279E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH2_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="TH2"
+    type="revolute">
+    <origin
+      xyz="0.048864 -0.032071 -0.0071856"
+      rpy="2.1727 0.12986 -1.0128" />
+    <parent
+      link="TH5_Link" />
+    <child
+      link="TH2_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.17453"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="TH3_Link">
+    <inertial>
+      <origin
+        xyz="0.0243997924697593 -6.29523730105615E-05 -0.0015142559685126"
+        rpy="0 0 0" />
+      <mass
+        value="0.015258665888617" />
+      <inertia
+        ixx="7.80027369748554E-07"
+        ixy="2.13340394648006E-09"
+        ixz="4.43778044747862E-08"
+        iyy="1.2559790540244E-06"
+        iyz="1.98996476136714E-10"
+        izz="1.1983708766237E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0020296 0 0.030821"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0020296 0 0.030821"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH3_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="TH3"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="TH2_Link" />
+    <child
+      link="TH3_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="TH1_Link">
+    <inertial>
+      <origin
+        xyz="0.0113371170872356 -0.00451564748567087 3.23149352901564E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.00824097301549682" />
+      <inertia
+        ixx="2.92038950953164E-07"
+        ixy="8.25292790218029E-08"
+        ixz="8.94520020125571E-12"
+        iyy="5.46172783816989E-07"
+        iyz="2.61552156441157E-12"
+        izz="4.6509559524356E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0.0000826 -0.0025 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.0000826 -0.0025 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/TH1_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="TH1"
+    type="revolute">
+    <origin
+      xyz="0.038 0 0.0025"
+      rpy="1.5708 0 0" />
+    <parent
+      link="TH3_Link" />
+    <child
+      link="TH1_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.17453"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="FF3_Link">
+    <inertial>
+      <origin
+        xyz="-0.000224930278134514 -0.000228021121990607 -2.22608010366186E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.000639638408706556" />
+      <inertia
+        ixx="1.33825177439089E-08"
+        ixy="1.92778674114983E-09"
+        ixz="-7.53527734541989E-14"
+        iyy="3.1580069675101E-08"
+        iyz="-7.51078761045238E-14"
+        izz="2.59770879311027E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/FF3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/FF3_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FF3"
+    type="revolute">
+    <origin
+      xyz="-0.0031548 -0.028293 0.089"
+      rpy="-1.5708 -1.5098 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="FF3_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5236"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="FF4_Link">
+    <inertial>
+      <origin
+        xyz="0.0262559188127603 -8.93532039658237E-05 -0.00152681706932938"
+        rpy="0 0 0" />
+      <mass
+        value="0.0156842407275182" />
+      <inertia
+        ixx="7.7618235691641E-07"
+        ixy="3.19943525266057E-09"
+        ixz="4.08003754869262E-08"
+        iyy="1.35685149809327E-06"
+        iyz="-1.46057270241586E-10"
+        izz="1.27902076744879E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/FF4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/FF4_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FF4"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="FF3_Link" />
+    <child
+      link="FF4_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.17453"
+      upper="0.5236"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="FF2_Link">
+    <inertial>
+      <origin
+        xyz="0.0131038552100103 -0.00190678923044574 3.13038040470233E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0091580514004609" />
+      <inertia
+        ixx="3.94677247361652E-07"
+        ixy="3.09634506574159E-08"
+        ixz="-1.51979860478794E-11"
+        iyy="6.81693380916965E-07"
+        iyz="2.43862956392563E-12"
+        izz="6.71837877758837E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/FF2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/FF2_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FF2"
+    type="revolute">
+    <origin
+      xyz="0.041076 0 0"
+      rpy="1.5708 0.016499 0" />
+    <parent
+      link="FF4_Link" />
+    <child
+      link="FF2_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.34907"
+      upper="1.8326"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="FF1_Link">
+    <inertial>
+      <origin
+        xyz="0.00957495745647469 -0.00239878670303972 5.14967621809137E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00536744413654376" />
+      <inertia
+        ixx="1.48272889073844E-07"
+        ixy="3.68059977476142E-08"
+        ixz="-4.61355646383785E-12"
+        iyy="2.53447513579908E-07"
+        iyz="5.86689037812101E-12"
+        izz="2.14198723387984E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/FF1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/FF1_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FF1"
+    type="revolute">
+    <origin
+      xyz="0.027001 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="FF2_Link" />
+    <child
+      link="FF1_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.17453"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="MF3_Link">
+    <inertial>
+      <origin
+        xyz="-0.000223694168728125 -0.000229233900138175 -2.22608010366136E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.000639638408706551" />
+      <inertia
+        ixx="1.33622043975674E-08"
+        ixy="1.82928836227851E-09"
+        ixz="-7.49455929220317E-14"
+        iyy="3.16003830214424E-08"
+        iyz="-7.55141815948987E-14"
+        izz="2.59770879311026E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/MF3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/MF3_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MF3"
+    type="revolute">
+    <origin
+      xyz="-0.0044548 -0.0082928 0.092"
+      rpy="-1.5708 -1.5152 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="MF3_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5236"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="MF4_Link">
+    <inertial>
+      <origin
+        xyz="0.0286123610462149 -6.75506763500632E-05 -0.00153815265489044"
+        rpy="0 0 0" />
+      <mass
+        value="0.0172913348085896" />
+      <inertia
+        ixx="8.77281556917747E-07"
+        ixy="-1.59729606679921E-10"
+        ixz="5.28572633580278E-08"
+        iyy="1.69846679159659E-06"
+        iyz="8.41415923963018E-11"
+        izz="1.6027423233192E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/MF4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/MF4_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MF4"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="MF3_Link" />
+    <child
+      link="MF4_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="MF2_Link">
+    <inertial>
+      <origin
+        xyz="0.0131038552100087 -0.00190678923045666 3.13038040470075E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00915805140046088" />
+      <inertia
+        ixx="3.94677247361702E-07"
+        ixy="3.09634506576554E-08"
+        ixz="-1.51979860482629E-11"
+        iyy="6.81693380916913E-07"
+        iyz="2.43862956377055E-12"
+        izz="6.71837877758837E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/MF2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/MF2_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MF2"
+    type="revolute">
+    <origin
+      xyz="0.04507 0 0"
+      rpy="1.5708 0.011092 0" />
+    <parent
+      link="MF4_Link" />
+    <child
+      link="MF2_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.34907"
+      upper="1.8326"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="MF1_Link">
+    <inertial>
+      <origin
+        xyz="0.00957495729544497 -0.00239878675846626 5.16070434305408E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00536744403492023" />
+      <inertia
+        ixx="1.48272884876599E-07"
+        ixy="3.68060032700256E-08"
+        ixz="-4.62133146963463E-12"
+        iyy="2.53447493598515E-07"
+        iyz="5.86362676055463E-12"
+        izz="2.14198704045808E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/MF1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/MF1_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="MF1"
+    type="revolute">
+    <origin
+      xyz="0.027001 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="MF2_Link" />
+    <child
+      link="MF1_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.17453"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF3_Link">
+    <inertial>
+      <origin
+        xyz="-0.0002249302781345 -0.000228021121990649 -2.22608010366186E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.000639638408706556" />
+      <inertia
+        ixx="1.33825177439089E-08"
+        ixy="1.92778674114972E-09"
+        ixz="-7.53527735200951E-14"
+        iyy="3.15800696751011E-08"
+        iyz="-7.51078761415305E-14"
+        izz="2.59770879311028E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/RF3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/RF3_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF3"
+    type="revolute">
+    <origin
+      xyz="-0.0024548 0.011707 0.089"
+      rpy="-1.5708 -1.5098 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RF3_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5236"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF4_Link">
+    <inertial>
+      <origin
+        xyz="0.0262967631066925 -7.42831045976756E-05 -0.00152990313663755"
+        rpy="0 0 0" />
+      <mass
+        value="0.0156343468107594" />
+      <inertia
+        ixx="7.75466207759637E-07"
+        ixy="-8.89283983582894E-11"
+        ixz="4.04936642462034E-08"
+        iyy="1.35100147625271E-06"
+        iyz="5.25244521088718E-11"
+        izz="1.27270723159643E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/RF4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/RF4_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF4"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="RF3_Link" />
+    <child
+      link="RF4_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.34907"
+      upper="0.34907"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF2_Link">
+    <inertial>
+      <origin
+        xyz="0.0131038552100102 -0.00190678923044646 3.13038040470962E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00915805140046087" />
+      <inertia
+        ixx="3.94677247361653E-07"
+        ixy="3.09634506574313E-08"
+        ixz="-1.51979860477892E-11"
+        iyy="6.81693380916959E-07"
+        iyz="2.43862956353034E-12"
+        izz="6.71837877758834E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/RF2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/RF2_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF2"
+    type="revolute">
+    <origin
+      xyz="0.041076 0 0"
+      rpy="1.5708 0.016499 0" />
+    <parent
+      link="RF4_Link" />
+    <child
+      link="RF2_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.34907"
+      upper="1.8326"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF1_Link">
+    <inertial>
+      <origin
+        xyz="0.00957495729596611 -0.00239878675953161 5.16068969988459E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00536744403518231" />
+      <inertia
+        ixx="1.48272884881574E-07"
+        ixy="3.68060032822665E-08"
+        ixz="-4.6213189262057E-12"
+        iyy="2.53447493664095E-07"
+        iyz="5.8636242886301E-12"
+        izz="2.14198704111325E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/RF1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/RF1_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF1"
+    type="revolute">
+    <origin
+      xyz="0.027001 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RF2_Link" />
+    <child
+      link="RF1_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.17453"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF5_Link">
+    <inertial>
+      <origin
+        xyz="0.0263245409789594 -0.00962116182694795 0.0184362399168352"
+        rpy="0 0 0" />
+      <mass
+        value="0.00811097690344735" />
+      <inertia
+        ixx="2.15677011463863E-06"
+        ixy="7.40690686188322E-08"
+        ixz="2.88118694326682E-07"
+        iyy="1.45124011849733E-06"
+        iyz="-2.69110778548743E-07"
+        izz="1.42901087056504E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF5_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF5_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF5"
+    type="revolute">
+    <origin
+      xyz="0.0092702 0.0046577 0.06706"
+      rpy="3.1416 -0.40245 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="LF5_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.5236"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF3_Link">
+    <inertial>
+      <origin
+        xyz="-0.000232668777263773 -0.000220119290799584 -2.22608010366152E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.000639638408706554" />
+      <inertia
+        ixx="1.35372469366834E-08"
+        ixy="2.55110037376862E-09"
+        ixz="-7.79010046269878E-14"
+        iyy="3.14253404823264E-08"
+        iyz="-7.24614863153123E-14"
+        izz="2.59770879311026E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF3_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF3"
+    type="revolute">
+    <origin
+      xyz="0.030485 -0.009425 0"
+      rpy="0.22034 1.1578 0.23983" />
+    <parent
+      link="LF5_Link" />
+    <child
+      link="LF3_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5236"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF4_Link">
+    <inertial>
+      <origin
+        xyz="0.0219012058392317 -1.43972411103394E-05 -0.0117346338477004"
+        rpy="0 0 0" />
+      <mass
+        value="0.00931479059198978" />
+      <inertia
+        ixx="4.86558109375558E-07"
+        ixy="-2.47583568230782E-09"
+        ixz="3.23264872882396E-08"
+        iyy="5.57839394543261E-07"
+        iyz="2.45418301451754E-10"
+        izz="4.97059044766275E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF4_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF4"
+    type="revolute">
+    <origin
+      xyz="0.00089861 0.0093821 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="LF3_Link" />
+    <child
+      link="LF4_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5236"
+      upper="0.17453"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF2_Link">
+    <inertial>
+      <origin
+        xyz="0.0132499963842958 -0.00239776756243404 3.27001629931573E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.00867912963161017" />
+      <inertia
+        ixx="3.80757301350797E-07"
+        ixy="3.01047295215516E-08"
+        ixz="5.02944707343159E-12"
+        iyy="5.7085536510394E-07"
+        iyz="-3.16171956937439E-12"
+        izz="5.69591242892261E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF2_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF2"
+    type="revolute">
+    <origin
+      xyz="0.034262 0 -0.0093821"
+      rpy="1.5708 0.095489 0" />
+    <parent
+      link="LF4_Link" />
+    <child
+      link="LF2_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.34907"
+      upper="1.8326"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF1_Link">
+    <inertial>
+      <origin
+        xyz="0.00967210552367161 -0.00197087794275237 5.16089775429163E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.00536744403492026" />
+      <inertia
+        ixx="1.4521232575085E-07"
+        ixy="3.19909635058072E-08"
+        ixz="-4.87736169514128E-12"
+        iyy="2.56508052724267E-07"
+        iyz="5.65244780824746E-12"
+        izz="2.14198704045809E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../visual_models/xynova_prima1_left/meshes/LF1_Link_collision.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF1"
+    type="revolute">
+    <origin
+      xyz="0.025999 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LF2_Link" />
+    <child
+      link="LF1_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.17453"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <!-- Fingertip links for DexPilot retargeting -->
+  <link name="TH1_tip">
+    <inertial>
+      <mass value="0.0001" />
+      <inertia ixx="1e-9" ixy="0.0" ixz="0.0" iyy="1e-9" iyz="0.0" izz="1e-9" />
+    </inertial>
+  </link>
+  <joint name="TH1_tip_joint" type="fixed">
+    <parent link="TH1_Link" />
+    <child link="TH1_tip" />
+    <origin xyz="0.017 0.0 0.0" rpy="0 0 0" />
+  </joint>
+  <link name="FF1_tip">
+    <inertial>
+      <mass value="0.0001" />
+      <inertia ixx="1e-9" ixy="0.0" ixz="0.0" iyy="1e-9" iyz="0.0" izz="1e-9" />
+    </inertial>
+  </link>
+  <joint name="FF1_tip_joint" type="fixed">
+    <parent link="FF1_Link" />
+    <child link="FF1_tip" />
+    <origin xyz="0.018 0.004 0.0" rpy="0 0 0" />
+  </joint>
+  <link name="MF1_tip">
+    <inertial>
+      <mass value="0.0001" />
+      <inertia ixx="1e-9" ixy="0.0" ixz="0.0" iyy="1e-9" iyz="0.0" izz="1e-9" />
+    </inertial>
+  </link>
+  <joint name="MF1_tip_joint" type="fixed">
+    <parent link="MF1_Link" />
+    <child link="MF1_tip" />
+    <origin xyz="0.018 0.004 0.0" rpy="0 0 0" />
+  </joint>
+  <link name="RF1_tip">
+    <inertial>
+      <mass value="0.0001" />
+      <inertia ixx="1e-9" ixy="0.0" ixz="0.0" iyy="1e-9" iyz="0.0" izz="1e-9" />
+    </inertial>
+  </link>
+  <joint name="RF1_tip_joint" type="fixed">
+    <parent link="RF1_Link" />
+    <child link="RF1_tip" />
+    <origin xyz="0.018 0.004 0.0" rpy="0 0 0" />
+  </joint>
+  <link name="LF1_tip">
+    <inertial>
+      <mass value="0.0001" />
+      <inertia ixx="1e-9" ixy="0.0" ixz="0.0" iyy="1e-9" iyz="0.0" izz="1e-9" />
+    </inertial>
+  </link>
+  <joint name="LF1_tip_joint" type="fixed">
+    <parent link="LF1_Link" />
+    <child link="LF1_tip" />
+    <origin xyz="0.018 0.004 0.0" rpy="0 0 0" />
+  </joint>
+</robot>
