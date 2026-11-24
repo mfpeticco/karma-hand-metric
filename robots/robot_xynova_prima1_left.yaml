@@ -1,0 +1,21 @@
+robot_name: xynova_prima1_left
+urdf_path: urdfs/xynova_prima1_left.urdf
+base_link: base_link
+fingers:
+  thumb:
+    active_joints: [TH4, TH5, TH2, TH3, TH1]
+    # TH4 and TH5 belong to the opposition mechanism.
+    contact_links: [TH1_Link, TH3_Link, TH2_Link]
+  index:
+    active_joints: [FF3, FF4, FF2, FF1]
+    contact_links: [FF1_Link, FF2_Link, FF4_Link]
+seed:
+  thumb_link: TH1_Link
+  index_link: FF1_Link
+# Projected STL extents from each distal joint origin, including URDF visual transforms.
+links:
+  TH1_Link: {tip_length_m: 0.032716}
+  FF1_Link: {tip_length_m: 0.027812}
+  MF1_Link: {tip_length_m: 0.027812}
+  RF1_Link: {tip_length_m: 0.027812}
+  LF1_Link: {tip_length_m: 0.027812}

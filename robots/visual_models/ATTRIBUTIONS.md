@@ -1,6 +1,6 @@
 # Third-party robot model attributions
 
-KaRMA evaluates 16 robotic hands. The kinematic URDFs in `robots/urdfs/` and the
+The KaRMA paper evaluates 16 robotic hands. The kinematic URDFs in `robots/urdfs/` and the
 visual meshes in `robots/visual_models/` (used only by `tools/compare_hands.py`) are
 derived from third-party robot descriptions, each under its own license. **The
 MIT license in `LICENSE` covers the KaRMA code only. It does not relicense these
@@ -13,7 +13,7 @@ third-party mesh geometry.
 
 ## License terms
 
-Of the 14 mesh models, 13 are permissive (MIT, BSD, Apache-2.0, or — for Shadow —
+Of the paper's 14 mesh models, 13 are permissive (MIT, BSD, Apache-2.0, or — for Shadow —
 CC BY 4.0): all permit reuse including commercial use, and require only that you
 keep the source's attribution and copyright notice. The one exception is the
 **SCHUNK SVH** hand, whose mesh geometry is **GPL-3.0 (copyleft)** — redistribution
@@ -45,9 +45,10 @@ kinematic reconstruction, distributed on a cite-the-source basis.
 | `wuji` | [wuji-technology/wuji-description](https://github.com/wuji-technology/wuji-description) | MIT | © 2025 Wuji Technology |
 | `xhand1` | RobotEra ([roboterax](https://github.com/roboterax); see note) | BSD (declared; unverified — see note) | RobotEra |
 | `xhandlite` | RobotEra ([roboterax](https://github.com/roboterax); see note) | BSD (declared; unverified — see note) | RobotEra |
+| `xynova_prima1_left`, `xynova_prima1_right` | Xynova Prima1 description package (`xynova_prima1` 1.0.0) | BSD (declared in the supplied `package.xml`) | Xynova |
 
-Each model folder ships an `ATTRIBUTION.txt` recording its source, license, and
-copyright. Full upstream license texts are available at the linked sources.
+Each model folder ships an `ATTRIBUTION.txt` recording its source and declared license.
+Full upstream license texts are available where the source is linked.
 
 ## Citations for the two OpenSim-derived hands
 

@@ -1,0 +1,5 @@
+Xynova Prima1 (right hand)
+Source: Xynova Prima1 description package (xynova_prima1, version 1.0.0)
+License: BSD (as declared in the source package.xml)
+
+The model uses its source license. See ../ATTRIBUTIONS.md.
